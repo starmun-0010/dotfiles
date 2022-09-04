@@ -15,3 +15,5 @@ sudo apt install fish -y
 #XClip
 sudo apt install xclip -y
 
+#VS Code
+sudo apt install code -y
