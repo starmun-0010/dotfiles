@@ -20,6 +20,7 @@ sudo apt install xclip -y
 
 #Fish
 sudo apt install fish -y
+ln -s "$PWD/config.fish" ~/.config/fish/config.fish
 
 #Neo Vim
 sudo apt install neovim -y
