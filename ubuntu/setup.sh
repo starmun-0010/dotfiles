@@ -1,3 +1,9 @@
+#Refresh package cache
+sudo apt update
+
+#Upgrade packages
+sudo apt upgrade
+
 #Github
 sudo apt install git -y
 git config --global user.email abdemuqsit@hotmail.com
