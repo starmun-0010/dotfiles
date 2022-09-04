@@ -2,7 +2,7 @@
 sudo apt update
 
 #Upgrade packages
-sudo apt upgrade
+sudo apt upgrade -y
 
 #Github
 sudo apt install git -y
@@ -15,11 +15,15 @@ sudo apt install tmux -y
 ln -s "$PWD/.tmux.conf" ~/.tmux.conf
 tmux source-file ~/.tmux.conf
 
+#XClip
+sudo apt install xclip -y
+
 #Fish
 sudo apt install fish -y
 
-#XClip
-sudo apt install xclip -y
+#Neo Vim
+sudo apt install neovim -y
+ln -s "$PWD/init.vim" ~/.config/nvim/init.vim
 
 #VS Code
 sudo apt install code -y
