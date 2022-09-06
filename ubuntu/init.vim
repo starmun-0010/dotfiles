@@ -7,3 +7,6 @@ endif
 
 imap jj <Esc>
 
+call plug#begin()
+Plug 'fladson/vim-kitty'
+call plug#end()
