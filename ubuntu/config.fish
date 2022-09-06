@@ -4,7 +4,8 @@ end
 
 # Add greeting
 function fish_greeting
-    neofetch 
+    set cow (random choice (cowsay -l | string replace /usr/share/cowsay/cows: "" | string replace "Cow files in" "" | string split -n " "))
+    neofetch --ascii (fortune | cowsay -f (echo $cow) -W 30 | string collect --no-trim-newline) | lolcat
 end
 
 fish_vi_key_bindings
