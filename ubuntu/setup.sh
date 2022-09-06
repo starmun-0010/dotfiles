@@ -6,6 +6,9 @@ sudo apt update
 #Upgrade packages
 sudo apt upgrade -y
 
+#Autoremove
+sudo apt autoremove -y
+
 #Github
 sudo apt install git -y
 git config --global user.name muqsit
@@ -20,6 +23,7 @@ git config --global commit.gpgsign true
 sudo apt install kitty -y
 mkdir -p ~/.config/kitty
 ln -sfn "$PWD/kitty.conf" ~/.config/kitty/kitty.conf
+sudo update-alternatives --set x-terminal-emulator /usr/bin/kitty
 
 #XClip
 sudo apt install xclip -y
@@ -35,9 +39,14 @@ mkdir -p ~/.config/neofetch
 ln -sfn "$PWD/config.conf" ~/.config/neofetch/config.conf
 
 #Neo Vim
-sudo apt install neovim -y
-mkdir -p ~/.config/nvim
-ln -sfn "$PWD/init.vim" ~/.config/nvim/init.vim
+LATEST_RELEASE=$(curl -L -s -H 'Accept: application/json' https://github.com/neovim/neovim/releases/latest)
+LATEST_VERSION=$(echo $LATEST_RELEASE | sed -e 's/.*"tag_name":"\([^"]*\)".*/\1/')
+ARTIFACT_URL="https://github.com/neovim/neovim/releases/download/$LATEST_VERSION/nvim-linux64.deb"
+curl --create-dirs -OL --output-dir /tmp $(echo $ARTIFACT_URL) 
+sudo apt install /tmp/nvim-linux64.deb -y
+rm /tmp/nvim-linux64.deb
+rm -rf ~/.config/nvim
+ln -sfn "$PWD/nvim" ~/.config/
 nvim -es -u init.vim -i NONE -c "PlugInstall" -c "qa"
 
 #gogh theme
@@ -60,5 +69,6 @@ nvim -es -u init.vim -i NONE -c "PlugInstall" -c "qa"
 #Locate
 sudo apt install locate -y
 sudo updatedb
+
 #VS Code
 sudo apt install code -y

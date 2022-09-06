@@ -11,4 +11,4 @@ call plug#begin()
 Plug 'fladson/vim-kitty'
 Plug 'neovim/nvim-lspconfig'
 call plug#end()
-
+lua require'lspconfig'.csharp_ls.setup{} 
