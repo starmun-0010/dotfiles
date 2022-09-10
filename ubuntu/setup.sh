@@ -6,6 +6,8 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
 && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null 
 
+SETUPROOT=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
+
 #Refresh package cache
 sudo apt update
 
@@ -30,7 +32,7 @@ sudo apt install gh -y
 #Kitty
 sudo apt install kitty -y
 mkdir -p ~/.config/kitty
-ln -sfn "$PWD/kitty.conf" ~/.config/kitty/kitty.conf
+ln -sfn "$SETUPROOT/kitty.conf" ~/.config/kitty/kitty.conf
 sudo update-alternatives --set x-terminal-emulator /usr/bin/kitty
 
 #XClip
@@ -39,16 +41,16 @@ sudo apt install xclip -y
 #Fish
 sudo apt install fish -y
 mkdir -p ~/.config/fish
-ln -sfn "$PWD/config.fish" ~/.config/fish/config.fish
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 #Fisher
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 fisher install IlanCosman/tide@v5
+ln -sfn "$SETUPROOT/config.fish" ~/.config/fish/config.fish
 
 #Neofetch
 sudo apt install neofetch -y
 mkdir -p ~/.config/neofetch
-ln -sfn "$PWD/config.conf" ~/.config/neofetch/config.conf
+ln -sfn "$SETUPROOT/config.conf" ~/.config/neofetch/config.conf
 
 #Node
 LATEST_RELEASE=$(curl -L -s -H 'Accept: application/json' https://github.com/nvm-sh/nvm/releases/latest)
@@ -71,7 +73,7 @@ curl --create-dirs -OL --output-dir /tmp $(echo $ARTIFACT_URL)
 sudo apt install /tmp/nvim-linux64.deb -y
 rm /tmp/nvim-linux64.deb
 rm -rf ~/.config/nvim
-ln -sfn "$PWD/nvim" ~/.config/
+ln -sfn "$SETUPROOT/nvim" ~/.config/
 nvim -es -u init.vim -i NONE -c "PlugInstall" -c "qa"
 
 #gogh theme
