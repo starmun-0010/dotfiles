@@ -26,10 +26,6 @@ git config --global pager.color no
 git config --global diff.tool nvimdiff
 git config --global merge.tool nvimdiff
 
-#Tmux
-#sudo apt install tmux -y
-#ln -sfn "$PWD/.tmux.conf" ~/.tmux.conf
-#tmux source-file ~/.tmux.conf
 #Github CLI
 sudo apt install gh -y
 
@@ -45,10 +41,6 @@ sudo apt install xclip -y
 #Fish
 sudo apt install fish -y
 mkdir -p ~/.config/fish
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-#Fisher
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-fisher install IlanCosman/tide@v5
 ln -sfn "$SETUPROOT/config.fish" ~/.config/fish/config.fish
 
 #Neofetch
@@ -80,20 +72,6 @@ rm -rf ~/.config/nvim
 ln -sfn "$SETUPROOT/nvim" ~/.config/
 nvim -es -u init.vim -i NONE -c "PlugInstall" -c "qa"
 
-#gogh theme
-#id=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "'")
-#gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$id/ visible-name 'Default'
-#sudo apt-get install dconf-cli uuid-runtime -y
-#mkdir -p "temp"
-#cd "temp"
-#git clone https://github.com/Gogh-Co/Gogh.git gogh
-#cd gogh/themes
-#export TERMINAL=gnome-terminal
-#./atom.sh
-#./dracula.sh
-#./wryan.sh
-#cd ../../..
-#rm -rf temp
 #Locate
 sudo apt install locate -y
 sudo updatedb
