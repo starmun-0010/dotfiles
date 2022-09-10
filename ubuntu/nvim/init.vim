@@ -1,6 +1,3 @@
-"mappings
-imap jj <Esc>
-
 "install vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -40,6 +37,9 @@ Plug 'ray-x/lsp_signature.nvim'
 "Lua formatter
 Plug 'andrejlevkovitch/vim-lua-format'
 
+"Helps see defined keymaps
+Plug 'folke/which-key.nvim'
+
 "Syntax highlighting for kitty configuraiton
 Plug 'fladson/vim-kitty'
 
@@ -55,3 +55,8 @@ lua require('init')
 "Fomat Lua
 autocmd FileType lua nnoremap <buffer> <c-k> :call LuaFormat()<cr>
 autocmd BufWrite *.lua call LuaFormat()
+
+"mappings
+imap jj <Esc>
+let g:mapleader = "\<Space>"
+let g:maplocalleader = ','

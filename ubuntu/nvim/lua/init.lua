@@ -85,8 +85,8 @@ local lsp_on_attatch = function(_, bufnr)
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local bufopts = {noremap = true, silent = true, buffer = bufnr}
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+    vim.keymap.set('n', '<Leader>gD', vim.lsp.buf.declaration, bufopts)
+    vim.keymap.set('n', '<Leader>gd', vim.lsp.buf.definition, bufopts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
     vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
@@ -100,7 +100,12 @@ local lsp_on_attatch = function(_, bufnr)
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
     vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-    vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>f', '', {
+        callback = vim.lsp.buf.formatting,
+        noremap = true,
+        silent = true,
+        desc = 'Format File'
+    })
 end;
 
 local lsp_setup = {capabilities = capabilities, on_attach = lsp_on_attatch}
@@ -126,7 +131,9 @@ require("lspconfig").vimls.setup(lsp_setup)
 require("lspconfig").sumneko_lua.setup(lsp_setup_lua)
 require("lspconfig").omnisharp.setup(lsp_setup_lua)
 
--- Mappings
+-- Which key
+require('which-key').setup()
+
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = {noremap = true, silent = true}
