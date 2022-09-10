@@ -19,8 +19,12 @@ sudo apt autoremove -y
 
 #Github
 sudo apt install git -y
-git config --global user.name muqsit
 git config --global commit.gpgsign true
+git config --global core.editor "nvim"
+git config --global core.pager "nvim -R"
+git config --global pager.color no
+git config --global diff.tool nvimdiff
+git config --global merge.tool nvimdiff
 
 #Tmux
 #sudo apt install tmux -y
