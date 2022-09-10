@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#GPG keys
+#Github CLI
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null 
+
 #Refresh package cache
 sudo apt update
 
@@ -18,6 +24,8 @@ git config --global commit.gpgsign true
 #sudo apt install tmux -y
 #ln -sfn "$PWD/.tmux.conf" ~/.tmux.conf
 #tmux source-file ~/.tmux.conf
+#Github CLI
+sudo apt install gh -y
 
 #Kitty
 sudo apt install kitty -y
@@ -33,7 +41,6 @@ sudo apt install fish -y
 mkdir -p ~/.config/fish
 ln -sfn "$PWD/config.fish" ~/.config/fish/config.fish
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-
 #Fisher
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 fisher install IlanCosman/tide@v5
@@ -75,15 +82,12 @@ nvim -es -u init.vim -i NONE -c "PlugInstall" -c "qa"
 #cd "temp"
 #git clone https://github.com/Gogh-Co/Gogh.git gogh
 #cd gogh/themes
-
 #export TERMINAL=gnome-terminal
-
 #./atom.sh
 #./dracula.sh
 #./wryan.sh
 #cd ../../..
 #rm -rf temp
-
 #Locate
 sudo apt install locate -y
 sudo updatedb
