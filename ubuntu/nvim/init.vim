@@ -27,9 +27,12 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 
 "Snippet manager
-Plug 'hrsh7th/vim-vsnip'
+"Plug 'hrsh7th/vim-vsnip'
+Plug 'L3MON4D3/LuaSnip', {'tag': 'v<CurrentMajor>.*'}
+
 "Snippet hook into autocompletion
-Plug 'hrsh7th/cmp-vsnip'
+"Plug 'hrsh7th/cmp-vsnip'
+Plug 'saadparwaiz1/cmp_luasnip'
 
 "Signature help from LSP and other sources
 Plug 'ray-x/lsp_signature.nvim'
