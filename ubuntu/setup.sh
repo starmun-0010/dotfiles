@@ -32,11 +32,29 @@ sudo apt install xclip -y
 sudo apt install fish -y
 mkdir -p ~/.config/fish
 ln -sfn "$PWD/config.fish" ~/.config/fish/config.fish
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+
+#Fisher
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+fisher install IlanCosman/tide@v5
 
 #Neofetch
 sudo apt install neofetch -y
 mkdir -p ~/.config/neofetch
 ln -sfn "$PWD/config.conf" ~/.config/neofetch/config.conf
+
+#Node
+LATEST_RELEASE=$(curl -L -s -H 'Accept: application/json' https://github.com/nvm-sh/nvm/releases/latest)
+LATEST_VERSION=$(echo $LATEST_RELEASE | sed -e 's/.*"tag_name":"\([^"]*\)".*/\1/')
+curl --create-dirs -OL --output-dir /tmp/nvm https://raw.githubusercontent.com/nvm-sh/nvm/$LATEST_VERSION/install.sh 
+chmod +x /tmp/nvm/install.sh
+/tmp/nvm/install.sh
+rm -rf /tmp/nvm
+source ~/.nvm/nvm.sh
+nvm install --latest-npm
+nvm use "$(nvm_ls)"
+fish -c 'fish_add_path (string sub -e -4 (which node))'
+fish -c 'fish_add_path (string sub -e -3 (which npm))'
 
 #Neo Vim
 LATEST_RELEASE=$(curl -L -s -H 'Accept: application/json' https://github.com/neovim/neovim/releases/latest)
