@@ -87,31 +87,64 @@ local signature_config = {
 }
 
 local lsp_on_attatch = function(_, bufnr)
-    require"lsp_signature".on_attach(signature_config, bufnr) -- Note: add in lsp client on-attach
+    require "lsp_signature".on_attach(signature_config, bufnr) -- Note: add in lsp client on-attach
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local bufopts = {noremap = true, silent = true, buffer = bufnr}
-    vim.keymap.set('n', '<Leader>gD', vim.lsp.buf.declaration, bufopts)
-    vim.keymap.set('n', '<Leader>gd', vim.lsp.buf.definition, bufopts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-    vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-    vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder,
-                   bufopts)
-    vim.keymap.set('n', '<space>wl', function()
+    local bufopts = { noremap = true, silent = true }
+
+    bufopts.desc = 'Go to Declaration'
+    bufopts.callback = vim.lsp.buf.declaration
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>gD', '', bufopts)
+
+    bufopts.desc = 'Go to Definition'
+    bufopts.callback = vim.lsp.buf.definition
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>gd', '', bufopts)
+
+    bufopts.desc = 'Hover'
+    bufopts.callback = vim.lsp.buf.hover
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>h', '', bufopts)
+
+    bufopts.desc = 'Go to Implementation'
+    bufopts.callback = vim.lsp.buf.implementation
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>gi', '', bufopts)
+
+    bufopts.desc = 'Signature Help'
+    bufopts.callback = vim.lsp.buf.signature_help
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>sh', '', bufopts)
+
+    bufopts.desc = 'Add Workspace Folder'
+    bufopts.callback = vim.lsp.buf.add_workspace_folder
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>awf', '', bufopts)
+
+    bufopts.desc = 'Remove Workspace Folder'
+    bufopts.callback = vim.lsp.buf.remove_workspace_folder
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>rwf', '', bufopts)
+
+    bufopts.desc = 'List Workspace Folders'
+    bufopts.callback = function()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-    end, bufopts)
-    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
-    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-    vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>f', '', {
-        callback = vim.lsp.buf.formatting,
-        noremap = true,
-        silent = true,
-        desc = 'Format File'
-    })
+    end
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>lwf', '', bufopts)
+
+    bufopts.desc = 'Type Definition'
+    bufopts.callback = vim.lsp.buf.type_definition
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>td', '', bufopts)
+
+    bufopts.desc = 'Rename'
+    bufopts.callback = vim.lsp.buf.rename
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>r', '', bufopts)
+
+    bufopts.desc = 'Code Action'
+    bufopts.callback = vim.lsp.buf.code_action
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>ca', '', bufopts)
+
+    bufopts.desc = 'Go to References'
+    bufopts.callback = vim.lsp.buf.references
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>gr', '', bufopts)
+
+    bufopts.desc = 'Format File'
+    bufopts.callback = vim.lsp.buf.formatting
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>f', '', bufopts)
 end;
 
 local lsp_setup = {capabilities = capabilities, on_attach = lsp_on_attatch}
