@@ -75,15 +75,15 @@ call plug#end()
 lua require('init')
 
 "Autocommands
-"Fomat Lua
-autocmd FileType lua nnoremap <buffer> <c-k> :call LuaFormat()<cr>
-autocmd BufWrite *.lua call LuaFormat()
-
 "Start nerd tree and move cursor to other file
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endi
 
 "mappings
 imap jj <Esc>
+
+"Autosave on change to Normal mode
+inoremap <Esc> <Esc>:w<CR>
+
 let g:mapleader = "\<Space>"
 let g:maplocalleader = ','
