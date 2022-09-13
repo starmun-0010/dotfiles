@@ -167,6 +167,12 @@ local lsp_setup_lua = {
     }
 }
 
+local lsp_setup_csharp = {
+    capabilities = capabilities,
+    on_attach = lsp_on_attatch,
+    omnisharp = { enableDecompilationSupport = true }
+}
+
 local tree_sitter_config = {
     -- ensure_installed = "maintained",
     highlight = { enable = true },
@@ -184,7 +190,7 @@ require("lspconfig").vimls.setup(lsp_setup)
 require("lspconfig").vimls.setup(lsp_setup)
 -- require("lspconfig").csharp_ls.setup(lsp_setup)
 require("lspconfig").sumneko_lua.setup(lsp_setup_lua)
-require("lspconfig").omnisharp.setup(lsp_setup_lua)
+require("lspconfig").omnisharp.setup(lsp_setup_csharp)
 
 -- Tree sitter config
 require("nvim-treesitter.configs").setup(tree_sitter_config)
