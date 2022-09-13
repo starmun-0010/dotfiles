@@ -11,7 +11,9 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport = {
-    properties = {"documentation", "detail", "additionalTextEdits"}
+    properties = {
+        "documentation", "detail", "additionalTextEdits", "inlayHints"
+    }
 }
 
 local function has_words_before()
@@ -41,7 +43,7 @@ local function handle_cmp_tab(cmp, direction)
     end
 end
 
-local handle_tab_parameters = {"i", "s"}
+local handle_tab_parameters = { "i", "s" }
 
 local cmp = require("cmp")
 cmp.setup({
@@ -49,11 +51,11 @@ cmp.setup({
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
             -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-            require('luasnip').lsp_expand(args.body) -- For `luasnip` users. 
+            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         end
     },
     mapping = {
-        ["<CR>"] = cmp.mapping.confirm({select = true}),
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
         ['<C-K>'] = cmp.mapping.scroll_docs(-4),
         ['<C-J>'] = cmp.mapping.scroll_docs(4),
         ["<C-k>"] = cmp.mapping.select_prev_item(),
@@ -64,11 +66,11 @@ cmp.setup({
 
     },
     sources = {
-        {name = "nvim_lsp"}, {name = 'luasnip'}, {name = 'buffer'},
-        {name = 'path'}
+        { name = "nvim_lsp" }, { name = 'luasnip' }, { name = 'buffer' },
+        { name = 'path' }
     },
-    completion = {completeopt = "menu,menuone,noinsert"},
-    experimental = {ghost_text = true}
+    completion = { completeopt = "menu,menuone,noinsert" },
+    experimental = { ghost_text = true }
 })
 
 local signature_config = {
@@ -147,7 +149,7 @@ local lsp_on_attatch = function(_, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>f', '', bufopts)
 end;
 
-local lsp_setup = {capabilities = capabilities, on_attach = lsp_on_attatch}
+local lsp_setup = { capabilities = capabilities, on_attach = lsp_on_attatch }
 
 local lsp_setup_lua = {
     capabilities = capabilities,
@@ -157,7 +159,7 @@ local lsp_setup_lua = {
             diagnostics = {
                 -- Get the language server to recognize the `vim` global
                 -- Fixes the 'global vim is undefined' error
-                globals = {'vim'}
+                globals = { 'vim' }
             },
             runtime = {
                 -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
@@ -201,11 +203,12 @@ require('which-key').setup()
 -- Autopairs
 require("nvim-autopairs").setup()
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
+cmp.event:on("confirm_done",
+    cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = {noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<C-.>', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '<C-p>', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', '<C-n>', vim.diagnostic.goto_next, opts)
@@ -213,5 +216,5 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
 -- Theme
 vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
-require("catppuccin").setup({transparent_background = true})
+require("catppuccin").setup({ transparent_background = true })
 vim.cmd [[colorscheme catppuccin]]

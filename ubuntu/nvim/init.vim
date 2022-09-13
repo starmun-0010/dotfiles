@@ -51,9 +51,6 @@ Plug 'saadparwaiz1/cmp_luasnip'
 "Signature help from LSP and other sources
 Plug 'ray-x/lsp_signature.nvim'
 
-"Lua formatter
-Plug 'andrejlevkovitch/vim-lua-format'
-
 "Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
