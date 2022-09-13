@@ -138,6 +138,11 @@ require("lspconfig").omnisharp.setup(lsp_setup_lua)
 -- Which key
 require('which-key').setup()
 
+-- Autopairs
+require("nvim-autopairs").setup()
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
+
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = {noremap = true, silent = true}
