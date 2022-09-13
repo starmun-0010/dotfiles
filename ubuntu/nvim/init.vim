@@ -2,6 +2,10 @@
 set number
 set relativenumber
 
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
 "install vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
