@@ -2,6 +2,9 @@
 set number
 set relativenumber
 
+"For recursive file search
+set path=.,,**
+
 set tabstop=4
 set shiftwidth=4
 set expandtab
