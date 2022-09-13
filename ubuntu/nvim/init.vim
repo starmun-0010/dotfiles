@@ -54,6 +54,9 @@ Plug 'ray-x/lsp_signature.nvim'
 "Lua formatter
 Plug 'andrejlevkovitch/vim-lua-format'
 
+"Treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 "Helps see defined keymaps
 Plug 'folke/which-key.nvim'
 
