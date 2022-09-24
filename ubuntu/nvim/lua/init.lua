@@ -1,5 +1,8 @@
 require("plugins/plugins-init").setup()
 
+vim.cmd([[
+	autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) | execute 'cd '.argv()[0] | wincmd l | endif
+]])
 -- Mason lsp installer
 require("mason").setup()
 require("mason-lspconfig").setup({
