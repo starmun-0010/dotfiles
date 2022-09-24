@@ -181,16 +181,6 @@ local lsp_setup_csharp = {
     omnisharp = { enableDecompilationSupport = true }
 }
 
-local tree_sitter_config = {
-    -- ensure_installed = "maintained",
-    highlight = { enable = true },
-    indent = { enable = true },
-    playground = {
-        enable = true,
-        disable = {},
-        updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
-        persist_queries = false -- Whether the query persists across vim sessions
-    }
 }
 
 -- lsp servers
@@ -201,7 +191,6 @@ require("lspconfig").sumneko_lua.setup(lsp_setup_lua)
 require("lspconfig").omnisharp.setup(lsp_setup_csharp)
 
 -- Tree sitter config
-require("nvim-treesitter.configs").setup(tree_sitter_config)
 
 -- Which key
 require('which-key').setup()

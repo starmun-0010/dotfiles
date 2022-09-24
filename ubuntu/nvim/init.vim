@@ -57,9 +57,6 @@ Plug 'ray-x/lsp_signature.nvim'
 "Easymotion
 Plug 'justinmk/vim-sneak'
 
-"Treesitter
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
 
 "Helps see defined keymaps
 Plug 'folke/which-key.nvim'
