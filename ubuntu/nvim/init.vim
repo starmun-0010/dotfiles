@@ -54,6 +54,9 @@ Plug 'saadparwaiz1/cmp_luasnip'
 "Signature help from LSP and other sources
 Plug 'ray-x/lsp_signature.nvim'
 
+"Easymotion
+Plug 'justinmk/vim-sneak'
+
 "Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -78,6 +81,9 @@ lua require('init')
 "Start nerd tree and move cursor to other file
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endi
+
+"Sneak hints
+let g:sneak#label = 1
 
 "mappings
 imap jj <Esc>
