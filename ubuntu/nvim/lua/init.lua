@@ -16,6 +16,9 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
     }
 }
 
+--Lsp extension commands
+vim.lsp.commands['omnisharp/client/findReferences'] = vim.lsp.buf.references
+
 local function has_words_before()
 
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))

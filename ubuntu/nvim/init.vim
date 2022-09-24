@@ -31,6 +31,9 @@ Plug 'williamboman/mason-lspconfig.nvim'
 "Configuration hook for builtin LSP
 Plug 'neovim/nvim-lspconfig'
 
+"
+Plug 'Hoffs/omnisharp-extended-lsp.nvim' 
+
 "Autocompletion
 Plug 'hrsh7th/nvim-cmp'
 
