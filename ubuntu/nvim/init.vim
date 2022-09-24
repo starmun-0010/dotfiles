@@ -60,8 +60,6 @@ Plug 'justinmk/vim-sneak'
 "Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-"File Explorer
-Plug 'preservim/nerdtree'
 
 "Helps see defined keymaps
 Plug 'folke/which-key.nvim'
@@ -77,10 +75,6 @@ call plug#end()
 "Source lua configurations
 lua require('init')
 
-"Autocommands
-"Start nerd tree and move cursor to other file
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endi
 
 "Sneak hints
 let g:sneak#label = 1
