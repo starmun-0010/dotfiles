@@ -9,6 +9,7 @@ Module.setup = function()
         use 'tpope/vim-commentary'
         use "fladson/vim-kitty"
 
+        require('plugins/lualine-config').setup(use)
         require('plugins/gitsigns-config').setup(use)
         require('plugins/neotree-config').setup(use)
         require('plugins/telescope-config').setup(use)
