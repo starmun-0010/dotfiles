@@ -90,3 +90,12 @@ sudo updatedb
 
 #VS Code
 sudo apt install code -y
+
+#Themes
+#Gedit
+rm -rf /tmp/catappuccin
+git clone https://github.com/catppuccin/gedit.git /tmp/catppuccin
+cd /tmp/catppuccin
+./install.sh
+cd $(echo $SETUPROOT)
+rm -rf /tmp/catppuccin
