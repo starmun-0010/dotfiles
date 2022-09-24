@@ -10,6 +10,9 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 #Fish
 sudo add-apt-repository ppa:fish-shell/release-3 -y
 
+#Emacs
+sudo add-apt-repository ppa:kelleyk/emacs -y
+
 #Make script excutable from any directory
 SETUPROOT=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
 
@@ -76,6 +79,10 @@ rm /tmp/nvim-linux64.deb
 rm -rf ~/.config/nvim
 ln -sfn "$SETUPROOT/nvim" ~/.config/
 nvim -es -u init.vim -i NONE -c "PlugInstall" -c "qa"
+
+#Emacs
+sudo apt install emacs28 -y
+#ln -sfn "$SETUPROOT/emacs" ~/.config/
 
 #Locate
 sudo apt install locate -y
