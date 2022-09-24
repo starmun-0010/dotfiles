@@ -8,6 +8,7 @@ Module.setup = function()
         use 'wbthomason/packer.nvim'
         use 'tpope/vim-commentary'
         use "fladson/vim-kitty"
+        use 'p00f/nvim-ts-rainbow'
 
         require('plugins/lualine-config').setup(use)
         require('plugins/gitsigns-config').setup(use)
