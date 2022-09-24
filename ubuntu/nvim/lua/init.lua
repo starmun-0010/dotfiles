@@ -221,6 +221,4 @@ vim.keymap.set('n', '<C-n>', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
 -- Theme
-vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
-require("catppuccin").setup({ transparent_background = true })
-vim.cmd [[colorscheme catppuccin]]
+

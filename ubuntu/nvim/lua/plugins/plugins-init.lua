@@ -10,6 +10,7 @@ Module.setup = function()
         use "fladson/vim-kitty"
         use 'p00f/nvim-ts-rainbow'
 
+        require('plugins/catppuccin-config').setup(use)
         require('plugins/lualine-config').setup(use)
         require('plugins/gitsigns-config').setup(use)
         require('plugins/neotree-config').setup(use)

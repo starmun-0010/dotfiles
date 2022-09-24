@@ -68,7 +68,6 @@ Plug 'folke/which-key.nvim'
 Plug 'fladson/vim-kitty'
 
 "Theme
-Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 
 call plug#end()
 
