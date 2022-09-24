@@ -7,6 +7,7 @@ Module.setup = function()
     return packer.startup(function(use)
         use 'wbthomason/packer.nvim'
         use 'tpope/vim-commentary'
+        use "fladson/vim-kitty"
         packer_config.post_init(packer)
     end, packer_config.packer_config)
 end
