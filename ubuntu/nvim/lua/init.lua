@@ -22,62 +22,6 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 --Lsp extension commands
 vim.lsp.commands['omnisharp/client/findReferences'] = vim.lsp.buf.references
 
-local function has_words_before()
-
-    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-end
-
-local function handle_cmp_tab(cmp, direction)
-    return function(fallback)
-        print(direction)
-        if cmp.visible() then
-            if direction == 1 then
-                cmp.select_next_item()
-            elseif direction == -1 then
-                cmp.select_prev_item()
-            end
-        elseif require("luasnip").expandable() then
-            require("luasnip").expand()
-        elseif require("luasnip").jumpable(direction) then
-            require("luasnip").jump(direction)
-        elseif direction == 1 and has_words_before() then
-            cmp.complete()
-        else
-            fallback()
-        end
-    end
-end
-
-local handle_tab_parameters = { "i", "s" }
-
-local cmp = require("cmp")
-cmp.setup({
-    snippet = {
-        -- REQUIRED - you must specify a snippet engine
-        expand = function(args)
-            -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-        end
-    },
-    mapping = {
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        ['<C-K>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-J>'] = cmp.mapping.scroll_docs(4),
-        ["<C-k>"] = cmp.mapping.select_prev_item(),
-        ["<C-j>"] = cmp.mapping.select_next_item(),
-        ["<C-e>"] = cmp.mapping.close(),
-        ["<Tab>"] = cmp.mapping(handle_cmp_tab(cmp, 1), handle_tab_parameters),
-        ["<S-Tab>"] = cmp.mapping(handle_cmp_tab(cmp, -1), handle_tab_parameters)
-
-    },
-    sources = {
-        { name = "nvim_lsp" }, { name = 'luasnip' }, { name = 'buffer' },
-        { name = 'path' }
-    },
-    completion = { completeopt = "menu,menuone,noinsert" },
-    experimental = { ghost_text = true }
-})
 
 local signature_config = {
     bind = true,
@@ -195,11 +139,6 @@ require("lspconfig").omnisharp.setup(lsp_setup_csharp)
 -- Which key
 require('which-key').setup()
 
--- Autopairs
-require("nvim-autopairs").setup()
-local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-cmp.event:on("confirm_done",
-    cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions

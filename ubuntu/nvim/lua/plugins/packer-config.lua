@@ -27,7 +27,7 @@ Module.post_init = function(packer)
     if packer_bootstrap then
         packer.sync()
     end
-    packer.compile()
     packer.install()
+    packer.compile()
 end
 return Module

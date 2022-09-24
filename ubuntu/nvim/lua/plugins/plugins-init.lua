@@ -9,6 +9,7 @@ Module.setup = function()
         use 'tpope/vim-commentary'
         use "fladson/vim-kitty"
 
+        require('plugins/cmp-config').setup(use)
         require('plugins/treesitter-config').setup(use)
         require('plugins/catppuccin-config').setup(use)
         require('plugins/lualine-config').setup(use)
