@@ -6,6 +6,11 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
 && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null 
 
+#PPA
+#Fish
+sudo add-apt-repository ppa:fish-shell/release-3 -y
+
+#Make script excutable from any directory
 SETUPROOT=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
 
 #Refresh package cache
