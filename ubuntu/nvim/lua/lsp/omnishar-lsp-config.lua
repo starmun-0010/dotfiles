@@ -40,5 +40,16 @@ local omnisharp_lsp_setup = {
 
 Module.setup = function()
     require('lspconfig').omnisharp.setup(omnisharp_lsp_setup)
+    --Refresh Codelens
+    vim.api.nvim_create_autocmd({
+        'BufEnter,CursorHold,InsertLeave'
+    }, {
+        pattern = "*.cs",
+        callback = function()
+            if (vim.lsp.buf.server_ready()) then
+                vim.lsp.codelens.refresh()
+            end
+        end
+    })
 end
 return Module

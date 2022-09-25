@@ -51,7 +51,7 @@ Module.setup = function(bufnr)
 
     bufopts.desc = 'Go to References'
     bufopts.callback = vim.lsp.buf.references
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>gr', '', bufopts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>grf', '', bufopts)
 
     bufopts.desc = 'Format File'
     bufopts.callback = vim.lsp.buf.formatting

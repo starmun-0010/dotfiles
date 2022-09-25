@@ -1,13 +1,10 @@
 local Module = {}
-local packer_config = require('plugins/packer-config')
-local packer = require('packer')
 local function load_plugins(use)
-    use 'wbthomason/packer.nvim'
     use 'tpope/vim-commentary'
     use "fladson/vim-kitty"
     use 'Hoffs/omnisharp-extended-lsp.nvim'
-    use 'justinmk/vim-sneak'
 
+    require('plugins/vim-config').setup()
     require('plugins/luadev-config').setup(use)
     require('plugins/lspkind-config').setup(use)
     require('lsp/lspconfig-config').setup(use)
@@ -24,10 +21,9 @@ local function load_plugins(use)
     require('plugins/gitsigns-config').setup(use)
     require('plugins/neotree-config').setup(use)
     require('plugins/telescope-config').setup(use)
-    packer_config.post_init(packer)
 end
 
 Module.setup = function()
-    return packer.startup({ load_plugins, packer_config.packer_config })
+    require('plugins/packer-config').setup(load_plugins)
 end
 return Module
