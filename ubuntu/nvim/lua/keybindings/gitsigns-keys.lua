@@ -1,6 +1,5 @@
 local Module = {}
 Module.setup = function(bufnr)
-    print('dsfsdafsd')
     local gs = package.loaded.gitsigns
 
     local function map(mode, l, r, opts)
@@ -36,6 +35,6 @@ Module.setup = function(bufnr)
     map('n', '<Leader>gtd', gs.toggle_deleted, { desc = "Toggle Delete" })
 
     -- Text object
-    map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', {desc="Select Hunk"})
+    map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', { desc = "Select Hunk" })
 end
 return Module
