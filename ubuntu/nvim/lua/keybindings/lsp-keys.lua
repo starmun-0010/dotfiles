@@ -60,5 +60,19 @@ Module.setup = function(bufnr)
     bufopts.desc = 'Code Lens'
     bufopts.callback = vim.lsp.codelens.run
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>cl', '', bufopts)
+
+    local opts = { noremap = true, silent = true }
+
+    opts.desc = "Diagnostics Open Float"
+    vim.keymap.set('n', '<Leader>dof', vim.diagnostic.open_float, opts)
+
+    opts.desc = "Diagnostics Go To Previous"
+    vim.keymap.set('n', '<Leader>dgp', vim.diagnostic.goto_prev, opts)
+
+    opts.desc = "Diagnostics Go To Next"
+    vim.keymap.set('n', '<Leader>dgn', vim.diagnostic.goto_next, opts)
+
+    opts.desc = "Diagnostics Set Local List"
+    vim.keymap.set('n', '<Leader>dsll', vim.diagnostic.setloclist, opts)
 end
 return Module
