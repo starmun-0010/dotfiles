@@ -15,6 +15,7 @@ sudo add-apt-repository ppa:kelleyk/emacs -y
 
 #Make script excutable from any directory
 SETUPROOT=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
+SETUPROOT+='/..'
 
 #Refresh package cache
 sudo apt update
