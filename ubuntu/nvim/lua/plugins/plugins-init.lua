@@ -7,7 +7,6 @@ local function load_plugins(use)
     use "fladson/vim-kitty"
     use 'Hoffs/omnisharp-extended-lsp.nvim'
     use 'justinmk/vim-sneak'
-    use 'folke/which-key.nvim'
 
     require('plugins/luadev-config').setup(use)
     require('plugins/lspkind-config').setup(use)
