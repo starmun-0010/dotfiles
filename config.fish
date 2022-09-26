@@ -19,3 +19,4 @@ set VISUAL 'nvim'
 
 set -g theme_nerd_fonts yes
 
+starship init fish | source
