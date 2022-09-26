@@ -5,15 +5,17 @@ local function load_plugins(use)
     use 'Hoffs/omnisharp-extended-lsp.nvim'
 
     require('plugins/vim-config').setup()
+
+    require("dap").setup(use)
     require('plugins/sneak-config').setup(use)
     require('plugins/whichkey-config').setup(use)
     require('plugins/luadev-config').setup(use)
     require('plugins/lspkind-config').setup(use)
-    require('lsp/lspconfig-config').setup(use)
     require('cmp/cmp-config').setup(use)
     require('cmp/cmpnvimlsp-config').setup(use)
     require('plugins/mason-config').setup(use)
     require('plugins/masonlspconfig-config').setup(use)
+    require('lsp/lspconfig-config').setup(use)
     require('plugins/masontoolinstaller-config').setup(use)
     require('plugins/autopairs-config').setup(use)
     require('plugins/signature-config').setup(use)
