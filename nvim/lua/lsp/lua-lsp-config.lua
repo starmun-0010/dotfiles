@@ -11,7 +11,10 @@ local lua_lsp_config = {
             completion = { enable = true, callSnippet = "Both" },
             diagnostics = {
                 enable = true,
-                globals = { 'vim', 'describe' },
+                globals = {
+                    'vim', 'describe', 'awesome', 'root',
+                    'client', 'screen'
+                },
             },
         }
     }

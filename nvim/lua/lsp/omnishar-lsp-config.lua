@@ -39,7 +39,7 @@ local omnisharp_lsp_setup = {
 }
 
 Module.setup = function()
-    --Refresh Codelens
+    print('fffff')
     vim.api.nvim_create_autocmd({
         'BufEnter,CursorHold,InsertLeave'
     }, {
@@ -51,5 +51,6 @@ Module.setup = function()
         end
     })
     require('lspconfig').omnisharp.setup(omnisharp_lsp_setup)
+    --Refresh Codelens
 end
 return Module

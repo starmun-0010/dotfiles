@@ -5,8 +5,8 @@ local function load_plugins(use)
     use 'Hoffs/omnisharp-extended-lsp.nvim'
 
     require('plugins/vim-config').setup()
-
-    require("dap").setup(use)
+    require("plugins/dap-config").setup(use)
+    require("plugins/dapui-config").setup(use)
     require('plugins/sneak-config').setup(use)
     require('plugins/whichkey-config').setup(use)
     require('plugins/luadev-config').setup(use)

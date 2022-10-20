@@ -46,8 +46,58 @@ Module.setup = function(use)
                 { text = "", texthl = "DiagnosticSignHint" })
             -- NOTE: this is changed from v1.x, which used the old style of highlight groups
             -- in the form "LspDiagnosticsSignWarning"
+            local neotree = require("neo-tree")
+            neotree.setup({
+                event_handlers = {
+                    {
+                        event = "file_open_requested",
+                        handler = function(args)
+                        --     local state = args.state
+                        --     local path = args.path
+                        --     local open_cmd = args.open_cmd or "edit"
 
-            require("neo-tree").setup({
+                        --     -- use last window if possible
+                        --     local suitable_window_found = false
+                        --     local nt = require("neo-tree")
+                        --     if nt.config.open_files_in_last_window then
+                        --         local prior_window = nt.get_prior_window()
+                        --         if prior_window > 0 then
+                        --             local success = pcall(vim.api.nvim_set_current_win, prior_window)
+                        --             if success then
+                        --                 suitable_window_found = true
+                        --             end
+                        --         end
+                        --     end
+
+                        --     -- find a suitable window to open the file in
+                        --     if not suitable_window_found then
+                        --         if state.window.position == "right" then
+                        --             vim.cmd("wincmd t")
+                        --         else
+                        --             vim.cmd("wincmd w")
+                        --         end
+                        --     end
+                        --     local attempts = 0
+                        --     while attempts < 4 and vim.bo.filetype == "neo-tree" do
+                        --         attempts = attempts + 1
+                        --         vim.cmd("wincmd w")
+                        --     end
+                        --     if vim.bo.filetype == "neo-tree" then
+                        --         -- Neo-tree must be the only window, restore it's status as a sidebar
+                        --         local winid = vim.api.nvim_get_current_win()
+                        --         local width = require("neo-tree.utils").get_value(state, "window.width", 40)
+                        --         vim.cmd("vsplit " .. path)
+                        --         vim.api.nvim_win_set_width(winid, width)
+                        --     else
+                        --         vim.cmd(open_cmd .. " " .. path)
+                        --     end
+
+                            -- If you don't return this, it will proceed to open the file using built-in logic.
+                            -- return { handled = true }
+                        end
+                    },
+                },
+
                 close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
                 popup_border_style = "rounded",
                 enable_git_status = true,
@@ -232,6 +282,30 @@ Module.setup = function(use)
                         }
                     },
                 },
+                -- event_handlers = {
+                --     {
+                --         event = "file_open_requested",
+                --         handler = function(arg)
+
+                --             local prior_window_num = neotree.get_prior_window();
+                --             if (prior_window_num < 0) then
+                --                 return
+                --             end
+                --             local previous_buf_num = vim.api.nvim_win_get_buf(prior_window_num)
+                --             local previous_buf_name = vim.api.nvim_buf_get_name(previous_buf_num)
+                --             if (vim.startswith(previous_buf_name, 'term')) then
+                --                 local edit_command = 'e ' .. arg.path
+                --                 --  vim.cmd('new')
+                --                 -- vim.defer_fn(function()
+                --                 --     vim.cmd(edit_command)
+                --                 -- end, 10)
+                --                 return { handled = true }
+                --             end
+                --             return { { handled = true } }
+                --         end,
+                --     }
+
+                -- },
                 git_status = {
                     window = {
                         position = "float",
@@ -247,8 +321,12 @@ Module.setup = function(use)
                     }
                 }
             })
-
-            vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
+            vim.cmd([[
+                nnoremap \ :Neotree reveal<cr>
+" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+ autocmd BufWinEnter * if bufname('#') =~ "^term" && bufname('%') !~ '^term' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! :new\<cr>" | execute 'buffer'.buf | endif
+            ]])
         end
     }
 end
