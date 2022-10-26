@@ -52,6 +52,12 @@ sudo apt install fish -y
 mkdir -p ~/.config/fish
 ln -sfn "$SETUPROOT/config.fish" ~/.config/fish/config.fish
 
+# Oh my fish
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+
+# Starship prompt
+curl -sS https://starship.rs/install.sh | sh
+
 #Neofetch
 sudo apt install neofetch -y
 mkdir -p ~/.config/neofetch
