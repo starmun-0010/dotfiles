@@ -59,9 +59,9 @@ mkdir -p ~/.config/fish
 ln -sfn "$SETUPROOT/config.fish" ~/.config/fish/config.fish
 
 #fortune
-sudo apt install cowsay
-sudo apt install fortune
-sudo apt install lolcat
+sudo apt install cowsay -y
+sudo apt install fortune -y
+sudo apt install lolcat -y
 
 
 # Oh my fish
