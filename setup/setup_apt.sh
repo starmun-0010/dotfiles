@@ -6,9 +6,15 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
 && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null 
 
+#dotnet
+wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb
+
 #PPA
 #Fish
 sudo add-apt-repository ppa:fish-shell/release-3 -y
+
 
 #Emacs
 sudo add-apt-repository ppa:kelleyk/emacs -y
@@ -52,11 +58,17 @@ sudo apt install fish -y
 mkdir -p ~/.config/fish
 ln -sfn "$SETUPROOT/config.fish" ~/.config/fish/config.fish
 
+#fortune
+sudo apt install cowsay
+sudo apt install fortune
+sudo apt install lolcat
+
+
 # Oh my fish
-curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish &
 
 # Starship prompt
-curl -sS https://starship.rs/install.sh | sh
+curl -sS https://starship.rs/install.sh | sh &
 
 #Neofetch
 sudo apt install neofetch -y
@@ -97,6 +109,15 @@ sudo updatedb
 
 #VS Code
 sudo apt install code -y
+
+#dotnet
+sudo apt-get install -y dotnet-sdk-6.0
+
+#aws cli
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "/tmp/awscliv2.zip"
+unzip /tmp/awscliv2.zip
+sudo ./tmp/aws/install
 
 #Themes
 #Gedit
