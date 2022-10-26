@@ -44,6 +44,9 @@ git config --global merge.tool nvimdiff
 #Github CLI
 sudo apt install gh -y
 
+# Zoxide 
+sudo apt install zoxide -y
+
 #Kitty
 sudo apt install kitty -y
 mkdir -p ~/.config/kitty
