@@ -2,6 +2,9 @@
   home.username = "muqsit";
   home.homeDirectory = "/home/muqsit";
   home.packages = with pkgs; [
+    pkgs-un.popcorntime
+    qbittorrent
+    pavucontrol
     gh
     flameshot
     unzip
@@ -47,7 +50,12 @@
   programs.home-manager = {
     enable = true;
   };
+  programs.git = {
+   enable = true;
+   userName = "starmun-0010";
+   userEmail = "abdemuqsit@hotmail.com";
 
+  };
   programs.neovim = {
     enable = true;
     defaultEditor = true;
