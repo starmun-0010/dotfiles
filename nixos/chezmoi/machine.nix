@@ -1,5 +1,10 @@
 { config, pkgs, pkgs-un, ... }: {
-  
+ nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (_:true);
+    };
+  }; 
   imports =
     [ 
       ./common.nix

@@ -13,8 +13,8 @@
     lib = nixpkgs.lib;
     hlib = home-manager.lib;
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-    pkgs-un = nixpkgs-unstable.legacyPackages.${system};
+    pkgs = import nixpkgs { system = system; config = { allowUnfree = true; }; }; 
+    pkgs-un = import nixpkgs-unstable { system = system; config = { allowUnfree = true; }; };
   in{
     nixosConfigurations = {
       machine = lib.nixosSystem {
