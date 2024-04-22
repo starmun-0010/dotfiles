@@ -35,8 +35,16 @@
 	extraSpecialArgs = {
           inherit pkgs-un;
         };
-	modules = [ ./home.nix ];
+	modules = [ ./chezmoi/machine.nix ];
       };
-    };
+    
+     deck = hlib.homeManagerConfiguration {
+       inherit pkgs;
+       extraSpecialArgs = {
+         inherit pkgs-un;
+       };
+       modules = [ ./chezmoi/deck.nix ];
+     };
+   };
   };
 }

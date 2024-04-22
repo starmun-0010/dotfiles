@@ -1,14 +1,8 @@
 { config, pkgs, pkgs-un, ... }: {
-  home.username = "muqsit";
-  home.homeDirectory = "/home/muqsit";
   home.packages = with pkgs; [
-    pkgs-un.popcorntime
-    qbittorrent
-    pavucontrol
     gh
     flameshot
     unzip
-    cowsay
     bat
     xplr
     projectable
@@ -19,13 +13,9 @@
     xclip
     ripgrep
     firefox
-    obs-studio
     wezterm
     nushell
-    qbittorrent
-    vlc
     rofi
-    vesktop
     picom
     zellij
     feh
@@ -34,19 +24,18 @@
 
     discord
     vscode
-    steam
   ];
   xdg.mimeApps = {
-  enable = true;
+    enable = true;
   
-  defaultApplications = {
-    "text/html" = "firefox.desktop";
-    "x-scheme-handler/http" = "firefox.desktop";
-    "x-scheme-handler/https" = "firefox.desktop";
-    "x-scheme-handler/about" = "firefox.desktop";
-    "x-scheme-handler/unknown" = "firefox.desktop";
-  };
-}; 
+    defaultApplications = {
+      "text/html" = "firefox.desktop";
+      "x-scheme-handler/http" = "firefox.desktop";
+      "x-scheme-handler/https" = "firefox.desktop";
+      "x-scheme-handler/about" = "firefox.desktop";
+      "x-scheme-handler/unknown" = "firefox.desktop";
+    };
+  }; 
   programs.home-manager = {
     enable = true;
   };
