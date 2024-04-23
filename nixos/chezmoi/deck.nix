@@ -12,7 +12,7 @@
     pkgs-un.postman
     slack
     i3
-     (with pkgs-un.dotnetCorePackages; combinePackages [
+    (with pkgs-un.dotnetCorePackages; combinePackages [
       sdk_6_0
       sdk_7_0
       sdk_8_0

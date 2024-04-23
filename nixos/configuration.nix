@@ -52,7 +52,6 @@
     enable = true;
     layout = "us";
     xkbVariant = "";
-    xkbOptions = "caps:swapescape";
   };
   services.xserver.displayManager.lightdm = {
     enable = true;
@@ -102,7 +101,7 @@
   users.users.muqsit = {
     isNormalUser = true;
     description = "muqsit";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "uinput" ];
     packages = with pkgs; [
     ];
   };

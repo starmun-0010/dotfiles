@@ -8,6 +8,7 @@
   };
   
   home.packages = with pkgs; [
+    kanata
     protonvpn-gui
     gh
     flameshot
@@ -61,7 +62,7 @@
 
   home.file.i3 = {
     enable = true;
-    source = config.lib.file.mkOutOfStoreSymlink ../programs/i3/xx;
+    source = config.lib.file.mkOutOfStoreSymlink ../programs/i3/config;
     target = "${config.home.homeDirectory}/.config/i3/config";
     force = true;
   };
