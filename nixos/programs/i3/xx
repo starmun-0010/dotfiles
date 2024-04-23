@@ -20,7 +20,8 @@ exec_always --no-startup-id echo -e "connect 23:02:24:14:13:2E" | bluetoothctl
 exec_always --no-startup-id echo -e "nconnect 74:45:CE:F5:01:59" | bluetoothctl
 bindsym $mod+m bar mode toggle
 
-bindsym $mod+t exec wezterm
+bindsym $mod+t exec nixGL wezterm
+bindsym $mod+Enter exec konsole
 
 bindsym $mod+shift+q kill
 bindsym $mod+Shift+r restart

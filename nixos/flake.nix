@@ -6,14 +6,15 @@
     nixpkgs-unstable.url="nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    nixgl.url = "github:nix-community/nixGL";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixgl, ... }:
   let
     lib = nixpkgs.lib;
     hlib = home-manager.lib;
     system = "x86_64-linux";
-    pkgs = import nixpkgs { system = system; config = { allowUnfree = true; }; }; 
+    pkgs = import nixpkgs { system = system; overlays = [ nixgl.overlay ]; config = { allowUnfree = true; }; }; 
     pkgs-un = import nixpkgs-unstable { system = system; config = { allowUnfree = true; }; };
   in{
     nixosConfigurations = {
@@ -42,6 +43,7 @@
        inherit pkgs;
        extraSpecialArgs = {
          inherit pkgs-un;
+	 inherit nixgl;
        };
        modules = [ ./chezmoi/deck.nix ];
      };
