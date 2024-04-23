@@ -8,6 +8,7 @@
   };
   
   home.packages = with pkgs; [
+    protonvpn-gui
     gh
     flameshot
     unzip
