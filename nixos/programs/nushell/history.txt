@@ -1,0 +1,2306 @@
+cargo install starship
+cmake
+apt install cmake
+sudo apt install cmake
+cargo install starship
+cat ~/.config/nushell/config.nu
+exit
+help
+ls
+z
+ls
+help where
+ls | where name =~ ".nu"
+ls | where name =~ "."
+ls -a | where name =~ "."
+mkdir .config/wezterm
+cd .config/wezterm/
+ls
+touch .wezterm.lua
+mv .wezterm.lua wezterm.lua
+ls
+nvim wezterm.lua
+cd .config/wezterm/
+nvim wezterm.lua
+exit
+which cargo
+cd .config/wezterm/
+nvim wezterm.lua
+ls
+nvim wezterm.lua
+nvim
+echo $PATH
+exit
+nvim
+cd .config/wezterm/
+nvim wezterm.lua
+exit
+bash
+exit
+cd .config/wezterm/
+nvim wezterm.lua
+ls
+ls /
+wezterm --help
+bluetoothctl
+exit
+cd .config/wezterm/
+exit
+nvim wezterm.lua
+cd .config/wezterm/
+nvim wezterm.lua
+help
+wezterm list
+wezterm cli list
+wezterm cli help
+nvim wezterm.lua
+exit
+cd .config/wezterm/
+nvim wezterm.lua
+cargo install update nu
+cargo update nu
+cargo install nu
+cargo --help
+cargo install --help
+cargo install --upgrade nu
+wezterm start --domain wow
+wezterm start --domain --help
+wezterm start --help
+wezterm start --domain --help
+wezterm start --help
+wezterm --help
+wezterm connect
+wezterm connect "wow"
+wezterm-gui
+wezterm show-keyus
+wezterm show-keys
+echo $LANG
+echo $env.LANG
+echo $env.LOCALE
+echo $LOCALE
+echo $env
+echo $env.PATH
+printf "\x1b[58:2::255:0:0m\x1b[4:1msingle\x1b[4:2mdouble\x1b[4:3mcurly\x1b[4:4mdotted\x1b[4:5mdashed\x1b[0m\n"
+bash
+exit
+cd .config/wezterm/
+nvim wezterm.lua
+exit
+bash
+exit
+wezterm-gui 
+exit
+cd .config/wezterm/
+nvim wezterm.lua
+wezterm start temp
+wezterm start --domain temp
+dmenu
+dmenu --help
+dmenu -p
+dmenu -p "why"
+wezterm cli help
+wezterm --help
+exit
+bash
+exit
+exit
+fefefadafdfe
+adfe
+exit
+exit
+exit
+cd .config/wezterm/
+ffiiwll
+sioe
+a
+temradvk
+wezterm cli help
+wezterm cli list
+nvim wezterm.lua
+exit
+bash
+exit
+bash
+exit
+exi
+exit
+wezterm cli list
+exit
+wezterm connect --help
+exi
+exit
+cd Documents/src/
+ls
+git clone https://github.com/starmun-0010/dotfiles.git
+cd dotfiles
+git checkout --orphan
+git checkout --orphan  2024
+mkdir debian
+mkdir .config/wezterm
+ls
+git checkout --orphan  2024
+ls
+git rm -rf .
+ls
+cd debian
+cd ../
+ls
+cd debian/
+mkdir .config/wezterm
+ls
+ls -a
+rm .config
+rm -r .config
+mkdir wezterm
+cd wezterm
+cd Documents/src/
+cp ~/.config/wezterm/wezterm.lua dotfiles/debian/wezterm/
+cat dotfiles/debian/wezterm/wezterm.lua
+cargo install starship
+cd dotfiles/
+ls
+git status
+git add --all
+git status
+git commit -m "wezterm"
+git push
+git push --set-upstream origin 2024
+gh
+cd ../
+cd golang/
+ls
+ls -a
+cd ../
+ls
+cd go
+ls
+cd hello
+ls
+cd ../
+cd ../interpreter/
+git checkout -b test
+git push
+git push -u origin test
+sudo mkdir -p -m 755 /etc/apt/keyrings && wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \<\n>&& sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \<\n>&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \<\n>&& sudo apt update \<\n>&& sudo apt install gh -y
+sudo mkdir -p -m 755 /etc/apt/keyrings && wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
+sudo mkdir -p -m 755 /etc/apt/keyrings and wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
+bash
+ghh
+gh
+gh auth login
+cd ../
+ls
+cd dotfiles/
+ls
+git push -u origin 2024
+mkdir test && cd test
+mkdir test ; cd test
+cd ../
+rm test
+sudo apt install picom
+leftwm-theme
+leftwm --help
+leftwm theme
+leftwm theme update
+leftwm theme --help
+leftwm --help theme
+leftwm  theme -h
+leftwm confi
+leftwm config
+leftwm config -n
+leftwm theme
+sudo apt install leftwm
+cargo search leftwm
+cargo install leftwm-theme
+leftwm-theme update
+leftwm-theme --help
+leftwm-theme --list
+leftwm-theme list
+leftwm-theme serach
+leftwm-theme serach *
+leftwm-theme seach *
+leftwm-theme search *
+leftwm-theme search 
+leftwm-theme search all
+leftwm-theme search cappu
+leftwm-theme install catpuccin
+leftwm-theme install Catpuccin
+leftwm-theme install community/Catpuccin
+leftwm-theme install community/Catppuccin
+leftwm-theme install Catppuccin
+leftwm theme apply Catppuccin
+cargo install Zexanima
+leftwum-theme install Zexanima
+leftwm-theme install Zexanima
+leftwm-theme search Zexanima
+leftwm-theme install Zexanima
+cd ~/.config/leftwm/themes<\n>git clone https://github.com/di-effe/catppuccin.git
+ls
+rm ~/.config/leftwm/themes/current
+ln -s ~/.config/leftwm/themes/catppuccin ~/.config/leftwm/themes/current
+ls
+cd catppuccin/
+ls
+./installfonts.sh
+ls
+./up
+./polybar.modules
+sudo apt install polybar
+sudo apt instal feh
+sudo apt install feh
+sudo apt install numlockx
+sudo apt install pavucontrol
+sudo apt install blueberry
+sudo apt install pamac
+sudo apt install nm-connection-editor
+exit
+bash
+exit
+exit
+bash
+exit
+picom
+exit
+exit
+wezterm
+exit
+picom
+cd Documents/src/
+cd dotfiles/
+mkdir i3
+cd i3
+ls
+touch config
+nvim config
+wezterm cli list
+wezterm start --domain temp
+exit
+exit
+cd .config
+picom --help
+mkdir picom
+cd picom
+touch picom.conf
+nvim picom.conf
+picom
+nvim picom.conf
+exit
+bash
+exit
+cd .config
+cd i3
+ls
+cat config
+cd ../
+mv config old
+mv i3/config i3/old
+cd Documents/src/dotfiles/
+cd Documents/src/
+cd ~/Documents/src/dotfiles/i3/
+cp config ~/.config/i3/
+nvim ~/.config/i3/config
+i3 --help
+i3 border none
+i3 -c ~/.config/i3/old
+i3 -c --replace ~/.config/i3/old
+i3 --replace -c ~/.config/i3/old
+nvim ~/.config/i3/config
+i3 restart
+nvim ~/.config/i3/old
+xprop
+cd ~/.config/wezterm/
+ls
+nvim wezterm.lua
+wezterm-theme
+nvim wezterm.lua
+cd ../i3
+touch colors
+nvim colors
+exit
+bash
+exit
+nvim ~/.config/i3/config
+cd ../
+nvim .
+cd ~/.config/i3
+nvim .
+mv catppuccin bar
+nvim .
+mv bar bar.conf
+nvim bar.conf
+mv bar.conf bar.config
+nvim bar.config
+nvim .
+exit
+exit
+exit
+cd ~/.config/i3
+nvim .
+exit
+feh
+feh --help
+man feh
+sudo apt install nitrogen
+cd ~/Documents/src
+git clone https://github.com/zhichaoh/catppuccin-wallpapers.git
+sudo add-apt-repository ppa:peterlevi/ppa
+sudo apt-get update
+sudo apt-get install variety
+cd .config/picom/
+ls
+nvim picom.conf
+picom
+cd .config/picom/
+picom
+picom  picom --experimental-backend 
+picom
+picom --experimental-backend 
+nvim ~/.config/i3
+nvim ~/.config/i3 .
+picom --experimental-backend 
+picom --experimental-backend -b
+nvim ~/.config/picom/picom.conf
+lnvim
+nvim
+exit
+nvim
+exit
+nvim
+cd
+dotnet
+wezterm list
+wezterm cli list
+exit
+wezterm cli list
+ls
+ls -a
+ls | sort-by size | reverse
+ps
+ps | where cpu >10
+ps | where cpu > 10
+ps | where cpu > 1
+date
+date now
+date now | date to-table
+sys
+sys | get host
+docker ps
+docker
+xinput
+bash
+ls
+starship
+starship init
+starship config
+starship explain
+help commands
+help commands.name
+help commands | get name
+help commands | get name | to json
+help commands | get name | to csv
+help commands | get name | to yaml 
+e
+j
+ps | where cpu > 1
+exit
+bluetoothctl 
+exit
+cd .config/picom/
+nvim .
+nvim
+ls
+dfr
+echo $env.PATH
+nvim
+exit
+nvim
+echo $env.PATH
+cd Downloads/
+ls
+cd ../
+ls
+code core-77cb05464e055e9e37ae.js
+nvim
+bluetoothctl 
+exit
+bash
+nvim
+cd .config/picom/
+bluetoothctl 
+register --help
+nu 1..
+seq 1..
+seq 1 1
+seq 1 
+seq --help
+1.. | str
+3..
+1..
+cd Documents/src/dotfiles/
+git log
+git log --grpaph
+git-log
+git log --decorate
+cd ../
+ls
+cd MultiLoader-Template/
+git log
+git log --graph
+bash
+ls
+cd ../
+ls
+cd Prune-Addon-FTB-Chunks/
+git log --graph
+git log --decorate
+git log --decorate --graph
+git log
+cd .git
+ls
+cd index
+ls
+cd objects/
+ls
+cd 67
+find
+ls -a
+cd pack/
+ls
+cd ../
+ls info
+cat 20/fc528db383ecf7a7ba74ddfff377e694270b17
+git cat-file -p 20/fc528db383ecf7a7ba74ddfff377e694270b17
+cd ../
+cd ../../
+mkdir gitgud
+cd gitgud/
+git init
+touch x
+"hello" | save x
+"hello" | save --append x
+cat x
+git add .
+git satus
+git status
+git commit -m "batman"
+ls .git/objects/
+git log
+cat .git/objects/9f/15160726f38a80eaefc0fa6a7d5de88ae8b7ac
+git cat-file -p .git/objects/9f/15160726f38a80eaefc0fa6a7d5de88ae8b7ac
+git cat-file -p 15160726f38a80eaefc0fa6a7d5de88ae8b7ac
+git cat-file -p 9f15160726f38a80eaefc0fa6a7d5de88ae8b7ac
+git cat-file -p 2e4ba6a73c4476b0d49115fe8c7d60c2840e08ff
+git cat-file -p b6fc4c620b67d95f953a5c1c1230aaab5db5a1b0
+touch second.md
+"wowo" | save --append second.md
+git add .
+git status
+git commit -m "second"
+git log
+git cat-file -p eab0dd0
+git cat-file -p 720966dec38c374a51d42c2a9b0e6774cefa69ae
+git config add yo.what "is what"
+git config --add yo.what "is what"
+git config --add yo.wow "is wow"
+git config --add yo.tim "is tim"
+git config --list
+git config --get-regexp yo
+git config --add yo.wow "wwweee"
+git config --get-regexp yo
+git config --get yo.wow
+cd .git
+ls
+cat config
+git config --remove-section yo
+git config --list
+git config -g init.defaultBranch trooper
+git config -g --add init.defaultBranch trooper
+git config --add -g init.defaultBranch trooper
+git config --add --global init.defaultBranch trooper
+git config --get inti.defaultBranch
+git config --get --global inti.defaultBranch
+git config --list
+git config --unset init.defaultbranch
+git config --list
+git config --unset --global init.defaultbranch
+git config --list
+cd ../
+rm -r .git
+rm -r
+ls
+git rm -r .
+rm -r .
+rm -r /
+rm -r 
+rm -r *
+ls
+git branch
+git init
+touch reamde.md
+"yo" | save --append reamde.md
+git add .
+git commit -m "A"
+git branch bro
+git branch
+ls .gig
+ls .git
+ls .git/refs
+ls .git/refs/heads/
+ls .git/refs/heads/master
+cat .git/refs/heads/master
+git log
+exit
+cd .config/picom/
+nvim picom.conf
+bluetoothctl 
+[1 2 3] | $in.1
+[1 2 3] | $in.1 * $in.2
+let x = ([1 2 3] | $in.2 * $in.3)
+let x = ([1 2 3] | $in.1 * $in.3)
+let x = ([1 2 3] | $in.1 * $in.2)
+x
+echo x
+echo $x
+lines1;
+33 | describe
+"yow" | describe
+[1 2 3] | describe
+{"yo": "wow", "BRO": "F"} | describe
+"-33" | into int
+"3.234" | into int
+"3.234" | into float
+"3.234" | into double
+print hello
+ls
+ls | each $in
+ls | each { $in}
+ls | each { $in.name}
+bluetoothctl 
+3..<32 | each {$in}
+0x[1 1100] | describe
+0x[1 1100] | {$in}
+0x[1 1100] | into int
+0x[1100] | into int
+0b[1100] | into int
+0b[10] | into int
+0b[00000010] | into int
+{"yo": "wow", "BRO": "F"} | insert yoo brooo
+{"yo": "wow", "BRO": "F"} | insert yoo brooo | transpose key key value
+{"yo": "wow", "BRO": "F"} | insert yoo brooo | transpose key key key value
+{"yo": "wow", "BRO": "F"} | insert yoo brooo | transpose key key key value value
+{"yo": "wow", "BRO": "F"} | insert yoo brooo | transpose key key key value value value
+{"yo": "wow", "BRO": "F"} | insert yoo brooo | transpose value key
+{"yo": "wow", "BRO": "F"} | insert yoo brooo | transpose 1 2
+[yooo broo droo] | where ($it =~ 'b')
+[yooo broo droo] | where ($it =~ 'd')
+[yooo broo droo] | where ($it =~ 'o')
+[yooo broo droo] | where ($it =~ 'r')
+let x = [yooo brooo jrooo]
+let y = [asdfe ...x eee ...x efwef ...x]
+y
+$y
+let y = [asdfe ...$x eee ...$x efwef ...$x]
+$y
+help into
+which nvim
+ls Downloads/nvim/bin/nvim
+ls Downloads/nvim/bin/
+ls Downloads/nvim/
+ls Downloads/nvim/share/nvim/runtime/
+ls Downloads/nvim/share/nvim/runtime/ | get name
+ls Downloads/nvim/share/nvim/runtime/ | get name | find tutor
+ls Downloads/nvim/share/nvim/runtime/ | get name | find tutor | ^ls -al $in
+ls Downloads/nvim/share/nvim/runtime/ | get name | find tutor | ^ls -al ...$in
+ls Downloads/nvim/share/nvim/runtime/ | get name | find tutor | ^ls -a $in
+ls Downloads/nvim/share/nvim/runtime/ | get name | find tutor | ^ls -a 
+1..10 | reduce {|it, acc| $acc + $it}
+1..10 | reduce {|it, acc| $acc + ($it | into string)}
+1..10 | reduce -f "" {|it, acc| $acc + ($it | into string)}
+1..10 | reduce -f "" {|it, acc| $acc + ($it | into string) + " "}
+help reduce
+help str join
+1..100 | str join ' '
+help into
+help str
+help str join
+seq --help
+seq 1 100 | str join ' '
+asdfwjoiefjaljdfoie | split chars | each { $in }
+'asdfwjoiefjaljdfoie' | split chars | each { $in }
+'asdfwjoiefjaljdfoie' | split chars | reduce -f 'ay' { |it, acc| $it + '4' + $acc} 
+'asdfwjoiefjaljdfoie' | split chars | str join  
+'asdfwjoiefjaljdfoie' | split chars | str join  '4'
+'         as   dfwjoiefja     ljdfoie  ' | split chars | str join  '4'
+'         as   dfwjoiefja     ljdfoie  ' | split chars | str trim | str join  '4'
+'         as   dfwjoiefja     ljdfoie  ' | split row ' ' | str trim | split chars  | str join  '4'
+'         as   dfwjoiefja     ljdfoie  ' | split row ' ' | whre not contains ' ' | str trim | split chars  | str join  '4'
+help contains
+contains help
+help =~
+=~ help
+where help
+help where
+'         as   dfwjoiefja     ljdfoie  ' | split row ' ' | whre $in != ' ' | str trim | split chars  | str join  '4'
+'         as   dfwjoiefja     ljdfoie  ' | split row ' ' | whre ...$in != ' ' | str trim | split chars  | str join  '4'
+'         as   dfwjoiefja     ljdfoie  ' | split row ' ' | where ...$in != ' ' | str trim | split chars  | str join  '4'
+'         as   dfwjoiefja     ljdfoie  ' | split row ' ' | where $in != ' ' | str trim | split chars  | str join  '4'
+'         as   dfwjoiefja     ljdfoie  ' | split chars | where $in != ' ' | str trim | split chars  | str join  '4'
+'         as   dfwjoiefja     ljdfoie  ' | split chars | where $in != ' ' | str trim  | str join  '4'
+'         as   dfwjoiefja     ljdfoie  ' | split chars | each  {$in != ' '} | str trim  | str join  '4'
+'         as   dfwjoiefja     ljdfoie  ' | split chars | each  {$in != ' '} 
+'         as   dfwjoiefja     ljdfoie  ' | split chars | where $in != ' ' 
+'         as   dfwjoiefja     ljdfoie  ' | split chars | where $in != " " 
+'         as   dfwjoiefja     ljdfoie  ' | split chars | where $in == " " 
+'         as   dfwjoiefja     ljdfoie  ' | split chars | where $in =~ " " 
+'         as   dfwjoiefja     ljdfoie  ' | split chars | where $in == " " 
+'         as   dfwjoiefja     ljdfoie  ' | split chars | where $in != " " 
+'         as   dfwjoiefja     ljdfoie  ' | split chars | where $in != "e" 
+'         as   dfwjoiefja     ljdfoie  ' | split chars | where $in != ('e'| into cha) 
+help into
+'         as   dfwjoiefja     ljdfoie  ' | split chars | get 0
+'         as   dfwjoiefja     ljdfoie  ' | split chars | get 9
+'         as   dfwjoiefja     ljdfoie  ' | split chars | get 9 | describe
+'         as   dfwjoiefja     ljdfoie  ' | split chars | get 0 | describe
+'         as   dfwjoiefja     ljdfoie  ' | split chars | where $in != "" 
+'         as   dfwjoiefja     ljdfoie  ' | split chars | where $in != " " 
+'         as   dfwjoiefja     ljdfoie  ' | split chars | where $in != "  " 
+'         as   dfwjoiefja     ljdfoie  ' | split chars | where $in != " " 
+'         as   dfwjoiefja     ljdfoie  ' | split chars | where $in != "e" 
+'         as   dfwjoiefja     ljdfoie  ' | split chars | where $in != "a" 
+'         as   dfwjoiefja     ljdfoie  ' | split chars | where $in == "a" 
+'         as   dfwjoiefja     ljdfoie  ' | split chars | each  {$in != ' '} 
+'         as   dfwjoiefja     ljdfoie  ' | split chars | each  { $in != ' '} 
+'(ansi purple_bold)This text is a bold purple!(ansi reset)'
+$'(ansi purple_bold)This text is a bold purple!(ansi reset)'
+$'(ansi red_bold)This text is a bold purple!(ansi reset)'
+$'(ansi red_bold)This text is a bold purple!'
+d
+echo 'help'
+help str
+'         as   dfwjoiefja     ljdfoie  ' | split chars | where ($it == 'a')
+'         as   dfwjoiefja     ljdfoie  ' | split chars | where $it == 'a'
+'         as   dfwjoiefja     ljdfoie  ' | split chars | where $it == ' '
+'         as   dfwjoiefja     ljdfoie  ' | split chars | where $it != ' '
+'         as   dfwjoiefja     ljdfoie  ' | split chars | where $it != ' ' | str join
+let zones = [UTC CET Europe/Moscow Asia/Yekaterinburg]
+$zones | wrap 'Zone' | upsert Time {|it| (date now | date to-timezone $it.Zone | format date '%Y.%m.%d %H:%M')}
+zones | append Asia/Karachi
+zones | append 'Asia/Karachi'
+$zones | append 'Asia/Karachi'
+let zones = $zones | append 'Asia/Karachi'
+$zones | wrap 'Zone' | upsert Time {|it| (date now | date to-timezone $it.Zone | format date '%Y.%m.%d %H:%M')}
+ls | sort-by size
+ls | sort-by size | reverse
+sudo apt install feh
+feh --help
+man feh
+cd Documents/src/catppuccin-wallpapers/
+ls
+find tropic
+find tropic*
+help find
+ls --help
+ls subdir
+help find
+^find -iname 'tropic*'
+feh --bg-fill landscapes/tropic_island_day.jpg
+ls |get 0
+ls |get 0 | describe
+ls |get 0 | get name
+let first = [[a b]; [1 2]]<\n>let second = [[a b]; [3 4]]<\n>let third = [[a c]; [3 4]]<\n>$first | append $second | append $third
+cargo install zoxide
+help z
+z
+zoxide
+md
+help alias
+alias cd = zoxide
+cd ../../
+dd ../
+cd ../
+cd --help
+z
+cd /
+help alias
+cargo remove zoxide
+cargo delete zoxide
+cargo --list
+cargo uninstall zoxide
+curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+exit
+bash
+zoxide init nushell | save -f ~/.zoxide.nu
+z
+exit
+z
+echo $nu.config-path
+nvim (echo $nu.config-path)
+exit
+z
+z Documents/
+cd ../
+help cd
+alias --list
+scope aliases
+help z
+help cd
+uuidgen
+exa --help
+man exa
+exa
+ls
+esa -l
+exa -a
+exa --help
+cargo install exa
+cat /proc/sys/kernel/random/uuid
+uuidgen
+uuid_generate()
+help extern
+extern 'UUID=$(cat /proc/sys/kernel/random/uuid)'
+UUID=$(cat /proc/sys/kernel/random/uuid)
+cat /proc/sys/kernel/random/uuid
+'cat /proc/sys/kernel/random/uuid'
+help run-external
+^UUID=$(cat /proc/sys/kernel/random/uuid)
+^'UUID=$(cat /proc/sys/kernel/random/uuid)'
+bash 'UUID=$(cat /proc/sys/kernel/random/uuid)'
+bash echo '$(cat /proc/sys/kernel/random/uuid)'
+bash "echo" '$(cat /proc/sys/kernel/random/uuid)'
+bash
+def lsg [] { ls | sort-by type name -i | grid -c | str trim }
+lsg
+help grid
+ls 
+ls | grid
+ls | grid =c
+ls | grid -c
+lsg
+help grid
+bluetoothctl
+alsamixer 
+nvidia-smi
+exit
+feh --bg-fill landscapes/tropic_island_day.jpg
+feh --bg-fill ~/Documents/src/catppuccin-wallpapers/landscapes/tropic_island_day.jpg
+alsamixer 
+echo $env.XDG_CURRENT_DESKTOP
+nautilus 
+nautilus
+bah
+clear
+cd ~/.config/i3/
+ls
+nvim config
+exit
+nu
+clear
+nvim config
+ls
+cd ~/.config/i3/
+nvim config
+clear
+"abcd" =~ "a"
+"abcd" =~ "32"
+fooo =~ o
+"abcd" =~ "A"
+"abcd" =~ "(?i)A"
+let $x = "something"
+echo $x
+echo $$x
+> let my_value = [[name]; [testuser]]
+> let x = [[name]; [testuser]]
+x
+$x
+$x.name
+$x.name.0
+$x.name.1
+$x.name.1?
+$x.xyz?.0
+(ls).size
+help par-each 
+clear
+help par-each 
+llllllll
+picom --experimental-backend -b
+nu env-path
+env-path
+$nu.env-path
+ls .config/nushell/
+open .config/nushell/config.nu
+open .config/nushell/env.nu
+config reset
+exit
+nu
+bash
+env reset
+env --help
+help env
+bash
+exit
+man env
+exit
+bash
+exit
+exit
+cd .config/wezterm/
+ls
+nvim wezterm.lua
+nvim
+exit
+nu
+nvim wezterm.lua
+cd ../nushell/
+code .
+cd .config/wezterm/
+nvim .
+clear
+cd ~/.config/i3/
+nvim .
+feh --bg-fill ~/Documents/src/catppuccin-wallpapers/landscapes/tropic_island_day.jpg
+nvim .config/i3/config
+bluetoothctl 
+cd Documents/src
+git clone https://github.com/nushell/reedline.git
+cd reedline/
+nvim .
+cargo build
+cargo run
+cargo run --example basic
+cargo run --example demo
+cargo run --example demo --vi
+cd Documents/src/reedline/
+cargo run --example demo --vi
+cargo run --example demo -- --vi
+cd 
+cd .config/nushell/
+ls
+mv env.nu env-old.nu
+mv config.nu config-old.nu
+exit
+cd .config/nushell/
+ls
+touch env.nu
+touch config.nu
+fish
+sudo apt install fish
+fish
+nvim .
+cd Documents/src/reedline/
+cd ~/.config/i3/
+nvim .
+cargo run --example demo -- --vi
+cd ~/.config/nushell/
+nvim
+help char
+char esep
+esep
+asdf
+asdfe
+for 
+for i 
+sfie
+awee -
+config nu
+echo $EDITOR
+$env | reject config | transpose key val | each {|r| echo $"$env.($r.key) = '($r.val)'"} | str join (char nl)
+$env  | transpose key val | each {|r| echo $"$env.($r.key) = '($r.val)'"} | str join (char nl)
+char esep
+char y
+help char
+char prompt
+char -l
+which nvim
+bash -c 'which nvim'
+(bash -c 'which nvim')
+($env.PATH | split row (char esep) | append (bash -c 'which nvim'))
+nvim .
+exit
+bash
+exit
+exit
+nu
+exit
+exit
+bash
+exit
+bash
+exit
+nvim
+exit
+cd ~/.config/nushell/
+nvim env.nu
+exit
+bash 
+exit
+nvim
+echo $env.PATH
+bash -c 'which nvim'
+exit
+bash -c 'which nvim'
+which nvim
+bash -c 'which nvim'
+exit
+bash
+bash --rcfile ~/.bashrc -c 'which nvim'
+bash -c 'echo $PATH'
+cat ~/.bashrc
+open ~/.bashrc
+open ~/.bashrc | grep -i 'nvim'
+nvim ~/.bashrc
+exit
+bash 
+bash -c 'echo $PATH'
+exit
+bash -c 'source ~/.bashrc && echo $PATH'
+nvim ~/.bashrc
+exit
+bash
+bash -c 'source ~/.bashrc && echo $PATH'
+bash -c 'echo $PATH'
+nvim .config/nushell/env.nu
+exit
+bash
+exit
+exit
+nvim
+bash -c 'echo $PATH'
+nvim
+echo $env.PATH
+nvim
+:q
+exit
+bash
+nvim
+echo $env.PATH
+echo $env.PATH | get 11
+echo $env.PATH | get 11 | cd
+cd (echo $env.PATH | get 11)
+^cd (echo $env.PATH | get 11)
+(echo $env.PATH | get 11) | cd $in
+(echo $env.PATH | get 11) | cd { $in }
+(echo $env.PATH | get 11) | cd $in
+(echo $env.PATH | get 11)
+cd ~/Downloads/nvim/bin/
+nvim
+./nvim
+nvim .config/nushell/env.nu
+cd .config/nushell/
+ls
+cd ~/.config/nushell/
+nvim .
+exit
+bash
+exit
+nvim
+echo $env.PATH
+exit
+nvim
+cd ~/.config/nushell/
+nvim .
+exit
+bash 
+exit
+nvim
+echo $env.PATH
+cd ~/.config/nushell/
+bash
+nvim
+exit
+nvim .
+exit
+bash 
+exit
+nvim
+$env | table -e
+LS
+ls
+echo $env.PATH
+help decode
+0x[8a 4c] | decode shift-jis
+bluetoothctl 
+cd ~/.config/nushell/
+nvim .
+exi
+exit
+cd ~/.config/nushell/
+nvim 
+nvim .
+exit
+cd ~/.config/nushell/
+nvim .
+exit
+keybindings list
+bluetoothctl 
+$env.config
+man 2 socket
+cd Documents/src/new
+cd Documents/src/
+mkdir rust
+cd rust
+touch main.rs
+nvim main.rs
+ructc main.rs
+rustc main.rs
+ls
+./main
+getconf PAGE_SIZE
+z Documents/src/
+cd Documents/src
+ls
+cd rust
+code .
+z
+cd Documents/src
+ls
+cd rust
+ls
+cd hello
+code .
+which libgl
+which libgl.so
+nm -D libgl.so
+nm -D libgl3.so
+nm -D lic.so
+nm -D libc.so
+nm -D libclang.so
+gcc --print-file-name=libc.a
+gcc --print-file-name=libc.so
+cd /usr/lib/gcc/x86_64-linux-gnu/
+ls
+cd 12
+ls
+ls | where name=~'libc'
+ls | where name=~ "libc"
+ls | where name =~ "libc"
+cd (echo gcc --print-file-name=libc.so)
+cd ( gcc --print-file-name=libc.so)
+let x =gcc --print-file-name=libc.so
+x = gcc --print-file-name=libc.so
+x = (gcc --print-file-name=libc.so)
+let x = (gcc --print-file-name=libc.so)
+x
+echo x
+echo $x
+cd $x
+cd (echo $x)
+(echo $x)
+^cd (echo $x)
+^cd ../
+cd ../
+help cd
+(echo $x) | cd
+ls
+ls -a
+(echo $x) | cd
+let y = ~/.config
+let y = "~/.config"
+(echo $y) | cd
+($y) | cd
+$y | cd
+$y
+cd  $y
+cd $x
+$x
+cd /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/
+ls
+ls | where name =~ "libc"
+ls | where name =~ "libc.so"
+nm -D libc.so
+readelf -sW libc.so
+ls | where name =~ "libgl.so"
+.d ../
+cd ../
+ls
+cd ../
+cd include/
+ls
+ls | where name =~ "libgl.so"
+ls | where name =~ "libgl"
+find **/* -iname="libgl" 
+find **/* -iname "libgl" 
+^find **/* -iname "libgl" 
+find **/* --ignore-case "libgl" 
+../../
+ls
+cd /usr
+find **/* --ignore-case "libgl" 
+find  --ignore-case "libgl" 
+help find
+tree
+^tree
+find  -iname "libgl" 
+^find  -iname "libgl" 
+cd ../
+^find  -iname "libgl" 
+^find  -iname "libBl" 
+^find  -iname "libGL" 
+cd /usr/lib
+^find  -iname "libGL" 
+ls | where name =~ "libGL" 
+ls | where  name =~ "libGL" 
+help where
+ls | where  ($it.name | downcase ) =~ "libgl" 
+ls | where  ($it.name | str downcase ) =~ "libgl" 
+fg
+gf
+sudo apt install gf
+cd Documents/src
+cd ~/Documents/src
+ls
+git clone https://github.com/nakst/gf.git
+cd gf/
+./build.sh
+sudo apt install gdb
+ls
+./gf
+cat build.sh
+./build.sh
+./gf2
+./gf2 --help
+gdb
+./gf2 file ../rust/a.out
+gdp ../rust/a.out
+gdp file ../rust/a.out
+gdbfile ../rust/a.out
+gdb file ../rust/a.out
+gdb  ../rust/a.out
+./gf2 ../rust/a.out
+bluetoothctl 
+sudo apt update
+sudo apt upgrade
+sudo apt update
+ls /apt/s
+ls /etc/apt/sources.list.d/
+cd  /etc/apt/sources.list.d/
+ls
+sudo apt update
+rm peterlevi-ubuntu-ppa-bookworm.list
+sudo rm peterlevi-ubuntu-ppa-bookworm.list
+ls
+sudo apt update
+sudo apt upgrade
+exit
+sudo apt upgrade
+sudo apt autoremove
+nvidia-smi
+bluetoothctl 
+gdb --version
+bluetoothctl 
+cargo test -- --help
+cd Documents/src
+cd rust
+ls
+cargo test -- --help
+cd ..
+ls
+mkdir rusts
+cd rusts
+corgo new
+cargo new
+cargo new yoo
+cd yoo/
+ls
+cargo test -- --help
+bluetoothctl 
+cargo install ripgrep
+ripgrep
+rg
+rg --help
+gdb list --help
+cd Documents/src
+ls
+gdb
+wget https://github.com/rr-debugger/rr/releases/download/5.7.0/rr-5.7.0-Linux-$(uname -m).deb
+uname -m
+wget https://github.com/rr-debugger/rr/releases/download/5.7.0/rr-5.7.0-Linux-(uname -m).deb
+echo https://github.com/rr-debugger/rr/releases/download/5.7.0/rr-5.7.0-Linux-(uname -m).deb
+cd Downloads/
+cd ~/Downloads/
+sudo dpkg -i rr-5.7.0-Linux-x86_64.deb
+rr
+make LLVM=1 rustavailable
+cd ~/Downloads/
+dd --help
+bash
+cd /dev/
+ls
+cd /dev/
+ls
+rm sd1
+sudo rm sd1
+cd Documents/src/
+ls
+cd rust/
+nvim .
+clear
+nvim .
+lsblk
+sync
+cat /proc/meminfo
+cat /proc/meminfo | grep -i dirty
+sync
+cat /proc/meminfo | grep -i dirty
+sync
+cat /proc/meminfo | grep -i dirty
+watch -d "cat /proc/meminfo | grep -i dirty"
+cp -f /mnt/x/home/muqsit/.config/nushell/* .config/nushell/
+exit
+cd .config/nushell/
+ls
+cat history.txt
+help save
+history
+cat config.nu
+exit
+exit
+cat .config/wezterm/wezterm.lua
+mkdir ~/.config/zellij<\n>zellij setup --dump-config > ~/.config/zellij/config.kdl<\n>
+mkdir ~/.config/zellij<\n><\n>
+zellij setup --dump-config > ~/.config/zellij/config.kdl
+zellij setup --dump-config | save  ~/.config/zellij/config.kdl
+cat .config/zellij/config.kdl
+nvim .config/zellij/config.kdl
+zellij
+nvim .config/zellij/config.kdl
+zellij
+nvim .config/zellij/config.kdl
+exit
+zellij
+nvim .config/wezterm/wezterm.lua
+exit
+ls /mnt/x
+cat .config/i3/
+cat .config/i3/config
+clear
+cp -f /mnt/x/home/muqsit/.config/i3/* .config/i3/
+echo https://github.com/rr-debugger/rr/releases/download/5.7.0/rr-5.7.0-Linux-(uname -m).deb
+bluetoothctl 
+mkdir .config/picom
+cp -f /mnt/x/home/muqsit/.config/picom/* .config/picom/
+picom
+cat .config/i3/config
+picom
+bluetoothctl 
+echo 'select 00:1A:7D:DA:71:11\nconnect 74:45:CE:F5:01:59' | bluetoothctl
+echo 'select 00:1A:7D:DA:71:11 \nconnect 74:45:CE:F5:01:59' | bluetoothctl
+echo "select 00:1A:7D:DA:71:11\nconnect 74:45:CE:F5:01:59" | bluetoothctl
+picom
+picom &
+bash picom &
+exit
+bash
+cp /mnt/x/home/muqsit/Documents/src/catppuccin-wallpapers/landscapes/tropic_island_day.jpg .config/i3/
+nvim .config/i3/config
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+exit
+clear
+ls
+echo "select 00:1A:7D:DA:71:11\nconnect 74:45:CE:F5:01:59" | bluetoothctl
+clear
+ls
+cat .config/picom/picom.conf
+picom
+i3
+nvim .config/i3/config
+nvim .config/zellij/config.kdl
+exit
+nvim .config/i3/config
+picom --experimental-backend -b
+:q
+picom --experimental-backends -b
+nvim .config/i3/config
+exit
+echo "select 00:1A:7D:DA:71:11\nconnect 74:45:CE:F5:01:59" | bluetoothctl
+rg
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+rg
+zellij ls
+exit
+nvim .config/zellij/config.kdl
+nvim .config/zellij/config.kdl
+exit
+nvim .config/zellij/config.kdl
+exit
+zellij options --disable-mouse-mode
+nvim .config/zellij/config.kdl
+exit
+nvim .config/zellij/config.kdl
+wezterm --help
+wezterm start -- nu 
+echo "select 00:1A:7D:DA:71:11\nconnect 74:45:CE:F5:01:59" | bluetoothctl
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+nvim .config/zellij/config.kdl
+exit
+nvim .config/zellij/config.kdl
+nvim .config/i3/config
+sudo nvim /etc/nixos/configuration.nix
+protonvpn 
+pushd
+bash
+pushd --help
+^pushd
+^pushd --help
+enter .config
+exit
+hostname
+sudo nvim /etc/nixos/configuration.nix
+mkdir .dotfiles
+cd .dotfiles/
+mkdir nixos
+cp /etc/nixos/* ./
+ls
+cd nixos/
+ls
+ls -a
+cd ../
+rm -r nixos
+ls
+nvim configuration.nix
+sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
+sudo nix-channel --update
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+exit
+sudo nvim /etc/nixos/configuration.nix
+exit
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nix-channel --help
+sudo nix-channel list
+sudo nix-channel --list
+sudo nix-channel --remove nixos-unstable
+sudo nix-channel --update
+sudo nixos-rebuild switch
+echo "select 00:1A:7D:DA:71:11\nconnect 74:45:CE:F5:01:59" | bluetoothctl
+bluetoothctl 
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+bluetoothctl 
+bluetootctll
+bluetoothctl
+echo "select 00:1A:7D:DA:71:11\nconnect 74:45:CE:F5:01:59" | bluetoothctl
+sudo nvim /etc/nixos/configuration.nix
+bluetoothctl
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+echo "select 00:1A:7D:DA:71:11\nconnect 74:45:CE:F5:01:59" | bluetoothctl
+bluetoothctl
+sudo install -dm700 /var/lib/bluetooth
+bluetoothctl
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+echo "select 00:1A:7D:DA:71:11\nconnect 74:45:CE:F5:01:59" | bluetoothctl
+cat /etc/issue
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+eix
+exit
+sudo nvim /etc/nixos/configuration.nix
+nvim ~/.xinitrc
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+exit
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+tuigreet
+echo "select 00:1A:7D:DA:71:11\nconnect 74:45:CE:F5:01:59" | bluetoothctl
+nvim .config/i3/config
+bluetoothctl scan on
+bluetoothctl
+sudo install -dm700 /var/lib/bluetooth
+bluetoothctl
+sudo systemctl restart bluetooth
+bluetoothctl
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+bluetoothctl
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+bluetoothctl
+zoxide
+zoxide init
+zoxide init nushell | save -f ~/.zoxide.nu
+cat ~/.zoxide.nu
+cat .config/nushell/config.nu
+cat .config/nushell/env.nu
+"source ~/.zoxide.nu" | save .config/nushell/config.nu --append 
+cat .config/nushell/env.nu
+cat .config/nushell/config.nu
+:wqa
+exit
+z Desktop/
+z 
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+exit
+nvim .config/i3/config
+bluetoothctl 
+nvim .config/zellij/config.kdl
+exit
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+exit
+nvim .config/zellij/config.kdl
+exit
+nvim
+sudo nvim /etc/nixos/configuration.nix
+nvim .config/zellij/config.kdl
+bluetoothctl 
+sudo systemctl restart bluetooth
+bluetoothctl 
+sudo systemctl restart bluetooth
+pipewire --help
+systemctl --user restart pipewire.service 
+bluetoothctl 
+nvim .config/i3/config
+blu
+bluetoothctl 
+nvim .config/i3/config
+cd .dotfiles/
+cd nixos/
+ls
+mkdir nixos
+mv configuration.nix nixos/
+mv hardware-configuration.nix nixos/
+ls
+cd nixos/
+ls
+nix --help
+nix flake init
+ls
+bat flake.nix
+pkill vencorddesktop 
+ps
+top
+zenith
+bottom
+btm
+zenith
+sudo nvim /etc/nixos/configuration.nix
+nvim .
+exit
+mkdir .config/i3status-rust
+mv Downloads/config.toml .config/i3status-rust/
+exit
+nvim .config/i3/config
+:q
+exit
+exit
+vlc
+exit
+alsamixer 
+bluetoothctl 
+alsamixer
+bluetoothctl 
+bluetoothctl
+alsamixer
+sudo nvim /etc/nixos/configuration.nix
+wpctl set-card-profile 
+wireplumber 
+wireplumber
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+bluetoothctl 
+alsamixer
+sudo nixos-rebuild switch
+xdg-mime
+xdg-mime default inode/directory
+xdg-mime query default inode/directory
+exit
+xdg-mime  default xplr inode/directory
+xplr
+prj
+xlprl
+xplr
+curl cht.sh
+cht.sh btrfs
+curl cht.sh btrfs
+curl cht.sh/btrfs
+curl cht.sh/btrfs | less
+bluetoothctl 
+alsamixer
+exit
+clear
+cd .dotfiles/
+ls
+cd nixos/
+cd ../
+cp /etc/nixos/* .dotfiles/nixos/
+cp /etc/nixos/* nixos/
+ls nixos/
+cat configuration.nix
+bat nixos/configuration.nix
+cd nixos
+ls
+nvim flake.nix
+nix flake lock
+nvim flake.nix
+nix flake lock
+nvim flake.nix
+nix flake lock
+nvim flake.nix
+nix flake lock
+sudo nixos-rebuild switch --flake .
+nvim flake.nix
+sudo nixos-rebuild switch --flake .
+bluetoothctl 
+nvim flake.nix
+z .dotfiles/nixos/
+ls
+nvim flake.nix
+bluetoothctl 
+exit
+alsamixer
+z .dotfiles/nixos/
+nix flake new example -t github:nix-community/home-manager#nixos
+ls
+cd example
+ls
+bat flake.nix
+nvim home.nix
+ls
+mv home.nix ../
+ls
+cd ../
+ls
+nvim flake.nix
+sudo nixos-rebuild switch --flake .
+nvim flake.nix
+sudo nixos-rebuild switch --flake .
+nvim flake.nix
+sudo nixos-rebuild switch --flake .
+nvim flake.nix
+sudo nixos-rebuild switch --flake .
+cowsay
+home-manager switch --flake .
+nvim flake.nix
+home-manager switch --flake .
+nvim flake.nix
+home-manager switch --flake .
+nvim flake.nix
+home-manager switch --flake .
+cowsay
+cowsay --help
+cowsay "yo"
+nvim flake.nix
+sudo nixos-rebuild switch --flake .
+home-manager 
+nvim flake.nix
+sudo nixos-rebuild switch --flake .
+home-manager --version
+home-manager uninstall
+home-manager
+sudo nixos-rebuild switch --flake .
+nvim flake.nix
+sudo nixos-rebuild switch --flake .
+nvim flake.nix
+sudo nixos-rebuild switch --flake .
+home-manager
+alsamixer
+nvim flake.nix
+exit
+nvim flake.nix
+sudo nixos-rebuild switch --flake .
+home-manager --version
+cowsay
+nvim flake.nix
+home-manager switch --flake .
+sudo nixos-rebuild switch --flake .
+nvim flake.nix
+sudo nixos-rebuild switch --flake .
+home-manager switch --flake .
+nvim flake.nix
+home-manager switch --flake .
+nvim flake.nix
+home-manager switch --flake .
+home-manager news
+home-manager switch --flake .
+home-manager new --flake .
+home-manager news --flake .
+nvim
+nvim flake.nix
+home-manager news --flake .
+nvim flake.nix
+home-manager news --flake .
+nvim flake.nix
+home-manager news --flake .
+sudo nixos-rebuild switch --flake .
+home-manager news --flake .
+home-manager switch --flake .
+nvim --version
+nvim
+nix flake update
+sudo nixos-rebuild switch --flake .
+nvim --version
+nix flake update
+nvim flake.nix
+sudo nixos-rebuild switch --flake .
+nvim flake.nix
+sudo nixos-rebuild switch --flake .
+nvim --version
+nvim flake.nix
+sudo nixos-rebuild switch --flake .
+nvim --version
+home-manager switch --flake .
+nvim flake.nix
+home-manager switch --flake .
+nvim flake.nix
+home-manager switch --flake .
+nvim flake.nix
+home-manager switch --flake .
+sudo nixos-rebuild switch --flake .
+home-manager switch --flake .
+nvim flake.nix
+sudo nixos-rebuild switch --flake .
+nvim flake.nix
+home-manager switch --flake .
+nvim flake.nix
+home-manager switch --flake .
+nvim flake.nix
+home-manager switch --flake .
+nvim flake.nix
+home-manager switch --flake .
+nvim flake.nix
+sudo nixos-rebuild switch --flake .
+nvim
+nvim flake.nix
+ls /etc/nixos/
+sudo move /etc/nixos/* /etc/nixos/back
+sudo mv /etc/nixos/* /etc/nixos/back
+mkdir /etc/nixos/back
+sudo mkdir /etc/nixos/back
+sudo mv /etc/nixos/* /etc/nixos/back
+ls /etc/nixos/
+sudo nixos-rebuild switch --flake .
+nvim --version
+nvim flake.nix
+home-manager switch --flake .
+nvim
+nvim flake.nix
+cd .dotfiles/
+cd nixos
+ls
+nvim flake.nix
+home-manager switch --flake .
+sudo nixos-rebuild switch --flake .
+nvim
+nvim flake.nix
+sudo nixos-rebuild switch --flake .
+bat
+vim
+nvim
+nvim flake.nix
+nvim home.nix
+sudo nixos-rebuild switch --flake .
+nvim
+nix --help
+nix install
+nix-env --uninstall neovim
+sudo nixos-rebuild switch
+sudo mv /etc/nixos/back/* /etc/nixos/
+sudo nixos-rebuild switch
+nvim
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+nvim
+sudo nvim /etc/nixos/configuration.nix
+nix-collect-garbage 
+nvim
+sudo nixos-rebuild switch --update --flake .
+ls ~/.cache/nix/
+nix-tree
+nvim flake.nix
+sudo nixos-rebuild switch --flake .
+nnn
+firefox
+vesktop
+nvim
+sudo nixos-rebuild switch --flake .
+home-manager switch --flake .
+nvim .
+home-manager switch --flake .
+nvim .
+home-manager switch --flake .
+nvim .
+sudo nixos-rebuild switch --flake .
+home-manager switch --flake .p7
+nvim .
+sudo nixos-rebuild switch --flake .
+home-manager switch --flake .p7
+home-manager switch --flake .
+nvim .
+home-manager switch --flake .
+nvim .
+sudo nixos-rebuild switch --flake .
+home-manager switch --flake .
+nvim .
+sudo nixos-rebuild switch --flake .
+home-manager switch --flake .
+nix-tree
+nix-collect-garbage 
+nvim .
+home-manager switch --flake .
+nvim .
+home-manager switch --flake .
+exit
+nvim
+exit
+nvim .
+cd .dotfiles/
+cd nixos
+nvim .
+sudo nixos-rebuild switch --flake .
+nvim .
+sudo nixos-rebuild switch --flake .
+cowsay
+nvim .
+sudo nixos-rebuild switch --flake .
+cowsay
+nvim .
+sudo nixos-rebuild switch --flake .
+nvim .
+sudo nixos-rebuild switch --flake .
+nvim .
+sudo nixos-rebuild switch --flake .
+nvim .
+sudo nixos-rebuild switch --flake .
+nvim .
+sudo nixos-rebuild switch --flake .
+nvim --version
+nvim
+nvim --version
+nvim .
+sudo nixos-rebuild switch --flake .
+nvim .
+sudo nixos-rebuild switch --flake .
+nvim .
+sudo nixos-rebuild switch --flake .
+nix-collect-garbage 
+nix-collect-garbage --help
+nix-collect-garbage --delete-older-than 3
+nix-collect-garbage --delete-older-than 33
+nix-collect-garbage --delete-older-than 3d
+nix-collect-garbage --delete-older-than 2d
+nvim --version
+nvim .
+z .dotfiles/nixos/
+nvim .
+exit
+bluetoothctl 
+exit
+alsamixer
+exit
+bluetoothctl 
+alsamixer
+exit
+alsamixer
+exit
+alsamixer
+exit
+cd .dotfiles/nixos/
+ls
+clear
+bat /cat/proc/meminfo
+bat /proc/meminfo
+cat /proc/meminfo | to json
+cat /proc/meminfo | to json | get "MemTotal"
+cat /proc/meminfo | get "MemTotal"
+cat /proc/meminfo 
+cp .dotfiles/* .dotbak
+help cp
+cp -r .dotfiles/* .dotbak
+ls .dotbak/
+cd .dotfiles
+git init --bare
+git branch -m main
+git worktree add master
+ls
+cd master/
+ls
+cd ../
+ls
+ls -a
+cd ../
+ls
+cd .dotfiles/
+ls
+cd .dotfiles/nixos
+ls
+nvim home.nix
+sudo nixos-rebuild switch --flake .
+cd ~/Downloads/
+ls
+unzip Starpack-Titan-0.1.9b.zip
+ls
+unzip Starpack-Titan-0.1.9b.zip xx
+unzip Starpack-Titan-0.1.9b.zip -o xx
+unzip Starpack-Titan-0.1.9b.zip -d xx
+ls
+cd xx
+ls
+cd overrides/
+ls
+cd config/
+ls
+clear
+exit
+less ls
+ls | less
+cd Downloads/
+ls
+cd xx
+ls
+cd overrides/
+cd config/
+ls
+less | ls
+ls | less
+exit
+clear
+cd Downloads/
+cd xx
+prj
+ls
+cd overrides/
+cd config/
+ls | where name =~ "itl"
+cd .dotfiles/nixos
+nvim home.nix
+sudo nixos-rebuild switch --flake .
+flameshot --help
+flameshot gui
+bat itlt-client.toml
+exit
+ls | select name
+ls | select get
+ls | get name
+history
+exit
+cd Downloads/
+cd xx
+ls
+cd overrides/
+ls
+ripgrep "16"
+rg "16"
+less rg "16"
+rg "16" | less
+rg "16.0" | less
+rg -i "ram" | less
+rg -i "memory" | less
+cd config/
+ls | where name =~ BBB
+ls | where name =~ B
+bat b
+cat BBBq:q
+ls | where name =~ B
+ls | where name =~ BB
+ls | where name =~ B
+ls | where name =~ q
+ls | where name =~ q:
+ls | where name =~ q: | get name
+ls | where name =~ q: | get name |open
+ls | where name =~ q: | get name | open
+open (ls | where name =~ q: | get name )
+rm "BBBq:q"
+rm *
+rm -d *
+rm -r *
+ls
+cd ../../
+ls
+rm -r *
+cd ../
+rm xx
+ls
+cd .dotfiles/nixos
+cd ~/.dotfiles/nixos/
+ls
+cd ../
+ls
+rm HEAD
+rm branches/
+ls config
+ls config/
+rm config 
+rm hooks
+rm -r hooks
+rm -r branches
+rm -r hooks
+rm -r info
+rm -r master
+rm -r objects
+rm -r refs
+rm -r workspace
+ls
+rm -r worktrees
+rm description
+ls
+cd ~/Documents/
+cd src
+ls
+mkdir src
+cd src
+ls
+git clone github.com/starmun-0010/dotfiles.git
+https://git clone github.com/starmun-0010/dotfiles.git
+git clone https://github.com/starmun-0010/dotfiles.git
+ls
+rm -r dotfiles/
+ls
+git clone https://github.com/starmun-0010/dotfiles.git --bare
+ls
+cd dotfiles.git
+ls
+git branch -a
+git worktree add 2024
+ls
+cd 2024/
+ls
+cd ..;
+cd ../
+git worktree add master
+cd dotfiles.git/
+cd master
+git worktree add master
+cd master
+ls
+cd ../
+ls
+git worktree add yo
+cd yo
+ls
+cd ../2024
+ls
+git worktree add yyy
+cd ../yyy
+ls
+cd yyy
+ls
+cd ../
+rm yyy
+rm -r yyy
+git status
+cd ../
+git status
+git worktree add no
+cd no
+ls
+cd ../
+rm no
+rm -r no
+ls
+rm -r yo
+ls
+git checkout 2024
+git worktree add yy
+cd yy
+git checkout 2024
+ls
+cd ../
+ls
+rm -r yy
+git worktree add yy 2024
+git worktree remove yy
+git worktree prune
+ls
+git worktree add yy 2024
+git worktree help
+cd 2024
+git worktree add ../20242
+cd ../20242
+ls
+git branch
+git push -u origin 20242
+git worktree --help
+cd ../2042
+cd ../2024/
+nvim ~/.dotfiles/nixos/home.nix
+sudo nixos-rebuild switch --flake .
+sudo nixos-rebuild switch --flake ~/.dotfiles/nixos/
+nvim ~/.dotfiles/nixos/home.nix
+sudo nixos-rebuild switch --flake ~/.dotfiles/nixos/
+gh auth login
+nvim ~/.dotfiles/nixos/home.nix
+sudo nixos-rebuild switch --flake ~/.dotfiles/nixos/
+exit
+gh
+gh auth login
+exit
+clear
+cd Documents/src/
+ls
+cd dotfiles.git/
+ls
+cd 2024
+ls
+mkdir nixos
+cp ~/.dotfiles/nixos/* ./nixos/
+cd nixos/
+ls
+git status
+git add --all
+git staus
+git status
+git commit -m "nix"
+nvim home.nix
+sudo nixos-rebuild switch --flake .
+nvim home.nix
+sudo nixos-rebuild switch --flake .
+nvim home.nix
+sudo nixos-rebuild switch --flake .
+nvim home.nix
+sudo nixos-rebuild switch --flake .
+nvim home.nix
+sudo nixos-rebuild switch --flake .
+gh --help
+gh --help | less
+gh gpg-key
+sudo nixos-rebuild switch --flake .
+ls
+git commit -m "nix"
+git push
+git push -u origin 2024
+cd ../main
+cd ../
+ls
+cd ../
+ls
+cd master/
+ls
+git origin -a
+git list origin
+git remote show origin
+bluetoothctl 
+CLEAR
+alsamixer
+exit
+alsamixer
+cd Documents/src/
+cd dotfiles.git/
+cd 2024
+ls
+cd nixos/
+ls
+cd home
+nvim home.nix
+sudo nixos-rebuild switch --flake .
+pavucontrol 
+nvim home.nix
+sudo nixos-rebuild switch --flake .
+bluetoothctl 
+pavucontrol 
+alsamixer
+cd Documents/src/
+cd dotfiles.git/
+ls
+cd 2024
+cd ls
+ls
+cd nixos
+ls
+nvim home.nix
+sudo nixos-rebuild switch --flake .
+git status
+git add --all
+git status
+git commit -m "popcorn"
+git push
+sudo nixos-rebuild switch --flake .
+cd Documents/src/
+cd dotfiles.git/
+ls
+cd 2024
+ls
+cd nixos/
+ls
+git pull
+ls
+mkdir programs
+cd programs
+ls
+cd ../
+cd .config/i3/
+ls
+cat config
+ls
+cat bar.config
+cp config ~/Documents/src/dotfiles.git/2024/nixos/programs/
+ls
+mv ~/Documents/src/dotfiles.git/2024
+mv ~/Documents/src/dotfiles.git/2024/nixos/programs/config ~/Documents/src/dotfiles.git/2024/nixos/programs/i3/
+mkdir ~/Documents/src/dotfiles.git/2024/nixos/programs/i3
+mv ~/Documents/src/dotfiles.git/2024/nixos/programs/config ~/Documents/src/dotfiles.git/2024/nixos/programs/i3/
+nvim chezmoi/common.nix
+sudo nixos-rebuild switch --flake .
+git add --all
+nvim chezmoi/common.nix
+git add --all
+sudo nixos-rebuild switch --flake .
+nvim chezmoi/common.nix
+sudo nixos-rebuild switch --flake .
+git add --all
+nvim chezmoi/common.nix
+sudo nixos-rebuild switch --flake .
+nvim chezmoi/common.nix
+sudo nixos-rebuild switch --flake .
+nvim chezmoi/common.nix
+git add --all
+nvim chezmoi/common.nix
+sudo nixos-rebuild switch --flake .
+sudo nixos-rebuild switch --flake . -b
+sudo nixos-rebuild switch -b --flake . 
+sudo nixos-rebuild switch -b backup --flake . 
+home-manager switch --flake . -b backup
+home-manager 
+exit 
+bash
+sudo nixos-rebuild switch -b backup --flake . 
+nvim chezmoi/common.nix
+z .dotfiles/nixos/
+z 2024
+ls
+z nixos
+ls
+nvim chezmoi/common.nix
+sudo nixos-rebuild switch -b backup --flake . 
+sudo nixos-rebuild switch  --flake . 
+nvim programs/i3/config
+exit
+ls ~/.config/i3/config
+bat ~/.config/i3/config
+help
+bat ~/.config/i3/config
+ls ~/.config/i3/
+z 2024
+z nixos/programs/
+ls
+z i3
+ls
+sudo nixos-rebuild switch  --flake . 
+exit
+exit
+exit
+exit
+exit
+home-manager
+bat ~/.config/i3/config
+z 2024
+ls
+z nixos
+ls
+sudo nixos-rebuild switch  --flake . 
+git add --all
+sudo nixos-rebuild switch  --flake . 
+home-manager
+exit
+bat ~/.config/i3/config
+nvim programs/i3/config
+nvim chezmoi/common.nix
+z
+z ~/.config/i3/
+ls
+rm config
+cp ~/Documents/src/dotfiles.git/2024/nixos/programs/i3/xx ~/.config/i3/config
+bluetoothctl 
+bat ~/.config/i3/config
+nvim chezmoi/common.nix
+cp ~/Documents/src/dotfiles.git/2024/nixos/programs/i3/xx ~/.config/i3/config
+ls -a 
+cd .config/i3
+ls
+ls -a
+^ls -a
+ls --help
+ls -as
+z nixos
+z 2024
+z nixos
+z chezmoi/
+sudo nixos-rebuild switch  --flake . 
+z nixos
+z 2024/nixos
+sudo nixos-rebuild switch  --flake . 
+z .config/i3
+ls
+bat config
+ls
+bat config
+cat config
+ls -as
+nvim common.nix
+cd ../
+sudo nixos-rebuild switch  --flake . 
+bluetoothctl 
+z nixos
+z 2024/nixos
+ls
+z chezmoi
+z chezmoi
+cd ../
+cd programs
+mkdir
+mkdir wezterm
+mkdir picom
+mkdir rofi
+mkdir zellij
+mkdir nushell
+cp ~/.config/wezterm/* wezterm/
+cp ~/.config/picom/* picom/
+cp ~/.config/zellij/* zellij/

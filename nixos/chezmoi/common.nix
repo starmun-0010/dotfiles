@@ -57,5 +57,13 @@
     enable = true;
     defaultEditor = true;
   };
+
+  home.file.i3 = {
+    enable = true;
+    source = config.lib.file.mkOutOfStoreSymlink ../programs/i3/xx;
+    target = "${config.home.homeDirectory}/.config/i3/config";
+    force = true;
+  };
+
   home.stateVersion = "23.11";
 }
