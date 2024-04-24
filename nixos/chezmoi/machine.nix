@@ -23,4 +23,15 @@
     
     steam
   ];
+  
+  home.file.i3 = {
+    enable = true;
+    text = (builtins.readFile ../programs/i3/config) + ''
+      exec --no-startup-id picom -b 
+      bindsym $mod+t exec wezterm
+    '';
+    force = true;
+    target = "${config.home.homeDirectory}/.config/i3/config";
+  };
+  
 }

@@ -61,41 +61,50 @@
     defaultEditor = true;
   }; 
 
-  home.file.i3 = {
+  home.file.wallpaper = {
     enable = true;
-    source = config.lib.file.mkOutOfStoreSymlink ../programs/i3;
-    target = "${config.home.homeDirectory}/.config/i3";
-    force = true;
-    recursive = true;
-  };
-  home.file.picom = {
-    enable = true;
-    source = config.lib.file.mkOutOfStoreSymlink ../programs/picom;
-    target = "${config.home.homeDirectory}/.config/picom";
-    force = true;
-    recursive = true;
-  };
-  home.file.nushell = {
-    enable = true;
-    source = config.lib.file.mkOutOfStoreSymlink ../programs/nushell;
-    target = "${config.home.homeDirectory}/.config/nushell";
+    source = config.lib.file.mkOutOfStoreSymlink ../wallpapers;
+    target = "${config.home.homeDirectory}/.config/i3/wallpapers";
     force = true;
     recursive = true;
   };
 
-  home.file.wezterm = {
+  home.file.picom = {
     enable = true;
-    source = config.lib.file.mkOutOfStoreSymlink ../programs/wezterm;
-    target = "${config.home.homeDirectory}/.config/wezterm";
+    source = config.lib.file.mkOutOfStoreSymlink ../programs/picom/picom.conf;
+    target = "${config.home.homeDirectory}/.config/picom/picom.conf";
     force = true;
-    recursive = true;
+  };
+  home.file.nushellenv = {
+    enable = true;
+    source = config.lib.file.mkOutOfStoreSymlink ../programs/nushell/env.nu;
+    target = "${config.home.homeDirectory}/.config/nushell/env.nu";
+    force = true;
+  };
+  home.file.nushellconfig = {
+    enable = true;
+    source = config.lib.file.mkOutOfStoreSymlink ../programs/nushell/config.nu;
+    target = "${config.home.homeDirectory}/.config/nushell/config.nu";
+    force = true;
+  };
+  home.file.weztermsh = {
+    enable = true;
+    source = config.lib.file.mkOutOfStoreSymlink ../programs/wezterm/wezterm.sh;
+    target = "${config.home.homeDirectory}/.config/wezterm/wezterm.sh";
+    force = true;
+  };
+ 
+  home.file.weztermlua = {
+    enable = true;
+    source = config.lib.file.mkOutOfStoreSymlink ../programs/wezterm/wezterm.lua;
+    target = "${config.home.homeDirectory}/.config/wezterm/wezterm.lua";
+    force = true;
   };
   home.file.zellij = {
     enable = true;
-    source = config.lib.file.mkOutOfStoreSymlink ../programs/zellij;
-    target = "${config.home.homeDirectory}/.config/zellij";
+    source = config.lib.file.mkOutOfStoreSymlink ../programs/zellij/config.kdl;
+    target = "${config.home.homeDirectory}/.config/zellij/config.kdl";
     force = true;
-    recursive = true;
   };
 
   home.stateVersion = "23.11";
