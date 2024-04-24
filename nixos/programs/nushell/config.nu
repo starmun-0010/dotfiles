@@ -5,4 +5,4 @@ $env.config = {
         max_size: 100000
     }
 }
-source ~/.zoxide.nu
+source ~/.cache/zoxide/nuinit.nu

@@ -17,20 +17,20 @@
     xplr
     projectable
     fzf
-    zoxide
     bottom
     zenith
     xclip
     ripgrep
     firefox
     wezterm
-    nushell
     rofi
     picom
     zellij
     feh
     xss-lock
     nix-tree
+    zoxide
+    nushell
 
     discord
     vscode
@@ -55,16 +55,47 @@
    userEmail = "abdemuqsit@hotmail.com";
 
   };
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-  };
+  }; 
 
   home.file.i3 = {
     enable = true;
-    source = config.lib.file.mkOutOfStoreSymlink ../programs/i3/config;
-    target = "${config.home.homeDirectory}/.config/i3/config";
+    source = config.lib.file.mkOutOfStoreSymlink ../programs/i3;
+    target = "${config.home.homeDirectory}/.config/i3";
     force = true;
+    recursive = true;
+  };
+  home.file.picom = {
+    enable = true;
+    source = config.lib.file.mkOutOfStoreSymlink ../programs/picom;
+    target = "${config.home.homeDirectory}/.config/picom";
+    force = true;
+    recursive = true;
+  };
+  home.file.nushell = {
+    enable = true;
+    source = config.lib.file.mkOutOfStoreSymlink ../programs/nushell;
+    target = "${config.home.homeDirectory}/.config/nushell";
+    force = true;
+    recursive = true;
+  };
+
+  home.file.wezterm = {
+    enable = true;
+    source = config.lib.file.mkOutOfStoreSymlink ../programs/wezterm;
+    target = "${config.home.homeDirectory}/.config/wezterm";
+    force = true;
+    recursive = true;
+  };
+  home.file.zellij = {
+    enable = true;
+    source = config.lib.file.mkOutOfStoreSymlink ../programs/zellij;
+    target = "${config.home.homeDirectory}/.config/zellij";
+    force = true;
+    recursive = true;
   };
 
   home.stateVersion = "23.11";

@@ -12,12 +12,13 @@ gaps inner 10
 
 smart_gaps inverse_outer
 
-exec --no-startup-id picom -b 
+exec_always --no-startup-id picom  
 # exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id feh --bg-fill ~/.config/i3/tropic_island_day.jpg
+exec_always --no-startup-id feh --bg-fill ~/.config/i3/Planet.png
 exec_always --no-startup-id echo -e "connect 23:02:24:14:13:2E" | bluetoothctl
 exec_always --no-startup-id echo -e "nconnect 74:45:CE:F5:01:59" | bluetoothctl
+
 bindsym $mod+m bar mode toggle
 
 bindsym $mod+t exec nixGL wezterm
@@ -44,7 +45,7 @@ bindsym $mod+shift+k move up
 bindsym $mod+ctrl+shift+h move workspace to output right
 bindsym $mod+ctrl+shift+l move workspace to output left 
 
-bindsym $mod+d exec "rofi -modi drun,run -show drun"
+bindsym $mod+d exec "export LANG=en_US.UTF-8 & rofi -modi drun,run -show drun"
 
 bindsym $mod+a focus parent
 
