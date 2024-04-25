@@ -55,7 +55,7 @@
    userEmail = "abdemuqsit@hotmail.com";
 
   };
-
+  
   programs.neovim = {
     enable = true;
     defaultEditor = true;

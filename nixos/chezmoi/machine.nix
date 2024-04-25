@@ -29,6 +29,7 @@
     text = (builtins.readFile ../programs/i3/config) + ''
       exec --no-startup-id picom -b 
       bindsym $mod+t exec wezterm
+      bindsym $mod+d exec "rofi -modi drun,run -show drun"
     '';
     force = true;
     target = "${config.home.homeDirectory}/.config/i3/config";

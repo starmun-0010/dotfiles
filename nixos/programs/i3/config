@@ -13,7 +13,7 @@ gaps inner 10
 smart_gaps inverse_outer
 
 
-exec_always --no-startup-id feh --bg-fill ~/.config/wallpapers/tropic_island_day.jpg
+exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpapers/tropic_island_day.jpg
 exec_always --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec_always --no-startup-id echo -e "connect 23:02:24:14:13:2E" | bluetoothctl
@@ -44,7 +44,6 @@ bindsym $mod+shift+k move up
 bindsym $mod+ctrl+shift+h move workspace to output right
 bindsym $mod+ctrl+shift+l move workspace to output left 
 
-bindsym $mod+d exec "export LANG=en_US.UTF-8 & rofi -modi drun,run -show drun"
 
 bindsym $mod+a focus parent
 

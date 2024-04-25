@@ -8,6 +8,8 @@
   home.username = "deck";
   home.homeDirectory = "/home/deck";
   home.packages = with pkgs; [
+    python3
+    arandr
     glibcLocales
     nixgl.auto.nixGLDefault
     pkgs-un.postman
@@ -29,6 +31,7 @@
     text = (builtins.readFile ../programs/i3/config) + ''
       exec --no-startup-id nixGL picom -b 
       bindsym $mod+t exec nixGL wezterm
+      bindsym $mod+d exec "rofi -modi drun,run -show drun"
     '';
     force = true;
     target = "${config.home.homeDirectory}/.config/i3/config";
