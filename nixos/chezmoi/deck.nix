@@ -32,6 +32,7 @@
       exec --no-startup-id nixGL picom -b 
       bindsym $mod+t exec nixGL wezterm
       bindsym $mod+d exec "rofi -modi drun,run -show drun"
+      xrandr --output eDP --auto --below DisplayPort-0 --auto
     '';
     force = true;
     target = "${config.home.homeDirectory}/.config/i3/config";
