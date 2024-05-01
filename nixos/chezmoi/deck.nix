@@ -8,6 +8,7 @@
   home.username = "deck";
   home.homeDirectory = "/home/deck";
   home.packages = with pkgs; [
+    dunst
     python3
     arandr
     glibcLocales
@@ -32,7 +33,7 @@
       exec --no-startup-id nixGL picom -b 
       bindsym $mod+t exec nixGL wezterm
       bindsym $mod+d exec "rofi -modi drun,run -show drun"
-      exec --no-startup-id xrandr --output eDP --auto --below DisplayPort-0 --auto
+      exec --no-startup-id "xrandr --output eDP --preferred --below DisplayPort-0 --preferred"
     '';
     force = true;
     target = "${config.home.homeDirectory}/.config/i3/config";

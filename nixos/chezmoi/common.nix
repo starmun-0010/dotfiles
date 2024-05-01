@@ -8,6 +8,8 @@
   };
   
   home.packages = with pkgs; [
+    gnumake
+    gcc
     kanata
     protonvpn-gui
     gh

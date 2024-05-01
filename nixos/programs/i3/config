@@ -27,6 +27,8 @@ bindsym $mod+shift+q kill
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
 
+bindsym $mod+Shift+s exec "flameshot gui"
+
 bindsym $mod+ctrl+v split vertical
 bindsym $mod+ctrl+h split horizontal 
 bindsym $mod+f fullscreen toggle
