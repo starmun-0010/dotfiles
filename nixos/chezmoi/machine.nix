@@ -16,7 +16,6 @@
     pkgs-un.popcorntime
     qbittorrent
     pavucontrol
-    obs-studio
     qbittorrent
     vlc
     vesktop

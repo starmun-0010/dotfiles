@@ -10,8 +10,8 @@
   home.packages = with pkgs; [
     gnumake
     gcc
+    pkgs-un.protonvpn-cli_2
     kanata
-    protonvpn-gui
     gh
     flameshot
     unzip
@@ -102,12 +102,33 @@
     target = "${config.home.homeDirectory}/.config/wezterm/wezterm.lua";
     force = true;
   };
+
   home.file.zellij = {
     enable = true;
     source = config.lib.file.mkOutOfStoreSymlink ../programs/zellij/config.kdl;
     target = "${config.home.homeDirectory}/.config/zellij/config.kdl";
     force = true;
   };
+  
+  home.file.kanata = {
+    enable = true;
+    source = config.lib.file.mkOutOfStoreSymlink ../programs/kanata/K400.kbd;
+    target = "${config.home.homeDirectory}/.config/kanata/kanata.kbd";
+    force = true;
+  };
 
+  systemd.user.services.kanata = {
+    
+    Unit = {
+      Description = "Launch Kanata";
+    };
+    Install = {
+      WantedBy = [ "default.target" ];
+    };
+    Service = {
+      ExecStart = "${pkgs.kanata}/bin/kanata";
+    };
+  };
+  
   home.stateVersion = "23.11";
 }

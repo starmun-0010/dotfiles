@@ -98,11 +98,21 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
 
+  users.groups.uinput = {};
+ 
+
+  users.groups.input = {};
+  
+  services.udev.extraRules = ''
+    KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
+  '';
+
   users.users.muqsit = {
     isNormalUser = true;
     description = "muqsit";
-    extraGroups = [ "networkmanager" "wheel" "uinput" ];
+    extraGroups = [ "networkmanager" "wheel" "uinput" "input" ];
     packages = with pkgs; [
+      obs-studio
     ];
   };
 
