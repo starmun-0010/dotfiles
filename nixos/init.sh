@@ -1,3 +1,7 @@
+sudo systemctl mask systemd-networkd-wait-online.service
+sudo apt install xorg
+
+           
 sudo groupadd uinput
 sudo groupadd input
 
