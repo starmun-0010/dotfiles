@@ -37,6 +37,7 @@
     discord
     vscode
   ];
+  xdg.enable = true;
   xdg.mimeApps = {
     enable = true;
   
@@ -118,7 +119,6 @@
   };
 
   systemd.user.services.kanata = {
-    
     Unit = {
       Description = "Launch Kanata";
     };

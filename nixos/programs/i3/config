@@ -21,12 +21,11 @@ exec_always --no-startup-id echo -e "nconnect 74:45:CE:F5:01:59" | bluetoothctl
 
 bindsym $mod+m bar mode toggle
 
-bindsym $mod+Enter exec konsole
-
 bindsym $mod+shift+q kill
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
 
+bindsym $mod+d exec "rofi -modi drun,run -show drun"
 bindsym $mod+Shift+s exec "flameshot gui"
 
 bindsym $mod+ctrl+v split vertical

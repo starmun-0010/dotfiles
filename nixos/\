@@ -1,22 +1,16 @@
-# Nix
-if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-da
-emon.sh' ]; then
-  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-fi
-# End Nix
-if ! [ -L "/etc/systemd/system/systemd-networkd-wait-online.service" ] || ! [ -e "/etc/systemd/system/systemd-networkd-wait-online.service" ]; 
+
+if ! [ -L "/etc/systemd/system/systemd-networkd-wait-online.service" ]; || ! [ -e "/etc/systemd/system/systemd-networkd-wait-online.service" ]; 
 then
 	echo "masking network waiting service"
 	sudo systemctl mask systemd-networkd-wait-online.service
 fi
 
-if [[ $(cmp "/etc/greetd/config.toml" "./programs/greetd/config.toml") ]];
-then
-	if ! [ -d "/etc/greetd" ]; then
-        	mkdir /etc/greetd
-	fi
-        sudo cp ./programs/greetd/config.toml /etc/greetd/config.toml	
-fi
+#if ! [ -f "/etc/greetd/config.toml" ]; then
+#        mkdir /etc/greetd
+#        cp ./programs/greetd/config.toml /etc/greetd/config.toml	
+#	sudo systemctl mask systemd-networkd-wait-online.service
+#fi
+
 
 if ! command -v startx &> /dev/null
 then
@@ -30,11 +24,8 @@ if ! command -v nix &> /dev/null
 then
 	echo "nix not found, installing nix"
 	sh <(curl -L https://nixos.org/nix/install) --daemon
-	if ! [ -d "$HOME/.config/nix" ]; then
-		mkdir ~/.config/nix
-	fi
-	cp ./programs/nix/nix.conf ~/.config/nix/nix.conf
 fi
+
 #install home-manager
 if ! command -v home-manager &> /dev/null
 then
@@ -57,15 +48,4 @@ then
         sudo modprobe uinput
 fi
 
-if ! command -v cargo &> /dev/null 
-then
-	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-fi
 
-if ! [ -d "/usr/local/bin/tuigreet" ]; then
-	git clone https://github.com/apognu/tuigreet && cd tuigreet
-	cargo build --release
-        sudo mkdir /usr/local/bin/tuigreet
-	sudo mv target/release/tuigreet /usr/local/bin/tuigreet
-	cd ..
-fi

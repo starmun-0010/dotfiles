@@ -5,8 +5,8 @@
       ./common.nix
     ];
 
-  home.username = "deck";
-  home.homeDirectory = "/home/deck";
+  home.username = "muqsit";
+  home.homeDirectory = "/home/muqsit";
   home.packages = with pkgs; [
     dunst
     python3
@@ -32,9 +32,20 @@
     text = (builtins.readFile ../programs/i3/config) + ''
       exec --no-startup-id nixGL picom -b 
       bindsym $mod+t exec nixGL wezterm
-      exec --no-startup-id "xrandr --output eDP --preferred --below DisplayPort-0 --preferred"
     '';
     force = true;
     target = "${config.home.homeDirectory}/.config/i3/config";
   };
+  home.file.bashprofile = {
+   enable = true;
+   source = config.lib.file.mkOutOfStoreSymlink ../programs/bash/.bash_profile;
+   target = "${config.home.homeDirectory}/.bash_profile";
+   force = true;
+ };
+ home.file.bourneprofile = {
+   enable = true;
+   source = config.lib.file.mkOutOfStoreSymlink ../programs/bash/.profile;
+   target = "${config.home.homeDirectory}/.profile";
+   force = true;
+ };
 }
