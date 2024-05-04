@@ -1,3 +1,6 @@
+def sudo [name:string] {
+    ^sudo (^which $name)
+}
 $env.config = {
     edit_mode: vi
 
