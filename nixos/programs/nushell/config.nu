@@ -1,7 +1,5 @@
-def sudo [name:string] {
-    ^sudo (^which $name)
-}
-$env.config = {
+alias sudo = bash -c sudo "PATH=$PATH"
+env.config = {
     edit_mode: vi
 
     history: {
