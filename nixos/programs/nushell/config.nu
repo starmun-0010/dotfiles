@@ -1,4 +1,3 @@
-alias sudo = bash -c sudo "PATH=$PATH"
 env.config = {
     edit_mode: vi
 
