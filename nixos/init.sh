@@ -15,19 +15,19 @@ fi
 #audio
 if ! command -v pulseaudio &> /dev/null
 then
-	sudo apt install pulseaudio 
-	sudo apt install pulseaudio-module-bluetooth
+	sudo apt -y install pulseaudio 
+	sudo apt -y install pulseaudio-module-bluetooth
 fi
 
 if ! command -v alsa &> /dev/null
 then
-	sudo apt install alsa 
+	sudo apt -y install alsa 
 fi
 
 #install bluetooth
 if ! command -v bluetoothd &> /dev/null
 then
-	sudo apt install bluez
+	sudo apt -y install bluez
 fi
 
 
@@ -35,7 +35,7 @@ fi
 if ! command -v startx &> /dev/null
 then
 	echo "startx not found, installing xorg"
-	sudo apt install xorg
+	sudo apt -y install xorg
 fi
 
 #install nix
@@ -43,6 +43,10 @@ if ! command -v nix &> /dev/null
 then
 	echo "nix not found, installing nix"
 	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+	if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  		. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+	fi
+
 	nix-channel --add https://nixos.org/channels/nixos-23.11 nixpkgs
 	nix-channel --update
 fi
@@ -53,10 +57,10 @@ if ! [ -f "$HOME/.config/nix/nix.conf" ]; then
 	fi	
 	cp ./programs/nix/nix.conf ~/.config/nix/nix.conf
 fi
-
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 fi
+
 # End Nix
 
 
@@ -111,7 +115,7 @@ fi
 #install greetd
 if ! command -v greetd &> /dev/null 
 then
-	sudo apt install greetd
+	sudo apt -y install greetd
 fi
 if ! [ -d "/etc/greetd" ]; then
 	sudo mkdir /etc/greetd
