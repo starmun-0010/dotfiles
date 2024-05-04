@@ -100,7 +100,7 @@ fi
 if ! [ -f "/etc/udev/rules.d/backlight.rules" ]; 
 then
 	echo 'ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="/usr/bin/chgrp video /sys/class/backlight/intel_backlight/brightness"
-ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="/usr/bin/chmod g+w /sys/class/backlight/intel_backlight/brightness"
+ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="/usr/bin/chmod 777 /sys/class/backlight/intel_backlight/brightness"
 ' | sudo tee /etc/udev/rules.d/backlight.rules
 fi
 if ! command -v cargo &> /dev/null 
