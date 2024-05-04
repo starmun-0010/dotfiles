@@ -64,15 +64,25 @@ fi
 # End Nix
 
 
-if [ -n "$2" ];
+if [ "$1" == "init" ];
 then 
 	nix run nixpkgs#home-manager -- switch --flake . --impure
 fi
 
 #home manager iterations
-if [ -n "$1" ];
+if [ "$1" == "gen" ];
 then
+	printf "\nHome Manager Chanes\n\n"
+	git diff -U0
+	read -p "Continue? " answer
+	if [ "$answer" != "${answer#[Nn]}" ]; 
+	then
+		exit 0
+	fi
+	git add --all
 	home-manager switch --flake . --impure
+	git commit -am "$(home-manager generations | head -n 1)"
+	git push
 fi  
 
 #kanata
@@ -95,7 +105,8 @@ ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="/usr/bin
 fi
 if ! command -v cargo &> /dev/null 
 then
-	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- y && . "$HOME/.cargo/env"
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y 
+       	. "$HOME/.cargo/env"
 fi
 
 #install greetd

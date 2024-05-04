@@ -5,8 +5,8 @@
       ./common.nix
     ];
 
-  home.username = "muqsit";
-  home.homeDirectory = "/home/muqsit";
+  home.username = "hermes";
+  home.homeDirectory = "/home/hermes";
   home.packages = with pkgs; [
     acpilight
     bluez-tools

@@ -31,7 +31,7 @@
       };
     };
     homeConfigurations = {
-      mqsit = hlib.homeManagerConfiguration {
+      muqsit = hlib.homeManagerConfiguration {
         inherit pkgs;
 	extraSpecialArgs = {
           inherit pkgs-un;
@@ -47,7 +47,7 @@
        };
        modules = [ ./chezmoi/deck.nix ];
      };
-     muqsit = hlib.homeManagerConfiguration {
+     hermes = hlib.homeManagerConfiguration {
        inherit pkgs;
        extraSpecialArgs = {
          inherit pkgs-un;
