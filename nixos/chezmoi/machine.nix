@@ -15,7 +15,6 @@
   home.packages = with pkgs; [
     pkgs-un.popcorntime
     qbittorrent
-    pavucontrol
     qbittorrent
     vlc
     vesktop

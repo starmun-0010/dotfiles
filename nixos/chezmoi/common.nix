@@ -8,10 +8,11 @@
   };
   
   home.packages = with pkgs; [
+    pavucontrol
     gnumake
     gcc
     pkgs-un.protonvpn-cli_2
-    kanata
+    pkgs-un.kanata
     gh
     flameshot
     unzip

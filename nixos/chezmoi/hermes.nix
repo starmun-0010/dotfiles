@@ -8,6 +8,8 @@
   home.username = "muqsit";
   home.homeDirectory = "/home/muqsit";
   home.packages = with pkgs; [
+    bluez-tools
+    xdg-utils
     dunst
     python3
     arandr
@@ -36,16 +38,11 @@
     force = true;
     target = "${config.home.homeDirectory}/.config/i3/config";
   };
-  home.file.bashprofile = {
+ 
+ home.file.xinitrc = {
    enable = true;
-   source = config.lib.file.mkOutOfStoreSymlink ../programs/bash/.bash_profile;
-   target = "${config.home.homeDirectory}/.bash_profile";
-   force = true;
- };
- home.file.bourneprofile = {
-   enable = true;
-   source = config.lib.file.mkOutOfStoreSymlink ../programs/bash/.profile;
-   target = "${config.home.homeDirectory}/.profile";
+   source = config.lib.file.mkOutOfStoreSymlink ../programs/xinit/.xinitrc;
+   target = "${config.home.homeDirectory}/.xinitrc";
    force = true;
  };
 }
