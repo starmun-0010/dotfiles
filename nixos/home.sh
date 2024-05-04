@@ -158,9 +158,13 @@ then
 	sudo ln -sfn "$PWD/programs/X11/xorg.conf" "/etc/X11/xorg.conf.d/20-intel.conf"
 fi
 
+if ! [ -L "/etc/localtime" ] || ! [ -e "/etc/localtime" ]; 
+then
+	sudo ln -sf /usr/share/zoneinfo/Asia/Karachi  /etc/localtime
+fi
+
 #github
 TOKEN=$(gh auth token 2>&1 >/dev/null)
-echo $TOKEN
 if [ "$TOKEN" == "no oauth token" ];
 then
 	rm ~/.config/git/config
