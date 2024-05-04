@@ -8,6 +8,8 @@
   };
   
   home.packages = with pkgs; [
+    i3blocks
+    fira-code-nerdfont
     pavucontrol
     gnumake
     gcc

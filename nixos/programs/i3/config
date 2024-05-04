@@ -154,13 +154,13 @@ client.background        $base
 # bar
 bar {
 
- # i3bar_command i3bar --transparency
- # status_command i3status-rs
- # mode hide
- # padding 10px 0
- # tray_padding 0
- # separator_symbol ":|:"
- # workspace_min_width 40
+  i3bar_command i3bar --transparency
+  status_command i3blocks
+  mode hide
+  padding 10px 0
+  tray_padding 0
+  separator_symbol ":|:"
+  workspace_min_width 40
 
   colors {
     background         $base
