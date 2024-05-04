@@ -112,13 +112,6 @@
     force = true;
   };
   
-  home.file.kanata = {
-    enable = true;
-    source = config.lib.file.mkOutOfStoreSymlink ../programs/kanata/K400.kbd;
-    target = "${config.home.homeDirectory}/.config/kanata/kanata.kbd";
-    force = true;
-  };
-
   systemd.user.services.kanata = {
     Unit = {
       Description = "Launch Kanata";

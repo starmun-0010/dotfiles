@@ -136,3 +136,9 @@ then
 	ln -sf "$PWD/programs/bash/.bash_profile" "$HOME/.bash_profile"
 fi
 
+ln -sfn "$PWD/programs/kanata" "$HOME/.config/kanata"
+
+#TOUCHPAD
+xinput set-prop 'SYNA801A:00 06CB:CEC6 Touchpad' 'libinput Tapping Enabled' 1
+
+xinput set-button-map 10 1 1 3 4 5 6 7
