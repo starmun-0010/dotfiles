@@ -58,18 +58,11 @@ if ! [ -f "$HOME/.config/nix/nix.conf" ]; then
 	cp ./programs/nix/nix.conf ~/.config/nix/nix.conf
 fi
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 fi
 
 # End Nix
 
-
-#install home-manager
-#if ! command -v home-manager &> /dev/null then
-	#echo "home-manager not found, installing home-manager"
-	#nix-channel --add 'https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz' home-manager && nix-channel --update
-	#nix-shell '<home-manager>' -A install
-#fi
 
 if [ -n "$2" ];
 then 
@@ -94,22 +87,13 @@ then
 	echo 'KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"' | sudo tee /etc/udev/rules.d/kanata.rules
         sudo modprobe uinput
 fi
-
+if ! [ -f "/etc/udev/rules.d/backlight.rules" ]; 
+then
+	echo 'ACTION=="add", SUBSYSTEM=="backlight", RUN+="/bin/chgrp video $sys$devpath/brightness", RUN+="/bin/chmod g+w $sys$devpath/brightness' | sudo tee /etc/udev/rules.d/backlight.rules
+fi
 if ! command -v cargo &> /dev/null 
 then
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh && . "$HOME/.cargo/env"
-fi
-
-if ! [ -f "/usr/local/bin/tuigreet/tuigreet" ]; then
-	git clone https://github.com/apognu/tuigreet /tmp/tuigreet 
-	pushd /tmp/tuigreet
-	cargo build --release
-
-	if ! [ -d "/usr/local/bin/tuigreet" ]; then
-        	sudo mkdir /usr/local/bin/tuigreet
-	fi
-	sudo mv target/release/tuigreet /usr/local/bin/tuigreet
-	popd
 fi
 
 #install greetd
@@ -120,6 +104,21 @@ fi
 if ! [ -d "/etc/greetd" ]; then
 	sudo mkdir /etc/greetd
 fi
+
+if ! [ -f "/usr/local/bin/tuigreet/tuigreet" ]; then
+	git clone https://github.com/apognu/tuigreet /tmp/tuigreet 
+	pushd /tmp/tuigreet
+	cargo build --release
+
+	if ! [ -d "/usr/local/bin/tuigreet" ]; then
+        	sudo mkdir /usr/local/bin/tuigreet
+		sudo mkdir /var/cache/tuigreet
+		sudo chmod 777 /var/cache/tuigreet
+	fi
+	sudo mv target/release/tuigreet /usr/local/bin/tuigreet
+	popd
+fi
+
 
 if ! [ -L "/etc/greetd/config.toml" ] || ! [ -e "/etc/greetd/config.toml" ]; 
 then
@@ -136,9 +135,15 @@ then
 	ln -sf "$PWD/programs/bash/.bash_profile" "$HOME/.bash_profile"
 fi
 
-ln -sfn "$PWD/programs/kanata" "$HOME/.config/kanata"
+if ! [ -L "$HOME/.config/kanata" ] || ! [ -e "$HOME/.config/kanata" ]; 
+then
+	ln -sfn "$PWD/programs/kanata" "$HOME/.config/kanata"
+fi
+
+if ! [ -L "/etc/X11/xorg.conf.d/20-intel.conf" ] || ! [ -e "/etc/X11/xorg.conf.d/20-intel.conf" ]; 
+then
+	sudo ln -sfn "$PWD/programs/X11/xorg.conf" "/etc/X11/xorg.conf.d/20-intel.conf"
+fi
 
 #TOUCHPAD
-xinput set-prop 'SYNA801A:00 06CB:CEC6 Touchpad' 'libinput Tapping Enabled' 1
 
-xinput set-button-map 10 1 1 3 4 5 6 7
