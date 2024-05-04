@@ -35,7 +35,7 @@
     text = (builtins.readFile ../programs/i3/config) + ''
       exec --no-startup-id nixGL picom -b 
       exec --no-startup-id "xinput set-prop 'SYNA801A:00 06CB:CEC6 Touchpad' 'libinput Tapping Enabled' 1"
- exec --no-startup-id 'xinput set-button-map 10 1 1 3 4 5 6 7'
+ exec --no-startup-id "xinput set-button-map 10 1 1 3 4 5 6 7"
       bindsym $mod+t exec nixGL wezterm
     '';
     force = true;
