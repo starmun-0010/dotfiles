@@ -42,7 +42,7 @@ fi
 if ! command -v nix &> /dev/null
 then
 	echo "nix not found, installing nix"
-	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --no-confirm
 	if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   		. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 	fi
@@ -93,7 +93,7 @@ then
 fi
 if ! command -v cargo &> /dev/null 
 then
-	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh && . "$HOME/.cargo/env"
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- y && . "$HOME/.cargo/env"
 fi
 
 #install greetd
