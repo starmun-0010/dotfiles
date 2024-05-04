@@ -32,3 +32,4 @@ then
 fi
 . "$HOME/.cargo/env"
 export CARGO_HOME="$HOME/.cargo"
+export GTK_USE_PORTAL=1
