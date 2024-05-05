@@ -1,6 +1,6 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder() 
-
+config.front_end = "WebGpu"
 config.enable_wayland = false
 
 --Appearance
@@ -12,5 +12,12 @@ config.initial_cols = 126
 
 --Startup program
 config.default_prog = { 'zellij' }
+config.keys = {
+  {
+    key = 'r',
+    mods = 'CMD|SHIFT',
+    action = wezterm.action.ReloadConfiguration,
+  },
+}
 
 return config

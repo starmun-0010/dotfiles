@@ -132,12 +132,20 @@ fi
 
 if ! [ -L "$HOME/.config/wezterm/wezterm.sh" ] || ! [ -e "$HOME/.config/wezterm/wezterm.sh" ]; 
 then
+	mkdir "$HOME/.config/wezterm"
 	ln -sf "$PWD/programs/wezterm/wezterm.sh" "$HOME/.config/wezterm/wezterm.sh"
 fi
 
 if ! [ -L "$HOME/.config/wezterm/wezterm.lua" ] || ! [ -e "$HOME/.config/wezterm/wezterm.lua" ]; 
 then
+	mkdir "$HOME/.config/wezterm"
 	ln -sf "$PWD/programs/wezterm/wezterm.lua" "$HOME/.config/wezterm/wezterm.lua"
+fi
+
+if ! [ -L "$HOME/.config/nvim/init.lua" ] || ! [ -e "$HOME/.config/nvim/init.lua" ]; 
+then
+	mkdir "$HOME/.config/nvim"
+	ln -sf "$PWD/programs/nvim/init.lua" "$HOME/.config/nvim/init.lua"
 fi
 
 #github
