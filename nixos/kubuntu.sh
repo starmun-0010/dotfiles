@@ -93,6 +93,14 @@ if ! [ -f "/usr/local/bin/tuigreet/tuigreet" ]; then
 	popd
 fi
 
+#backlight
+if ! [ -f "/etc/udev/rules.d/backlight.rules" ]; 
+then
+	echo 'ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="/usr/bin/chgrp video /sys/class/backlight/intel_backlight/brightness"
+ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="/usr/bin/chmod 777 /sys/class/backlight/intel_backlight/brightness"
+' | sudo tee /etc/udev/rules.d/backlight.rules
+fi
+
 if ! [ -L "/etc/X11/xorg.conf.d/20-intel.conf" ] || ! [ -e "/etc/X11/xorg.conf.d/20-intel.conf" ]; 
 then
 	sudo ln -sfn "$PWD/programs/X11/xorg.conf" "/etc/X11/xorg.conf.d/20-intel.conf"
