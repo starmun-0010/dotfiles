@@ -8,6 +8,7 @@
   home.username = "hermes";
   home.homeDirectory = "/home/hermes";
   home.packages = with pkgs; [
+    acpilight
     dunst
     python3
     arandr

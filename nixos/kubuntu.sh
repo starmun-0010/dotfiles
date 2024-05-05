@@ -93,6 +93,10 @@ if ! [ -f "/usr/local/bin/tuigreet/tuigreet" ]; then
 	popd
 fi
 
+if ! [ -L "/etc/X11/xorg.conf.d/20-intel.conf" ] || ! [ -e "/etc/X11/xorg.conf.d/20-intel.conf" ]; 
+then
+	sudo ln -sfn "$PWD/programs/X11/xorg.conf" "/etc/X11/xorg.conf.d/20-intel.conf"
+fi
 
 if ! [ -L "/etc/greetd/config.toml" ] || ! [ -e "/etc/greetd/config.toml" ]; 
 then

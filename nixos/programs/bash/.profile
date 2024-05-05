@@ -33,3 +33,5 @@ fi
 . "$HOME/.cargo/env"
 export CARGO_HOME="$HOME/.cargo"
 export GTK_USE_PORTAL=1
+export XDG_CURRENT_DESKTOP=i3
+
