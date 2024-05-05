@@ -130,6 +130,16 @@ then
 	ln -sf "$PWD/programs/picom/picom.conf" "$HOME/.config/picom/picom.conf"
 fi
 
+if ! [ -L "$HOME/.config/wezterm/wezterm.sh" ] || ! [ -e "$HOME/.config/wezterm/wezterm.sh" ]; 
+then
+	ln -sf "$PWD/programs/wezterm/wezterm.sh" "$HOME/.config/wezterm/wezterm.sh"
+fi
+
+if ! [ -L "$HOME/.config/wezterm/wezterm.lua" ] || ! [ -e "$HOME/.config/wezterm/wezterm.lua" ]; 
+then
+	ln -sf "$PWD/programs/wezterm/wezterm.lua" "$HOME/.config/wezterm/wezterm.lua"
+fi
+
 #github
 TOKEN=$(gh auth token 2>&1 >/dev/null)
 if [ "$TOKEN" == "no oauth token" ];

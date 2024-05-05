@@ -88,20 +88,7 @@
     target = "${config.home.homeDirectory}/.config/nushell/config.nu";
     force = true;
   };
-  home.file.weztermsh = {
-    enable = true;
-    source = config.lib.file.mkOutOfStoreSymlink ../programs/wezterm/wezterm.sh;
-    target = "${config.home.homeDirectory}/.config/wezterm/wezterm.sh";
-    force = true;
-  };
- 
-  home.file.weztermlua = {
-    enable = true;
-    source = config.lib.file.mkOutOfStoreSymlink ../programs/wezterm/wezterm.lua;
-    target = "${config.home.homeDirectory}/.config/wezterm/wezterm.lua";
-    force = true;
-  };
-
+  
   home.file.zellij = {
     enable = true;
     source = config.lib.file.mkOutOfStoreSymlink ../programs/zellij/config.kdl;
