@@ -14,7 +14,6 @@
     glibcLocales
     nixgl.auto.nixGLDefault
     pkgs-un.postman
-    slack
     i3
     (with pkgs-un.dotnetCorePackages; combinePackages [
       sdk_6_0
