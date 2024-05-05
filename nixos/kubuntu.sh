@@ -125,6 +125,10 @@ if ! [ -L "$HOME/.config/kanata" ] || ! [ -e "$HOME/.config/kanata" ];
 then
 	ln -sfn "$PWD/programs/kanata" "$HOME/.config/kanata"
 fi
+if ! [ -L "$HOME/.config/picom/picom.conf" ] || ! [ -e "$HOME/.config/picom/picom.conf" ]; 
+then
+	ln -sfn "$PWD/programs/kanata" "$HOME/.config/picom/picom.conf"
+fi
 
 #github
 TOKEN=$(gh auth token 2>&1 >/dev/null)

@@ -75,35 +75,30 @@
     recursive = true;
   };
 
-  home.file.picom = {
-    enable = true;
-    source = config.lib.file.mkOutOfStoreSymlink ../programs/picom/picom.conf;
-    target = "${config.home.homeDirectory}/.config/picom/picom.conf";
-    force = true;
-  };
   home.file.nushellenv = {
     enable = true;
-    source = config.lib.file.mkOutOfStoreSymlink ../programs/nushell/env.nu;
-    target = "${config.home.homeDirectory}/.config/nushell/env.nu";
+    source = config.lib.file.mkoutofstoresymlink ../programs/nushell/env.nu;
+    target = "${config.home.homedirectory}/.config/nushell/env.nu";
     force = true;
   };
+
   home.file.nushellconfig = {
     enable = true;
-    source = config.lib.file.mkOutOfStoreSymlink ../programs/nushell/config.nu;
-    target = "${config.home.homeDirectory}/.config/nushell/config.nu";
+    source = config.lib.file.mkoutofstoresymlink ../programs/nushell/config.nu;
+    target = "${config.home.homedirectory}/.config/nushell/config.nu";
     force = true;
   };
   home.file.weztermsh = {
     enable = true;
-    source = config.lib.file.mkOutOfStoreSymlink ../programs/wezterm/wezterm.sh;
-    target = "${config.home.homeDirectory}/.config/wezterm/wezterm.sh";
+    source = config.lib.file.mkoutofstoresymlink ../programs/wezterm/wezterm.sh;
+    target = "${config.home.homedirectory}/.config/wezterm/wezterm.sh";
     force = true;
   };
  
   home.file.weztermlua = {
     enable = true;
-    source = config.lib.file.mkOutOfStoreSymlink ../programs/wezterm/wezterm.lua;
-    target = "${config.home.homeDirectory}/.config/wezterm/wezterm.lua";
+    source = config.lib.file.mkoutofstoresymlink ../programs/wezterm/wezterm.lua;
+    target = "${config.home.homedirectory}/.config/wezterm/wezterm.lua";
     force = true;
   };
 
