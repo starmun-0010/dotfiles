@@ -120,5 +120,6 @@ if [ "$TOKEN" == "no oauth token" ];
 then
 	rm ~/.config/git/config
 	gh auth login
+        git push -u origin 2024			
 	home-manager switch --flake . --impure
 fi
