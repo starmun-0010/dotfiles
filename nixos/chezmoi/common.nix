@@ -27,7 +27,7 @@
     xclip
     ripgrep
     firefox
-    wezterm
+    pkgs-un.wezterm
     rofi
     picom
     zellij
