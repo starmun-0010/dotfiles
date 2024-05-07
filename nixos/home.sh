@@ -174,6 +174,7 @@ fi
 
 if ! [ -L "$HOME/.config/picom/picom.conf" ] || ! [ -e "$HOME/.config/picom/picom.conf" ];
 then
+	mkdir "$HOME/.config/picom"
 	ln -sf "$PWD/programs/picom/picom.conf" "$HOME/.config/picom/picom.conf"
 fi
 
