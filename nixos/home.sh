@@ -172,28 +172,24 @@ then
 	sudo ln -sf /usr/share/zoneinfo/Asia/Karachi  /etc/localtime
 fi
 
-if ! [ -L "$HOME/.config/picom/picom.conf" ] || ! [ -e "$HOME/.config/picom/picom.conf" ];
+if ! [ -L "$HOME/.config/picom" ] || ! [ -e "$HOME/.config/picom" ];
 then
-	mkdir "$HOME/.config/picom"
-	ln -sf "$PWD/programs/picom/picom.conf" "$HOME/.config/picom/picom.conf"
+	ln -sfn "$PWD/programs/picom" "$HOME/.config/picom"
 fi
 
-if ! [ -L "$HOME/.config/wezterm/wezterm.sh" ] || ! [ -e "$HOME/.config/wezterm/wezterm.sh" ];
+if ! [ -L "$HOME/.config/wezterm" ] || ! [ -e "$HOME/.config/wezterm" ];
 then
-	mkdir "$HOME/.config/wezterm"
-	ln -sf "$PWD/programs/wezterm/wezterm.sh" "$HOME/.config/wezterm/wezterm.sh"
+	ln -sfn "$PWD/programs/wezterm" "$HOME/.config/wezterm"
 fi
 
-if ! [ -L "$HOME/.config/wezterm/wezterm.lua" ] || ! [ -e "$HOME/.config/wezterm/wezterm.lua" ];
+if ! [ -L "$HOME/.config/nvim" ] || ! [ -e "$HOME/.config/nvim" ];
 then
-	mkdir "$HOME/.config/wezterm"
-	ln -sf "$PWD/programs/wezterm/wezterm.lua" "$HOME/.config/wezterm/wezterm.lua"
+	ln -sfn "$PWD/programs/nvim" "$HOME/.config/nvim"
 fi
 
-if ! [ -L "$HOME/.config/nvim/init.lua" ] || ! [ -e "$HOME/.config/nvim/init.lua" ];
+if ! [ -L "$HOME/.config/zellij" ] || ! [ -e "$HOME/.config/zellij" ];
 then
-	mkdir "$HOME/.config/nvim"
-	ln -sf "$PWD/programs/nvim/init.lua" "$HOME/.config/nvim/init.lua"
+	ln -sfn "$PWD/programs/zellij" "$HOME/.config/zellij"
 fi
 
 #github

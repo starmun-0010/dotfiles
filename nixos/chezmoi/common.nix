@@ -88,14 +88,7 @@
     target = "${config.home.homeDirectory}/.config/nushell/config.nu";
     force = true;
   };
-  
-  home.file.zellij = {
-    enable = true;
-    source = config.lib.file.mkOutOfStoreSymlink ../programs/zellij/config.kdl;
-    target = "${config.home.homeDirectory}/.config/zellij/config.kdl";
-    force = true;
-  };
-  
+
   systemd.user.services.kanata = {
     Unit = {
       Description = "Launch Kanata";
