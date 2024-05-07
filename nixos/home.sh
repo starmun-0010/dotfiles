@@ -6,7 +6,7 @@ if ! [ -d "$HOME/.config" ]; then
 fi
 
 #mask systemd network waiting service
-if ! [ -L "/etc/systemd/system/systemd-networkd-wait-online.service" ] || ! [ -e "/etc/systemd/system/systemd-networkd-wait-online.service" ]; 
+if ! [ -L "/etc/systemd/system/systemd-networkd-wait-online.service" ] || ! [ -e "/etc/systemd/system/systemd-networkd-wait-online.service" ];
 then
 	echo "masking network waiting service"
 	sudo systemctl mask systemd-networkd-wait-online.service
@@ -21,7 +21,7 @@ fi
 
 if ! command -v alsa &> /dev/null
 then
-	sudo apt -y install alsa 
+	sudo apt -y install alsa
 fi
 
 #install bluetooth
@@ -44,7 +44,7 @@ then
 	echo "nix not found, installing nix"
 	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --no-confirm
 	if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-  		. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+		. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 	fi
 
 	nix-channel --add https://nixos.org/channels/nixos-23.11 nixpkgs
@@ -54,7 +54,7 @@ fi
 if ! [ -f "$HOME/.config/nix/nix.conf" ]; then
 	if ! [ -d "$HOME/.config/nix" ]; then
 		mkdir ~/.config/nix
-	fi	
+	fi
 	cp ./programs/nix/nix.conf ~/.config/nix/nix.conf
 fi
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
@@ -65,7 +65,7 @@ fi
 
 
 if [ "$1" == "init" ];
-then 
+then
 	nix run nixpkgs#home-manager -- switch --flake . --impure
 fi
 
@@ -133,9 +133,9 @@ if ! [ -f "/usr/local/bin/tuigreet/tuigreet" ]; then
 fi
 
 
-if ! [ -L "/etc/greetd/config.toml" ] || ! [ -e "/etc/greetd/config.toml" ]; 
+if ! [ -L "/etc/greetd/config.toml" ] || ! [ -e "/etc/greetd/config.toml" ];
 then
-        sudo ln -sf "$PWD/programs/greetd/config.toml" "/etc/greetd/config.toml"	
+        sudo ln -sf "$PWD/programs/greetd/config.toml" "/etc/greetd/config.toml"
 fi
 
 if ! [ -L "~/.profile" ] || ! [ -e "~/.profile" ]; 
@@ -143,24 +143,47 @@ then
 	ln -sf "$PWD/programs/bash/.profile" "$HOME/.profile"
 fi
 
-if ! [ -L "~/.bash_profile" ] || ! [ -e "~/.bash_profile" ]; 
+if ! [ -L "~/.bash_profile" ] || ! [ -e "~/.bash_profile" ];
 then
 	ln -sf "$PWD/programs/bash/.bash_profile" "$HOME/.bash_profile"
 fi
 
-if ! [ -L "$HOME/.config/kanata" ] || ! [ -e "$HOME/.config/kanata" ]; 
+if ! [ -L "$HOME/.config/kanata" ] || ! [ -e "$HOME/.config/kanata" ];
 then
 	ln -sfn "$PWD/programs/kanata" "$HOME/.config/kanata"
 fi
 
-if ! [ -L "/etc/X11/xorg.conf.d/20-intel.conf" ] || ! [ -e "/etc/X11/xorg.conf.d/20-intel.conf" ]; 
+if ! [ -L "/etc/X11/xorg.conf.d/20-intel.conf" ] || ! [ -e "/etc/X11/xorg.conf.d/20-intel.conf" ];
 then
 	sudo ln -sfn "$PWD/programs/X11/xorg.conf" "/etc/X11/xorg.conf.d/20-intel.conf"
 fi
 
-if ! [ -L "/etc/localtime" ] || ! [ -e "/etc/localtime" ]; 
+if ! [ -L "/etc/localtime" ] || ! [ -e "/etc/localtime" ];
 then
 	sudo ln -sf /usr/share/zoneinfo/Asia/Karachi  /etc/localtime
+fi
+
+if ! [ -L "$HOME/.config/picom/picom.conf" ] || ! [ -e "$HOME/.config/picom/picom.conf" ];
+then
+	ln -sf "$PWD/programs/picom/picom.conf" "$HOME/.config/picom/picom.conf"
+fi
+
+if ! [ -L "$HOME/.config/wezterm/wezterm.sh" ] || ! [ -e "$HOME/.config/wezterm/wezterm.sh" ];
+then
+	mkdir "$HOME/.config/wezterm"
+	ln -sf "$PWD/programs/wezterm/wezterm.sh" "$HOME/.config/wezterm/wezterm.sh"
+fi
+
+if ! [ -L "$HOME/.config/wezterm/wezterm.lua" ] || ! [ -e "$HOME/.config/wezterm/wezterm.lua" ];
+then
+	mkdir "$HOME/.config/wezterm"
+	ln -sf "$PWD/programs/wezterm/wezterm.lua" "$HOME/.config/wezterm/wezterm.lua"
+fi
+
+if ! [ -L "$HOME/.config/nvim/init.lua" ] || ! [ -e "$HOME/.config/nvim/init.lua" ];
+then
+	mkdir "$HOME/.config/nvim"
+	ln -sf "$PWD/programs/nvim/init.lua" "$HOME/.config/nvim/init.lua"
 fi
 
 #github
@@ -170,4 +193,5 @@ then
 	rm ~/.config/git/config
 	gh auth login
 	home-manager switch --flake . --impure
+	git push -u origin 2024
 fi
