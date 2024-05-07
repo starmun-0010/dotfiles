@@ -192,9 +192,14 @@ then
 	ln -sfn "$PWD/programs/zellij" "$HOME/.config/zellij"
 fi
 
-if ! [ -L "$HOME/.config/nushell" ] || ! [ -e "$HOME/.config/nushell" ];
+if ! [ -L "$HOME/.config/nushell/env.nu" ] || ! [ -e "$HOME/.config/nushell/env.nu" ];
 then
-	ln -sfn "$PWD/programs/nushell" "$HOME/.config/nushell"
+	ln -sfn "$PWD/programs/nushell/env.nu" "$HOME/.config/nushell/env.nu"
+fi
+
+if ! [ -L "$HOME/.config/nushell/config.nu" ] || ! [ -e "$HOME/.config/nushell/config.nu" ];
+then
+	ln -sfn "$PWD/programs/nushell/config.nu" "$HOME/.config/nushell/config.nu"
 fi
 
 #github
