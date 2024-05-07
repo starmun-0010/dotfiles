@@ -1,12 +1,12 @@
 { config, pkgs, pkgs-un, ... }: {
- 
+
   nixpkgs = {
     config = {
       allowUnfree = true;
       allowUnfreePredicate = (_:true);
     };
   };
-  
+
   home.packages = with pkgs; [
     i3blocks
     fira-code-nerdfont
@@ -73,20 +73,6 @@
     target = "${config.home.homeDirectory}/.config/i3/wallpapers";
     force = true;
     recursive = true;
-  };
-
-  home.file.nushellenv = {
-    enable = true;
-    source = config.lib.file.mkOutOfStoreSymlink ../programs/nushell/env.nu;
-    target = "${config.home.homeDirectory}/.config/nushell/env.nu";
-    force = true;
-  };
-
-  home.file.nushellconfig = {
-    enable = true;
-    source = config.lib.file.mkOutOfStoreSymlink ../programs/nushell/config.nu;
-    target = "${config.home.homeDirectory}/.config/nushell/config.nu";
-    force = true;
   };
 
   systemd.user.services.kanata = {

@@ -192,6 +192,11 @@ then
 	ln -sfn "$PWD/programs/zellij" "$HOME/.config/zellij"
 fi
 
+if ! [ -L "$HOME/.config/nushell" ] || ! [ -e "$HOME/.config/nushell" ];
+then
+	ln -sfn "$PWD/programs/nushell" "$HOME/.config/nushell"
+fi
+
 #github
 TOKEN=$(gh auth token 2>&1 >/dev/null)
 if [ "$TOKEN" == "no oauth token" ];
