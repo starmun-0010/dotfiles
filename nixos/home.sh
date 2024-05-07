@@ -1,5 +1,14 @@
 #!/bin/bash
 
+if [ "$2" == "kernel" ];
+then
+	sudo add-apt-repository ppa:cappelikan/ppa
+	sudo apt update
+	sudo apt install pkexec
+	sudo apt install mainline
+	sudo mainline install-latest
+fi
+
 # Create xdg config folder
 if ! [ -d "$HOME/.config" ]; then
 	mkdir "$HOME/.config"
