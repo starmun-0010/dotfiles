@@ -4,8 +4,8 @@ if [ "$2" == "kernel" ];
 then
 	sudo add-apt-repository ppa:cappelikan/ppa
 	sudo apt update
-	sudo apt install pkexec
-	sudo apt install mainline
+	sudo apt install -y pkexec
+	sudo apt install -y mainline
 	sudo mainline install-latest
 fi
 
