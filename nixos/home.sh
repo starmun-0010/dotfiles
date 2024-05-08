@@ -159,7 +159,7 @@ fi
 
 if ! [ -L "$HOME/.config/kanata" ] || ! [ -e "$HOME/.config/kanata" ];
 then
-	ln -sfn "$PWD/programs/kanata" "$HOME/.config/kanata"
+	ln -sfn "$PWD/programs/kanata" "$HOME/.config/"
 fi
 
 if ! [ -L "/etc/X11/xorg.conf.d/20-intel.conf" ] || ! [ -e "/etc/X11/xorg.conf.d/20-intel.conf" ];
@@ -174,32 +174,28 @@ fi
 
 if ! [ -L "$HOME/.config/picom" ] || ! [ -e "$HOME/.config/picom" ];
 then
-	ln -sfn "$PWD/programs/picom" "$HOME/.config/picom"
+	ln -sfn "$PWD/programs/picom" "$HOME/.config/"
 fi
 
-if ! [ -L "$HOME/.config/wezterm" ] || ! [ -e "$HOME/.config/wezterm" ];
+if ! [ -L "$HOME/.config/wezterm" ] || ! [ -e "$HOME/.config" ];
 then
-	ln -sfn "$PWD/programs/wezterm" "$HOME/.config/wezterm"
+	ln -sfn "$PWD/programs/wezterm" "$HOME/.config/"
 fi
 
-if ! [ -L "$HOME/.config/nvim" ] || ! [ -e "$HOME/.config/nvim" ];
+if ! [ -L "$HOME/.config/nvim" ] || ! [ -e "$HOME/.config" ];
 then
-	ln -sfn "$PWD/programs/nvim" "$HOME/.config/nvim"
+	ln -sfn "$PWD/programs/nvim" "$HOME/.config/"
 fi
 
 if ! [ -L "$HOME/.config/zellij" ] || ! [ -e "$HOME/.config/zellij" ];
 then
-	ln -sfn "$PWD/programs/zellij" "$HOME/.config/zellij"
+	ln -sfn "$PWD/programs/zellij" "$HOME/.config/"
 fi
 
-if ! [ -L "$HOME/.config/nushell/env.nu" ] || ! [ -e "$HOME/.config/nushell/env.nu" ];
-then
-	ln -sfn "$PWD/programs/nushell/env.nu" "$HOME/.config/nushell/env.nu"
-fi
 
-if ! [ -L "$HOME/.config/nushell/config.nu" ] || ! [ -e "$HOME/.config/nushell/config.nu" ];
+if ! [ -L "$HOME/.config/nushell" ] || ! [ -e "$HOME/.config/nushell" ];
 then
-	ln -sfn "$PWD/programs/nushell/config.nu" "$HOME/.config/nushell/config.nu"
+	ln -sfn "$PWD/programs/nushell" "$HOME/.config/"
 fi
 
 #github

@@ -8,6 +8,7 @@
   };
 
   home.packages = with pkgs; [
+    vifm
     i3blocks
     fira-code-nerdfont
     pavucontrol
