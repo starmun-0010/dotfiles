@@ -8,6 +8,7 @@
   };
 
   home.packages = with pkgs; [
+    xdg-utils
     vifm
     i3blocks
     fira-code-nerdfont
