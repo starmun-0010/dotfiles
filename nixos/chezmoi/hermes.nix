@@ -8,6 +8,8 @@
   home.username = "hermes";
   home.homeDirectory = "/home/hermes";
   home.packages = with pkgs; [
+    acpi
+    lazygit
     testdisk
     ddrescue
     udiskie

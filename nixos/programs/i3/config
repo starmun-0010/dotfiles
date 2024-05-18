@@ -12,6 +12,7 @@ gaps inner 10
 
 smart_gaps inverse_outer
 
+font pango:DejaVu Sans Mono 10
 
 exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpapers/tropic_island_day.jpg
 exec_always --no-startup-id dex --autostart --environment i3

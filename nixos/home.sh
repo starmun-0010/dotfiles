@@ -76,6 +76,7 @@ fi
 if [ "$1" == "init" ];
 then
 	nix run nixpkgs#home-manager -- switch --flake . --impure
+	sudo ln -sf /usr/share/zoneinfo/Asia/Karachi  /etc/localtime
 fi
 
 #home manager iterations
@@ -167,11 +168,6 @@ then
 	sudo ln -sfn "$PWD/programs/X11/xorg.conf" "/etc/X11/xorg.conf.d/20-intel.conf"
 fi
 
-if ! [ -L "/etc/localtime" ] || ! [ -e "/etc/localtime" ];
-then
-	sudo ln -sf /usr/share/zoneinfo/Asia/Karachi  /etc/localtime
-fi
-
 if ! [ -L "$HOME/.config/picom" ] || ! [ -e "$HOME/.config/picom" ];
 then
 	ln -sfn "$PWD/programs/picom" "$HOME/.config/"
@@ -196,6 +192,26 @@ fi
 if ! [ -L "$HOME/.config/nushell" ] || ! [ -e "$HOME/.config/nushell" ];
 then
 	ln -sfn "$PWD/programs/nushell" "$HOME/.config/"
+fi
+
+if ! [ -L "$HOME/.config/stylua" ] || ! [ -e "$HOME/.config/stylua" ];
+then
+	ln -sfn "$PWD/programs/stylua" "$HOME/.config/"
+fi
+
+if ! [ -L "$HOME/.config/i3blocks" ] || ! [ -e "$HOME/.config/i3blocks" ];
+then
+	ln -sfn "$PWD/programs/i3blocks" "$HOME/.config/"
+fi
+
+if ! [ -L "$HOME/.omnisharp" ] || ! [ -e "$HOME/.omnisharp" ];
+then
+	ln -sfn "$PWD/programs/.omnisharp" "$HOME/"
+fi
+
+if ! [ -L "/etc/systemd/system/awsvpnclient.service" ] || ! [ -e "/etc/systemd/system/awsvpnclient.service" ];
+then
+	ln -sfn "$PWD/programs/awsvpn/awsvpnclient.service" "/etc/systemd/system/awsvpnclient.service"
 fi
 
 #github
