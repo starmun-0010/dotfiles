@@ -36,8 +36,8 @@
   home.file.i3 = {
     enable = true;
     text = (builtins.readFile ../programs/i3/config) + ''
-      set $monitor_left "DP2"
-      set $monitor_right "HDMI-1"
+      set $monitor_left "HDMI-1"
+      set $monitor_right "DP2"
       set $monitor_internal "eDP1"
       set $ws1 "1"
       set $ws2 "2"
@@ -61,7 +61,7 @@
       workspace $ws8 output $monitor_right
       workspace $ws9 output $monitor_internal
       workspace $ws10 output $monitor_left
-      exec --no-startup-id xrandr --output DP2  --preferred --left-of HDMI1 --output HDMI1  --preferred --left-of eDP1 --output eDP1 --preferred
+      exec --no-startup-id "sleep 10; xrandr --output HDMI1  --preferred --left-of DP2 --output DP2  --preferred --left-of eDP1 --output eDP1 --preferred"
       exec --no-startup-id nixGL picom -b
       exec --no-startup-id "xinput set-prop 'SYNA801A:00 06CB:CEC6 Touchpad' 'libinput Tapping Enabled' 1"
       exec --no-startup-id "xinput set-button-map 10 1 1 3 4 5 6 7"

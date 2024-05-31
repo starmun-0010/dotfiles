@@ -46,6 +46,8 @@ bindsym $mod+shift+l move right
 bindsym $mod+shift+j move down 
 bindsym $mod+shift+k move up 
 
+bindsym $mod+space focus mode_toggle
+
 bindsym $mod+ctrl+shift+h move workspace to output right
 bindsym $mod+ctrl+shift+l move workspace to output left 
 
