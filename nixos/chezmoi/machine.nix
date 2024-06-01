@@ -13,7 +13,13 @@
   home.username = "muqsit";
   home.homeDirectory = "/home/muqsit";
   home.packages = with pkgs; [
-    pkgs-un.popcorntime
+   (with pkgs-un.dotnetCorePackages; combinePackages [
+      sdk_6_0
+      sdk_7_0
+      sdk_8_0
+      sdk_9_0
+    ])
+   pkgs-un.popcorntime
     qbittorrent
     qbittorrent
     vlc

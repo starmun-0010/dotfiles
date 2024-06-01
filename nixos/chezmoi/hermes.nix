@@ -8,6 +8,11 @@
   home.username = "hermes";
   home.homeDirectory = "/home/hermes";
   home.packages = with pkgs; [
+    (with pkgs-un.dotnetCorePackages; combinePackages [
+      sdk_6_0
+      sdk_7_0
+      sdk_8_0
+    ])
     acpi
     lazygit
     testdisk
@@ -22,11 +27,6 @@
     nixgl.auto.nixGLDefault
     pkgs-un.postman
     i3
-    (with pkgs-un.dotnetCorePackages; combinePackages [
-      sdk_6_0
-      sdk_7_0
-      sdk_8_0
-    ])
   ];
   home.sessionVariables = {
     LOCALES_ARCHIVE = "${pkgs.glibcLocales}/lib/locale/locale-archive";

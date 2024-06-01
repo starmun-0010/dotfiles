@@ -1,13 +1,11 @@
-#!/bin/bash
-
 HOSTNAME=$(hostname)
 
 if [ "$HOSTNAME" == "pk-pf4hdkph-muqsit" ] && [ "$USER" == "hermes" ];
 then
     source ./hermes.sh
 elif [ "$HOSTNAME" == "machine" ] && [ "$USER" == "muqsit" ];
-    source ./machine.sh
 then
+    source ./machine.sh
 fi
 
 

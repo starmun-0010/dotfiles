@@ -8,7 +8,5 @@ then
 		exit 0
 	fi
 	git add --all
-	sudo nixos-rebuild switch --flake .
-	git commit -am "$(home-manager generations | head -n 1)"
-	git push
+	sudo nixos-rebuild switch --flake . && CURRENT=$(nixos-rebuild list-generations | grep current) && git commit -am "$CURRENT" && git push
 fi 

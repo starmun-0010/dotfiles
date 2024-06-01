@@ -7,7 +7,9 @@
     };
   };
 
-  home.packages = with pkgs; [
+  home.packages = with pkgs; [ 
+    
+
     xdg-utils
     vifm
     i3blocks
@@ -17,6 +19,7 @@
     gcc
     pkgs-un.protonvpn-cli_2
     pkgs-un.kanata
+    pkgs-un.neovim
     gh
     flameshot
     unzip
@@ -63,11 +66,6 @@
    userEmail = "abdemuqsit@hotmail.com";
 
   };
-  
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  }; 
 
   home.file.wallpaper = {
     enable = true;
