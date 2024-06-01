@@ -24,7 +24,7 @@
     qbittorrent
     vlc
     vesktop
-    
+    lua-language-server    
     steam
   ];
   
