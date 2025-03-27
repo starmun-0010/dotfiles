@@ -1,3 +1,4 @@
+
 if [ "$2" == "kernel" ];
 then
 	sudo add-apt-repository ppa:cappelikan/ppa
@@ -6,6 +7,9 @@ then
 	sudo apt install -y mainline
 	sudo mainline install-latest
 fi
+
+git config --global user.email "abdemuqsit@hotmail.com"
+git config --global user.name "starmun-0010"
 
 # Create xdg config folder
 if ! [ -d "$HOME/.config" ]; then
@@ -100,6 +104,11 @@ then
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y 
        	. "$HOME/.cargo/env"
 fi
+#install build essentials 
+if ! command -v gcc &> /dev/null 
+then
+	sudo apt -y install build-essential 
+fi
 
 #install greetd
 if ! command -v greetd &> /dev/null 
@@ -164,3 +173,4 @@ then
 	git commit -am "$(home-manager generations | head -n 1)"
 	git push
 fi 
+
