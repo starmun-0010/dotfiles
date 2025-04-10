@@ -1,4 +1,4 @@
-echo 'what'
+#!/bin/bash
 if [ "$2" == "kernel" ];
 then
 	echo 'whati'
@@ -69,6 +69,7 @@ if ! [ -f "$HOME/.config/nix/nix.conf" ]; then
 	fi
 	cp ./programs/nix/nix.conf ~/.config/nix/nix.conf
 fi
+
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 fi
@@ -94,6 +95,7 @@ then
 	echo 'KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"' | sudo tee /etc/udev/rules.d/kanata.rules
         sudo modprobe uinput
 fi
+
 if ! [ -f "/etc/udev/rules.d/backlight.rules" ]; 
 then
 	echo 'ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="/usr/bin/chgrp video /sys/class/backlight/intel_backlight/brightness"
@@ -105,6 +107,7 @@ then
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y 
        	. "$HOME/.cargo/env"
 fi
+
 #install build essentials 
 if ! command -v gcc &> /dev/null 
 then
@@ -116,6 +119,7 @@ if ! command -v greetd &> /dev/null
 then
 	sudo apt -y install greetd
 fi
+
 if ! [ -d "/etc/greetd" ]; then
 	sudo mkdir /etc/greetd
 fi
@@ -139,12 +143,42 @@ then
         sudo ln -sf "$PWD/programs/greetd/config.toml" "/etc/greetd/config.toml"
 fi
 
-if ! [ -L "~/.profile" ] || ! [ -e "~/.profile" ]; 
+if ! [ -L "$HOMR/.profile" ] || ! [ -e "$HOME/.profile" ]; 
 then
 	ln -sf "$PWD/programs/bash/.profile" "$HOME/.profile"
 fi
 
-if ! [ -L "~/.bash_profile" ] || ! [ -e "~/.bash_profile" ];
+if ! [ -L "$HOME/.config/nvim" ] || ! [ -e "$HOME/.config/nvim" ]; 
+then
+	ln -sfn "$PWD/programs/nvim" "$HOME/.config/nvim"
+fi
+
+if ! [ -L "$HOME/.config/kanata" ] || ! [ -e "$HOME/.config/kanata" ]; 
+then
+	ln -sfn "$PWD/programs/kanata" "$HOME/.config/kanata"
+fi
+
+if ! [ -L "$HOME/.config/zellij" ] || ! [ -e "$HOME/.config/zellij" ]; 
+then
+	ln -sfn "$PWD/programs/zellij" "$HOME/.config/zellij"
+fi
+
+if ! [ -L "$HOME/.config/nushell" ] || ! [ -e "$HOME/.config/nushell" ]; 
+then
+	ln -sfn "$PWD/programs/nushell" "$HOME/.config/nushell"
+fi
+
+if ! [ -L "$HOME/.config/wezterm" ] || ! [ -e "$HOME/.config/wezterm" ]; 
+then
+	ln -sfn "$PWD/programs/wezterm" "$HOME/.config/wezterm"
+fi
+
+#if ! [ -L "$HOME/.config/picom" ] || ! [ -e "$HOME/.config/picom" ]; 
+#then
+#	ln -sfn "$PWD/programs/picom" "$HOME/.config/picom"
+#fi
+
+if ! [ -L "$HOME/.bash_profile" ] || ! [ -e "$HOME/.bash_profile" ];
 then
 	ln -sf "$PWD/programs/bash/.bash_profile" "$HOME/.bash_profile"
 fi
