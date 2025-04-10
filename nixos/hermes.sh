@@ -156,7 +156,7 @@ fi
 
 if ! [ -L "/etc/systemd/system/awsvpnclient.service" ] || ! [ -e "/etc/systemd/system/awsvpnclient.service" ];
 then
-	ln -sfn "$PWD/programs/awsvpn/awsvpnclient.service" "/etc/systemd/system/awsvpnclient.service"
+	sudo ln -sfn "$PWD/programs/awsvpn/awsvpnclient.service" "/etc/systemd/system/awsvpnclient.service"
 fi
 
 #home manager iterations
