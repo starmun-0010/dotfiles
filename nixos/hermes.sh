@@ -7,7 +7,12 @@ then
 	sudo apt install -y mainline
 	sudo mainline install-latest
 fi
-
+if [ "$2" == "upgrade" ];
+then
+	nix-channel --add 'https://nixos.org/channels/nixos-24.11' nixpkgs
+	nix-channel --update
+	nix flake update
+fi
 git config --global user.email "abdemuqsit@hotmail.com"
 git config --global user.name "starmun-0010"
 
