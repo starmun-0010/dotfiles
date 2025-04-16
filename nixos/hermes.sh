@@ -192,19 +192,3 @@ then
 	sudo ln -sfn "$PWD/programs/awsvpn/awsvpnclient.service" "/etc/systemd/system/awsvpnclient.service"
 fi
 
-#home manager iterations
-if [ "$1" == "gen" ];
-then
-	printf "\nHome Manager Chanes\n\n"
-	git diff -U0
-	read -p "Continue? " answer
-	if [ "$answer" != "${answer#[Nn]}" ]; 
-	then
-		exit 0
-	fi
-	git add --all
-	home-manager switch --flake . --impure
-	git commit -am "$(home-manager generations | head -n 1)"
-	git push
-fi 
-
