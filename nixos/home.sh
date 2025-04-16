@@ -75,7 +75,7 @@ then
 		exit 0
 	fi
 	git add --all
-	home-manager switch --flake . --impure
+	home-manager switch -b backup --flake . --impure
 	git commit -am "$(home-manager generations | head -n 1)"
 	git push
 fi 
