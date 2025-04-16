@@ -1,9 +1,9 @@
-HOSTNAME=$(hostname)
+#!/bin/bash
 
-if [ "$HOSTNAME" == "pk-pf4hdkph-muqsit" ] && [ "$USER" == "hermes" ];
+if [ "$USER" == "hermes" ];
 then
     source ./hermes.sh
-elif [ "$HOSTNAME" == "machine" ] && [ "$USER" == "muqsit" ];
+elif [ "$USER" == "muqsit" ];
 then
     source ./machine.sh
 fi
@@ -64,3 +64,19 @@ then
 	home-manager switch --flake . --impure
 	git push -u origin 2024
 fi
+
+if [ "$1" == "gen" ];
+then
+	printf "\nHome Manager Changes\n\n"
+	git diff -U0
+	read -p "Continue? " answer
+	if [ "$answer" != "${answer#[Nn]}" ]; 
+	then
+		exit 0
+	fi
+	git add --all
+	home-manager switch --flake . --impure
+	git commit -am "$(home-manager generations | head -n 1)"
+	git push
+fi 
+

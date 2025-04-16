@@ -42,7 +42,6 @@
     zoxide
     nushell
 
-    discord
     vscode
   ];
   xdg.enable = true;

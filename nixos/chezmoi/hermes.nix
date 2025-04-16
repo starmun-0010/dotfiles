@@ -8,7 +8,7 @@
   home.username = "hermes";
   home.homeDirectory = "/home/hermes";
   home.packages = with pkgs; [
-    (with pkgs-un.dotnetCorePackages; combinePackages [
+    (with pkgs-un.dotnetCorePackagess; combinePackages [
       sdk_8_0
     ])
     acpi
@@ -19,7 +19,6 @@
     slack
     acpilight
     dunst
-    python3
     arandr
     glibcLocales
     nixgl.auto.nixGLDefault

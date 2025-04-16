@@ -1,7 +1,6 @@
 #!/bin/bash
 if [ "$2" == "kernel" ];
 then
-	echo 'whati'
 	sudo add-apt-repository ppa:cappelikan/ppa
 	sudo apt update
 	sudo apt install -y pkexec
