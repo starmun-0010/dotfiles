@@ -63,22 +63,5 @@ if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
 end
 vim.opt.rtp:prepend(lazypath)
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "cs",
-    callback = function ()
-        print("yoooo")
-    local disp = vim.lsp.rpc.connect("rospip")
-        local command = ''
-        vim.lsp.rpc.start({
-           name = 'roslynls',
-            dispatchers = disp,
-           cmd = function ()
-               uv.spawn{'dotnet run /src/repos/roslynls.git/main/tcp-wrapper/src/LanguageServer/Microsoft.CodeAnalysis.LanguageServer --logLevel="Trace" --extensionLogDirectory=/tmp'}
-            end,
-	    root_dir = vim.fs.root(0, function(name, path)
-                return name:match('%.sln$') ~= nil
-            end)  
-        })
-    end 
-})
+
 require("lazy").setup("plugins")

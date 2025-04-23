@@ -5,11 +5,4 @@ $env.PATH = ($env.PATH | split row (char esep)
   | uniq) # filter so the paths are unique
 
 
-let zoxide_cache = ("~/.cache/zoxide" | path expand)
-if not ($"($zoxide_cache)/nuinit.nu" | path exists) {
-  if not ($zoxide_cache | path exists) {
-    mkdir $zoxide_cache
-  }
-  zoxide init nushell --cmd cd 
-  | save --force $"($zoxide_cache)/nuinit.nu"
-}
+zoxide init --cmd cd nushell | save -f ~/.zoxide.nu

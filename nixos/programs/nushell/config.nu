@@ -166,4 +166,4 @@ $env.config = {
     }
 }
 alias cat = bat
-source ~/.cache/zoxide/nuinit.nu
+source ~/.zoxide.nu

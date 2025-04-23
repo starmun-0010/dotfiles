@@ -52,7 +52,7 @@ fi
 
 if ! [ -L "$HOME/.omnisharp" ] || ! [ -e "$HOME/.omnisharp" ];
 then
-	ln -sfn "$PWD/programs/.omnisharp" "$HOME/"
+	ln -sfn "$PWD/programs/omnisharp" "$HOME/.omnisharp"
 fi
 
 #github
