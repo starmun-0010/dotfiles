@@ -8,8 +8,9 @@
   home.username = "hermes";
   home.homeDirectory = "/home/hermes";
   home.packages = with pkgs; [
-    (with pkgs-un.dotnetCorePackages; combinePackages [
-    ])
+        #    (with pkgs-un.dotnetCorePackages; combinePackages [
+        # sdk_8_0
+        # ])
     acpi
     lazygit
     testdisk
