@@ -9,7 +9,6 @@
   home.homeDirectory = "/home/hermes";
   home.packages = with pkgs; [
     (with pkgs-un.dotnetCorePackages; combinePackages [
-      sdk_8_0
     ])
     acpi
     lazygit
