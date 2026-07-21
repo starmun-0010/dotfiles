@@ -29,10 +29,9 @@ then
 fi
 
 #audio
-if ! command -v pulseaudio &> /dev/null
+if ! command -v pipewire &> /dev/null
 then
-	sudo apt -y install pulseaudio 
-	sudo apt -y install pulseaudio-module-bluetooth
+	sudo apt -y install pipewire pipewire-pulse pipewire-alsa wireplumber libspa-0.2-bluetooth
 fi
 
 if ! command -v alsa &> /dev/null
