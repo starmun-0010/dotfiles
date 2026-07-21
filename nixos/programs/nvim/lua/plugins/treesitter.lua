@@ -4,6 +4,8 @@ return {
     opts = {
         ensure_installed = {
             "liquid",
+            "python",
+            "go",
             "bash",
             "c",
             "diff",
