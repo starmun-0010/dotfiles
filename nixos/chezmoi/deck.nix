@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-un, ... }: {
+{ config, pkgs, ... }: {
 
   imports =
     [ 
@@ -13,10 +13,10 @@
     arandr
     glibcLocales
     nixgl.auto.nixGLDefault
-    pkgs-un.postman
+    postman
     slack
     i3
-    (with pkgs-un.dotnetCorePackages; combinePackages [
+    (with pkgs.dotnetCorePackages; combinePackages [
       sdk_6_0
       sdk_7_0
       sdk_8_0

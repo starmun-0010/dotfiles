@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-un, ... }: {
+{ config, pkgs, ... }: {
 
   nixpkgs = {
     config = {
@@ -13,13 +13,13 @@
     xdg-utils
     vifm
     i3blocks
-    fira-code-nerdfont
+    nerd-fonts.fira-code
     pavucontrol
     gnumake
     gcc
-    pkgs-un.protonvpn-cli_2
-    pkgs-un.kanata
-    pkgs-un.neovim
+    proton-vpn-cli
+    kanata
+    neovim
     gh
     flameshot
     unzip
@@ -32,7 +32,7 @@
     xclip
     ripgrep
     firefox
-    pkgs-un.wezterm
+    wezterm
     rofi
     picom
     zellij
@@ -61,9 +61,8 @@
   };
   programs.git = {
    enable = true;
-   userName = "starmun-0010";
-   userEmail = "abdemuqsit@hotmail.com";
-
+   settings.user.name = "starmun-0010";
+   settings.user.email = "abdemuqsit@hotmail.com";
   };
 
   home.file.wallpaper = {

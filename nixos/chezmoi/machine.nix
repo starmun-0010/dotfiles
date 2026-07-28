@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-un, ... }: {
+{ config, pkgs, ... }: {
  nixpkgs = {
     config = {
       allowUnfree = true;
@@ -13,13 +13,13 @@
   home.username = "muqsit";
   home.homeDirectory = "/home/muqsit";
   home.packages = with pkgs; [
-   (with pkgs-un.dotnetCorePackages; combinePackages [
+   (with pkgs.dotnetCorePackages; combinePackages [
       sdk_6_0
       sdk_7_0
       sdk_8_0
       sdk_9_0
     ])
-   pkgs-un.popcorntime
+   popcorntime
     qbittorrent
     qbittorrent
     vlc

@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-un, ... }: {
+{ config, pkgs, ... }: {
 
   imports =
     [ 
@@ -8,7 +8,7 @@
   home.username = "hermes";
   home.homeDirectory = "/home/hermes";
   home.packages = with pkgs; [
-        #    (with pkgs-un.dotnetCorePackages; combinePackages [
+        #    (with pkgs.dotnetCorePackages; combinePackages [
         # sdk_8_0
         # ])
     acpi
@@ -22,7 +22,7 @@
     arandr
     glibcLocales
     nixgl.auto.nixGLDefault
-    pkgs-un.postman
+    postman
     i3
   ];
   home.sessionVariables = {
