@@ -1,0 +1,115 @@
+/*
+ * Catppuccin Mocha for rofi.
+ * Hex values copied from nixos/programs/nushell/config.nu ($catppuccin.mocha)
+ * to stay in sync with wezterm/zellij/nushell/nvim, which all use the same
+ * flavor with no accent override.
+ */
+* {
+    rosewater: #f5e0dc;
+    flamingo:  #f2cdcd;
+    pink:      #f5c2e7;
+    mauve:     #cba6f7;
+    red:       #f38ba8;
+    maroon:    #eba0ac;
+    peach:     #fab387;
+    yellow:    #f9e2af;
+    green:     #a6e3a1;
+    teal:      #94e2d5;
+    sky:       #89dceb;
+    sapphire:  #74c7ec;
+    blue:      #89b4fa;
+    lavender:  #b4befe;
+    text:      #cdd6f4;
+    subtext1:  #bac2de;
+    subtext0:  #a6adc8;
+    overlay2:  #9399b2;
+    overlay1:  #7f849c;
+    overlay0:  #6c7086;
+    surface2:  #585b70;
+    surface1:  #45475a;
+    surface0:  #313244;
+    base:      #1e1e2e;
+    mantle:    #181825;
+    crust:     #11111b;
+
+    accent:    @mauve;
+
+    background-color: transparent;
+    text-color:        @text;
+}
+
+window {
+    background-color: rgba(30, 30, 46, 92%);
+    border:             2px;
+    border-color:       @accent;
+    border-radius:      15px;
+    width:               600px;
+    location:            center;
+    padding:             0;
+}
+
+mainbox {
+    padding:  12px;
+    spacing:  12px;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    background-color: @surface0;
+    border-radius:      10px;
+    padding:             10px 14px;
+    spacing:             10px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    text-color: @accent;
+    font:        "FiraCode Nerd Font Bold 12";
+}
+
+entry {
+    placeholder:       "Search…";
+    placeholder-color: @overlay0;
+    text-color:         @text;
+}
+
+listview {
+    lines:        8;
+    columns:      1;
+    spacing:      4px;
+    fixed-height: false;
+    scrollbar:    false;
+    padding:      4px 0 0 0;
+}
+
+element {
+    padding:       8px 10px;
+    spacing:       10px;
+    border-radius: 8px;
+}
+
+element normal.normal {
+    text-color:       @text;
+    background-color: transparent;
+}
+
+element selected.normal {
+    background-color: @accent;
+    text-color:         @base;
+}
+
+element-icon {
+    size:           26px;
+    vertical-align: 0.5;
+}
+
+element-text {
+    vertical-align: 0.5;
+    text-color:     inherit;
+}
+
+configuration {
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    font:       "FiraCode Nerd Font 11";
+}

@@ -19,6 +19,11 @@ then
 	ln -sfn "$PWD/programs/picom" "$HOME/.config/"
 fi
 
+if ! [ -L "$HOME/.config/rofi" ] || ! [ -e "$HOME/.config/rofi" ];
+then
+	ln -sfn "$PWD/programs/rofi" "$HOME/.config/"
+fi
+
 if ! [ -L "$HOME/.config/wezterm" ] || ! [ -e "$HOME/.config" ];
 then
 	ln -sfn "$PWD/programs/wezterm" "$HOME/.config/"

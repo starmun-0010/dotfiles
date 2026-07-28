@@ -65,6 +65,14 @@
    settings.user.email = "abdemuqsit@hotmail.com";
   };
 
+  gtk = {
+    enable = true;
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+    };
+  };
+
   home.file.wallpaper = {
     enable = true;
     source = config.lib.file.mkOutOfStoreSymlink ../wallpapers;
