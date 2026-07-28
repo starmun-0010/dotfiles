@@ -99,7 +99,13 @@ then
         sudo modprobe uinput
 fi
 
-if ! [ -f "/etc/udev/rules.d/backlight.rules" ]; 
+#gpu render access (avoids DRI3 fallback to llvmpipe, which crashes citrix wfica)
+if ! groups $USER | grep -qw render;
+then
+	sudo usermod -aG render,video $USER
+fi
+
+if ! [ -f "/etc/udev/rules.d/backlight.rules" ];
 then
 	echo 'ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="/usr/bin/chgrp video /sys/class/backlight/intel_backlight/brightness"
 ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="/usr/bin/chmod 777 /sys/class/backlight/intel_backlight/brightness"
