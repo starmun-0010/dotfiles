@@ -1,0 +1,23 @@
+(defsrc
+  tab
+  esc
+  caps
+  lsgt 
+)
+
+(deflayer some 
+  @tabmeta
+  caps
+  @escctrl
+  lsft
+)
+
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defalias
+  ;; tap for caps lock, hold for left control
+  escctrl (tap-hold 200 200 esc lctl)
+  tabmeta (tap-hold 200 200 tab lmet)
+) 

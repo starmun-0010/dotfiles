@@ -1,0 +1,198 @@
+#!/bin/bash
+if [ "$2" == "kernel" ];
+then
+	sudo add-apt-repository ppa:cappelikan/ppa
+	sudo apt update
+	sudo apt install -y pkexec
+	sudo apt install -y mainline
+	sudo mainline install-latest
+fi
+if [ "$2" == "upgrade" ];
+then
+	nix-channel --add 'https://nixos.org/channels/nixos-24.11' nixpkgs
+	nix-channel --update
+	nix flake update
+fi
+git config --global user.email "abdemuqsit@hotmail.com"
+git config --global user.name "starmun-0010"
+
+# Create xdg config folder
+if ! [ -d "$HOME/.config" ]; then
+	mkdir "$HOME/.config"
+fi
+
+#mask systemd network waiting service
+if ! [ -L "/etc/systemd/system/systemd-networkd-wait-online.service" ] || ! [ -e "/etc/systemd/system/systemd-networkd-wait-online.service" ];
+then
+	echo "masking network waiting service"
+	sudo systemctl mask systemd-networkd-wait-online.service
+fi
+
+#audio
+if ! command -v pipewire &> /dev/null
+then
+	sudo apt -y install pipewire pipewire-pulse pipewire-alsa wireplumber libspa-0.2-bluetooth
+fi
+
+if ! command -v alsa &> /dev/null
+then
+	sudo apt -y install alsa
+fi
+
+#install bluetooth
+if ! command -v bluetoothd &> /dev/null
+then
+	sudo apt -y install bluez
+fi
+
+
+#install xorg
+if ! command -v startx &> /dev/null
+then
+	echo "startx not found, installing xorg"
+	sudo apt -y install xorg
+fi
+
+#install nix
+if ! command -v nix &> /dev/null
+then
+	echo "nix not found, installing nix"
+	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --no-confirm
+	if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+		. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+	fi
+
+	nix-channel --add https://nixos.org/channels/nixos-23.11 nixpkgs
+	nix-channel --update
+fi
+
+if ! [ -f "$HOME/.config/nix/nix.conf" ]; then
+	if ! [ -d "$HOME/.config/nix" ]; then
+		mkdir ~/.config/nix
+	fi
+	cp ./programs/nix/nix.conf ~/.config/nix/nix.conf
+fi
+
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+
+# End Nix
+
+
+if [ "$1" == "init" ];
+then
+	nix run nixpkgs#home-manager -- switch --flake . --impure
+	sudo ln -sf /usr/share/zoneinfo/Asia/Karachi  /etc/localtime
+fi
+
+#kanata
+if ! [ -f "/etc/udev/rules.d/kanata.rules" ]; 
+then
+	getent group uinput || sudo groupadd uinput
+	getent group input  || sudo groupadd input
+
+	sudo usermod -aG input $USER
+	sudo usermod -aG uinput $USER
+
+	echo 'KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"' | sudo tee /etc/udev/rules.d/kanata.rules
+        sudo modprobe uinput
+fi
+
+if ! [ -f "/etc/udev/rules.d/backlight.rules" ]; 
+then
+	echo 'ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="/usr/bin/chgrp video /sys/class/backlight/intel_backlight/brightness"
+ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="/usr/bin/chmod 777 /sys/class/backlight/intel_backlight/brightness"
+' | sudo tee /etc/udev/rules.d/backlight.rules
+fi
+if ! command -v cargo &> /dev/null 
+then
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y 
+       	. "$HOME/.cargo/env"
+fi
+
+#install build essentials 
+if ! command -v gcc &> /dev/null 
+then
+	sudo apt -y install build-essential 
+fi
+
+#install greetd
+if ! command -v greetd &> /dev/null 
+then
+	sudo apt -y install greetd
+fi
+
+if ! [ -d "/etc/greetd" ]; then
+	sudo mkdir /etc/greetd
+fi
+
+if ! [ -f "/usr/local/bin/tuigreet/tuigreet" ]; then
+	git clone https://github.com/apognu/tuigreet /tmp/tuigreet 
+	pushd /tmp/tuigreet
+	cargo build --release
+
+	if ! [ -d "/usr/local/bin/tuigreet" ]; then
+        	sudo mkdir /usr/local/bin/tuigreet
+		sudo mkdir /var/cache/tuigreet
+		sudo chmod 777 /var/cache/tuigreet
+	fi
+	sudo mv target/release/tuigreet /usr/local/bin/tuigreet
+	popd
+fi
+
+if ! [ -L "/etc/greetd/config.toml" ] || ! [ -e "/etc/greetd/config.toml" ];
+then
+        sudo ln -sf "$PWD/programs/greetd/config.toml" "/etc/greetd/config.toml"
+fi
+
+if ! [ -L "$HOMR/.profile" ] || ! [ -e "$HOME/.profile" ]; 
+then
+	ln -sf "$PWD/programs/bash/.profile" "$HOME/.profile"
+fi
+
+if ! [ -L "$HOME/.config/nvim" ] || ! [ -e "$HOME/.config/nvim" ]; 
+then
+	ln -sfn "$PWD/programs/nvim" "$HOME/.config/nvim"
+fi
+
+if ! [ -L "$HOME/.config/kanata" ] || ! [ -e "$HOME/.config/kanata" ]; 
+then
+	ln -sfn "$PWD/programs/kanata" "$HOME/.config/kanata"
+fi
+
+if ! [ -L "$HOME/.config/zellij" ] || ! [ -e "$HOME/.config/zellij" ]; 
+then
+	ln -sfn "$PWD/programs/zellij" "$HOME/.config/zellij"
+fi
+
+if ! [ -L "$HOME/.config/nushell" ] || ! [ -e "$HOME/.config/nushell" ]; 
+then
+	ln -sfn "$PWD/programs/nushell" "$HOME/.config/nushell"
+fi
+
+if ! [ -L "$HOME/.config/wezterm" ] || ! [ -e "$HOME/.config/wezterm" ]; 
+then
+	ln -sfn "$PWD/programs/wezterm" "$HOME/.config/wezterm"
+fi
+
+#if ! [ -L "$HOME/.config/picom" ] || ! [ -e "$HOME/.config/picom" ]; 
+#then
+#	ln -sfn "$PWD/programs/picom" "$HOME/.config/picom"
+#fi
+
+if ! [ -L "$HOME/.bash_profile" ] || ! [ -e "$HOME/.bash_profile" ];
+then
+	ln -sf "$PWD/programs/bash/.bash_profile" "$HOME/.bash_profile"
+fi
+
+if ! [ -L "/etc/X11/xorg.conf.d/20-intel.conf" ] || ! [ -e "/etc/X11/xorg.conf.d/20-intel.conf" ];
+then
+	sudo ln -sfn "$PWD/programs/X11/xorg.conf" "/etc/X11/xorg.conf.d/20-intel.conf"
+fi
+
+if ! [ -L "/etc/systemd/system/awsvpnclient.service" ] || ! [ -e "/etc/systemd/system/awsvpnclient.service" ];
+then
+	sudo ln -sfn "$PWD/programs/awsvpn/awsvpnclient.service" "/etc/systemd/system/awsvpnclient.service"
+fi
+
