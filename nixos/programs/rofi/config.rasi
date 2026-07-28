@@ -88,7 +88,8 @@ element {
     border-radius: 8px;
 }
 
-element normal.normal {
+element normal.normal,
+element alternate.normal {
     text-color:       @text;
     background-color: transparent;
 }
