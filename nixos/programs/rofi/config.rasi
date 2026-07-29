@@ -32,7 +32,8 @@
     mantle:    #181825;
     crust:     #11111b;
 
-    accent:    @mauve;
+    accent:    @blue;
+    border:    @surface2;
 
     background-color: transparent;
     text-color:        @text;
@@ -41,7 +42,7 @@
 window {
     background-color: rgba(30, 30, 46, 92%);
     border:             2px;
-    border-color:       @accent;
+    border-color:       @border;
     border-radius:      15px;
     width:               600px;
     location:            center;
