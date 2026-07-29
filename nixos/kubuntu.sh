@@ -46,10 +46,8 @@ then
 		exit 0
 	fi
 	git add --all
-	home-manager switch --flake . --impure
-	git commit -am "$(home-manager generations | head -n 1)"
-	git push
-fi  
+	home-manager switch --flake . --impure && git commit -am "$(home-manager generations | head -n 1)" && git push
+fi
 
 #kanata
 if ! [ -f "/etc/udev/rules.d/kanata.rules" ]; 
