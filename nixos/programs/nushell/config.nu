@@ -167,3 +167,4 @@ $env.config = {
 }
 alias cat = bat
 source ~/.zoxide.nu
+source ~/.starship.nu

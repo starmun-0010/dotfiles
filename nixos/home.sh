@@ -24,6 +24,11 @@ then
 	ln -sfn "$PWD/programs/rofi" "$HOME/.config/"
 fi
 
+if ! [ -L "$HOME/.config/starship" ] || ! [ -e "$HOME/.config/starship" ];
+then
+	ln -sfn "$PWD/programs/starship" "$HOME/.config/"
+fi
+
 if ! [ -L "$HOME/.config/wezterm" ] || ! [ -e "$HOME/.config" ];
 then
 	ln -sfn "$PWD/programs/wezterm" "$HOME/.config/"

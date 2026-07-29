@@ -13,6 +13,7 @@
     xdg-utils
     vifm
     i3blocks
+    starship
     nerd-fonts.fira-code
     pavucontrol
     gnumake
@@ -55,7 +56,11 @@
       "x-scheme-handler/about" = "firefox.desktop";
       "x-scheme-handler/unknown" = "firefox.desktop";
     };
-  }; 
+  };
+  # Apps (Zen, etc.) keep rewriting this as a real file when they register as
+  # default handlers, which makes every switch try to back it up again and
+  # fail once a stale .backup already exists. Always overwrite instead.
+  xdg.configFile."mimeapps.list".force = true;
   programs.home-manager = {
     enable = true;
   };

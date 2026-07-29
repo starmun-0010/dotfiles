@@ -6,3 +6,6 @@ $env.PATH = ($env.PATH | split row (char esep)
 
 
 zoxide init --cmd cd nushell | save -f ~/.zoxide.nu
+
+$env.STARSHIP_CONFIG = ($env.HOME | path join .config starship starship.toml)
+starship init nushell | save -f ~/.starship.nu
