@@ -40,7 +40,7 @@ mantle    = "#181825"
 crust     = "#11111b"
 
 [directory]
-style = "bold blue"
+style = "overlay1"
 truncation_length = 4
 truncate_to_repo = true
 
