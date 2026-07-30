@@ -24,6 +24,10 @@ font pango:DejaVu Sans Mono 10
 # talks to systemd directly and works regardless.
 exec --no-startup-id systemctl --user set-environment DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY
 
+# Bare i3 has no polkit agent by default, so anything gated by polkit
+# (fprintd enroll, udisks2 mounts, NetworkManager) fails with no auth prompt.
+exec --no-startup-id lxpolkit
+
 exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpapers/tropic_island_day.jpg
 exec_always --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -44,6 +48,7 @@ bindsym $mod+Shift+e exit
 
 bindsym $mod+d exec "rofi -modi drun,run -show drun"
 bindsym $mod+Shift+s exec "flameshot gui"
+bindsym $mod+Escape exec --no-startup-id loginctl lock-session
 
 bindsym $mod+ctrl+v split vertical
 bindsym $mod+ctrl+h split horizontal 
@@ -142,6 +147,16 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Entered/exited via `i3-msg mode nav|default`, driven by the
+# kanata-nav-indicator script when the kanata hjkl -> arrow-key layer
+# toggles (see nixos/programs/kanata/). i3 silently refuses to switch
+# into a mode with zero bindsyms (confirmed via get_binding_state), so
+# this has a placeholder binding even though kanata handles the real
+# arrow-key remapping below i3's view.
+mode "nav" {
+  bindsym $mod+shift+n mode "default"
+}
+
 
 #Theme
 set $rosewater #f5e0dc
@@ -202,7 +217,7 @@ bar {
     active_workspace   $base $base $blue
     inactive_workspace $base $base $subtext0
     urgent_workspace    $peach $peach $base
-    binding_mode       $base $base $surface1
+    binding_mode       $base $base $mauve
   }
 }
 

@@ -108,6 +108,10 @@
     Service = {
       ExecStart = "${config.home.homeDirectory}/.config/kanata/scripts/nav-indicator";
       Restart = "on-failure";
+      # systemd user services get a minimal default PATH that doesn't
+      # include the nix-profile bin dir, so i3-msg (called by the script)
+      # can't be found without this.
+      Environment = "PATH=%h/.nix-profile/bin:/usr/bin:/bin";
     };
   };
 

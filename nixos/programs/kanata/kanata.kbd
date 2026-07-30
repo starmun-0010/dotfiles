@@ -3,10 +3,12 @@
   esc
   caps
   lsgt
+  g
   h
   j
   k
   l
+  ;
 )
 
 (deflayer some
@@ -14,10 +16,12 @@
   @nav-on
   @escctrl
   lsft
+  g
   h
   j
   k
   l
+  ;
 )
 
 (deflayer nav
@@ -25,10 +29,12 @@
   @nav-off
   @escctrl
   lsft
+  home
   left
   down
   up
   rght
+  end
 )
 
 (defcfg

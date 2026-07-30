@@ -3,34 +3,27 @@
 
 Kanata reports every layer switch over its --port socket (see
 kanata.kbd / common.nix). When the "nav" layer (hjkl -> arrow keys)
-becomes active, this un-hides the i3 bar and lights up the [nav]
-i3blocks segment, so it's obvious hjkl no longer types letters.
+becomes active, this un-hides the i3 bar and enters i3's own "nav"
+mode, so the bar's existing mode-indicator segment (the one that
+already shows "resize") shows "nav" too.
 """
 import json
-import os
 import socket
 import subprocess
 import time
 
 PORT = 5829
-I3BLOCKS_SIGNAL = 10
-FLAG_PATH = os.path.join(os.environ.get("XDG_RUNTIME_DIR", "/tmp"), "kanata-nav-active")
 
 
 def set_nav_active(active: bool) -> None:
-    if active:
-        with open(FLAG_PATH, "w") as f:
-            f.write("NAV")
-        bar_mode = "dock"
-    else:
-        try:
-            os.remove(FLAG_PATH)
-        except FileNotFoundError:
-            pass
-        bar_mode = "hide"
-
-    subprocess.run(["i3-msg", "bar", "mode", bar_mode], capture_output=True)
-    subprocess.run(["pkill", f"-RTMIN+{I3BLOCKS_SIGNAL}", "i3blocks"], capture_output=True)
+    # hidden_state (not mode) matches what the Win-key peek already does:
+    # an overlay that doesn't re-tile/displace windows. Toggling `mode`
+    # itself (dock/hide) also triggers an i3bar bug that mispositions the
+    # bar on outputs with a non-zero origin (e.g. eDP-1 at x=2560).
+    mode = "nav" if active else "default"
+    hidden_state = "show" if active else "hide"
+    subprocess.run(["i3-msg", "mode", mode], capture_output=True)
+    subprocess.run(["i3-msg", "bar", "hidden_state", hidden_state], capture_output=True)
 
 
 def main() -> None:
