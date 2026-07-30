@@ -22,7 +22,11 @@ font pango:DejaVu Sans Mono 10
 # doesn't work here since dbus-run-session spawns its own private bus
 # instead of using the systemd-managed per-user one; set-environment
 # talks to systemd directly and works regardless.
-exec --no-startup-id systemctl --user set-environment DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY
+# DBUS_SESSION_BUS_ADDRESS is included for the same reason: dunst is
+# dbus-activated on this private bus, not on the systemd --user bus
+# (/run/user/$UID/bus), so systemd user services (e.g. batsignal) that
+# don't also get this var send notify calls into the void.
+exec --no-startup-id systemctl --user set-environment DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS
 
 # Bare i3 has no polkit agent by default, so anything gated by polkit
 # (fprintd enroll, udisks2 mounts, NetworkManager) fails with no auth prompt.
@@ -30,7 +34,7 @@ exec --no-startup-id lxpolkit
 
 exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpapers/tropic_island_day.jpg
 exec_always --no-startup-id dex --autostart --environment i3
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- $HOME/.local/bin/i3lock-color --nofork --indicator
 exec_always --no-startup-id echo -e "connect 23:02:24:14:13:2E" | bluetoothctl
 exec_always --no-startup-id echo -e "nconnect 74:45:CE:F5:01:59" | bluetoothctl
 
