@@ -1,0 +1,115 @@
+# See dunst(5) for all configuration options
+#
+# Catppuccin Mocha theme, to stay consistent with the rest of the
+# rice (see nixos/programs/rofi/config.rasi, starship.toml, wezterm.lua).
+
+[global]
+    ### Display ###
+    monitor = 0
+    follow = none
+
+    ### Geometry ###
+    width = 300
+    height = 300
+    origin = top-right
+    offset = 10x50
+    scale = 0
+    notification_limit = 20
+
+    ### Progress bar ###
+    progress_bar = true
+    progress_bar_height = 10
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+    progress_bar_corner_radius = 0
+    progress_bar_corners = all
+    icon_corner_radius = 0
+    icon_corners = all
+
+    indicate_hidden = yes
+    transparency = 0
+    separator_height = 2
+    padding = 8
+    horizontal_padding = 8
+    text_icon_padding = 0
+    frame_width = 2
+    frame_color = "#585b70"
+    gap_size = 0
+    separator_color = frame
+    sort = yes
+
+    ### Text ###
+    font = FiraCode Nerd Font 9
+    line_height = 0
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+
+    ### Icons ###
+    enable_recursive_icon_lookup = true
+    icon_theme = Papirus-Dark
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 128
+
+    ### History ###
+    sticky_history = yes
+    history_length = 20
+
+    ### Misc/Advanced ###
+    browser = xdg-open
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    corner_radius = 10
+    corners = all
+    ignore_dbusclose = false
+
+    force_xwayland = false
+    force_xinerama = false
+
+    ### mouse
+    # do_action first so clicking a notification triggers its default
+    # action (e.g. focusing the sending app - Slack, etc.), then dismisses it.
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = close_current
+    mouse_right_click = close_all
+
+[experimental]
+    per_monitor_dpi = false
+
+# Catppuccin Mocha palette: base=#1e1e2e text=#cdd6f4 blue=#89b4fa
+# red=#f38ba8 surface1=#45475a surface2=#585b70 subtext0=#a6adc8
+[urgency_low]
+    background = "#1e1e2e"
+    foreground = "#a6adc8"
+    frame_color = "#45475a"
+    timeout = 5
+
+[urgency_normal]
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#89b4fa"
+    timeout = 10
+
+[urgency_critical]
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#f38ba8"
+    timeout = 0
+
+# Claude Code's permission-prompt notifications (~/.claude/settings.json
+# Notification hook) fire at "critical" urgency, which never times out by
+# default (see urgency_critical above). Cap it here so they don't linger
+# forever if missed.
+[claude_code]
+    appname = "Claude Code"
+    timeout = 60

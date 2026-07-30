@@ -74,4 +74,11 @@
    target = "${config.home.homeDirectory}/.xinitrc";
    force = true;
  };
+
+ home.file.dunstrc = {
+   enable = true;
+   source = config.lib.file.mkOutOfStoreSymlink ../programs/dunst/dunstrc;
+   target = "${config.home.homeDirectory}/.config/dunst/dunstrc";
+   force = true;
+ };
 }

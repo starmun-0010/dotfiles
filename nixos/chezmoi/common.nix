@@ -42,6 +42,7 @@
     nix-tree
     zoxide
     nushell
+    batsignal
 
     vscode
   ];
@@ -93,6 +94,19 @@
       ExecStart = "${pkgs.kanata}/bin/kanata";
     };
   };
-  
+
+  systemd.user.services.batsignal = {
+    Unit = {
+      Description = "Low battery notification daemon";
+    };
+    Install = {
+      WantedBy = [ "default.target" ];
+    };
+    Service = {
+      ExecStart = ''${pkgs.batsignal}/bin/batsignal -i -w 20 -c 10 -d 5 -D "systemctl suspend"'';
+      Restart = "on-failure";
+    };
+  };
+
   home.stateVersion = "23.11";
 }

@@ -1,14 +1,24 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+add_newline = false
+
 palette = "catppuccin_mocha"
 
 format = """
+$username\
+$hostname\
 $directory\
 $git_branch\
 $git_status\
-$fill\
+$nodejs\
+$python\
+$rust\
+$golang\
+$lua\
+$docker_context\
 $cmd_duration\
-$time
+$jobs\
+$time\
 $character"""
 
 [palettes.catppuccin_mocha]
@@ -39,35 +49,76 @@ base      = "#1e1e2e"
 mantle    = "#181825"
 crust     = "#11111b"
 
+[username]
+style_user = "bold sapphire"
+style_root = "bold red"
+format = "[$user]($style)@"
+disabled = false
+
+[hostname]
+ssh_only = true
+style = "bold sapphire"
+format = "[$hostname]($style) "
+
 [directory]
 style = "overlay1"
-truncation_length = 4
+truncation_length = 2
 truncate_to_repo = true
+format = "[$path]($style)"
 
 [git_branch]
-symbol = " "
+symbol = ""
 style = "bold mauve"
-format = "on [$symbol$branch]($style) "
+format = "[$symbol$branch]($style)"
 
 [git_status]
 style = "bold peach"
-format = "([$all_status$ahead_behind]($style) )"
+format = "([$all_status$ahead_behind]($style))"
 
-[fill]
-symbol = " "
+[nodejs]
+style = "bold green"
+format = "[$symbol($version )]($style)"
+
+[python]
+style = "bold yellow"
+format = "[$symbol($version )]($style)"
+
+[rust]
+style = "bold peach"
+format = "[$symbol($version )]($style)"
+
+[golang]
+style = "bold sapphire"
+format = "[$symbol($version )]($style)"
+
+[lua]
+style = "bold blue"
+format = "[$symbol($version )]($style)"
+
+[docker_context]
+style = "bold blue"
+format = "[$symbol$context]($style) "
+only_with_files = true
 
 [cmd_duration]
 min_time = 2000
 style = "bold yellow"
 format = "took [$duration]($style) "
 
+[jobs]
+symbol = "✦"
+style = "bold green"
+number_threshold = 1
+format = "[$symbol]($style) "
+
 [time]
 disabled = false
-style = "bold overlay1"
+style = "bold pink"
 format = "[$time]($style)"
 time_format = "%H:%M"
 
 [character]
+disabled = true
 success_symbol = "[❯](bold green)"
 error_symbol = "[❯](bold red)"
 vimcmd_symbol = "[❮](bold green)"
