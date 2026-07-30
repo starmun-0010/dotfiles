@@ -75,34 +75,11 @@
   services.autorandr.enable = true;
 
 
-  home.file.i3 = {
-    enable = true;
-    text = (builtins.readFile ../programs/i3/config) + ''
-      set $monitor_left "HDMI-1"
-      set $monitor_right "DP2"
-      set $monitor_internal "eDP1"
+  # i3 config is symlinked directly via home.sh (like i3blocks, kanata,
+  # etc.) instead of being rendered here, so editing
+  # nixos/programs/i3/config.hermes takes effect on the next i3 reload
+  # without needing a home-manager switch.
 
- #assign workspace to monitor (reuses the $wsN names, icons included,
- #already set in the base i3 config above)
-      workspace $ws1 output $monitor_left
-      workspace $ws2 output $monitor_right
-      workspace $ws3 output $monitor_internal
-      workspace $ws4 output $monitor_left
-      workspace $ws5 output $monitor_right
-      workspace $ws6 output $monitor_internal
-      workspace $ws7 output $monitor_left
-      workspace $ws8 output $monitor_right
-      workspace $ws9 output $monitor_internal
-      workspace $ws10 output $monitor_internal
-      exec --no-startup-id nixGL picom -b
-      exec --no-startup-id "xinput set-prop 'SYNA801A:00 06CB:CEC6 Touchpad' 'libinput Tapping Enabled' 1"
-      exec --no-startup-id "xinput set-button-map 10 1 1 3 4 5 6 7"
-      bindsym $mod+t exec nixGL wezterm
-    '';
-    force = true;
-    target = "${config.home.homeDirectory}/.config/i3/config";
-  };
- 
  home.file.xinitrc = {
    enable = true;
    source = config.lib.file.mkOutOfStoreSymlink ../programs/xinit/.xinitrc;

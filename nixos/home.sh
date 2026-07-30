@@ -60,6 +60,16 @@ then
 	ln -sfn "$PWD/programs/i3blocks" "$HOME/.config/"
 fi
 
+if ! [ -d "$HOME/.config/i3" ];
+then
+	mkdir -p "$HOME/.config/i3"
+fi
+
+if ! [ -L "$HOME/.config/i3/config" ] || ! [ -e "$HOME/.config/i3/config" ];
+then
+	ln -sfn "$PWD/programs/i3/config.hermes" "$HOME/.config/i3/config"
+fi
+
 if ! [ -L "$HOME/.omnisharp" ] || ! [ -e "$HOME/.omnisharp" ];
 then
 	ln -sfn "$PWD/programs/omnisharp" "$HOME/.omnisharp"
