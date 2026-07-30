@@ -65,6 +65,12 @@
       i3status-rust
     ];
   };
+
+  # Installs autorandr's udev rules so monitor plug/unplug triggers a
+  # live xrandr layout switch, instead of needing it re-run by hand.
+  # Profiles themselves (which layout goes with which monitors) are
+  # defined per-user via home-manager's programs.autorandr.
+  services.autorandr.enable = true;
   console.useXkbConfig = true;
   # Enable CUPS to print documents.
   services.printing.enable = true;

@@ -2,14 +2,33 @@
   tab
   esc
   caps
-  lsgt 
+  lsgt
+  h
+  j
+  k
+  l
 )
 
-(deflayer some 
+(deflayer some
   @tabmeta
-  caps
+  @nav-on
   @escctrl
   lsft
+  h
+  j
+  k
+  l
+)
+
+(deflayer nav
+  @tabmeta
+  @nav-off
+  @escctrl
+  lsft
+  left
+  down
+  up
+  rght
 )
 
 (defcfg
@@ -18,6 +37,14 @@
 
 (defalias
   ;; tap for caps lock, hold for left control
-  escctrl (tap-hold 200 200 esc lctl)
-  tabmeta (tap-hold 200 200 tab lmet)
-) 
+  ;; tap-hold-press (not plain tap-hold): resolve to hold as soon as
+  ;; another key is pressed, so fast chords like ctrl+a aren't misread as taps
+  escctrl (tap-hold-press 200 200 esc lctl)
+  tabmeta (tap-hold-press 200 200 tab lmet)
+  ;; physical Esc key: tap flips into the hjkl -> arrow-key nav layer and
+  ;; stays there until tapped again (layer-switch persists, unlike
+  ;; layer-while-held); hold still sends real Caps Lock, since that's now
+  ;; rarely needed with the caps-lock key itself remapped to esc/ctrl above
+  nav-on (tap-hold-press 200 200 (layer-switch nav) caps)
+  nav-off (tap-hold-press 200 200 (layer-switch some) caps)
+)

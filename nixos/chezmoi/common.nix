@@ -91,7 +91,23 @@
       WantedBy = [ "default.target" ];
     };
     Service = {
-      ExecStart = "${pkgs.kanata}/bin/kanata";
+      # --port exposes LayerChange events over TCP for kanata-nav-indicator
+      ExecStart = "${pkgs.kanata}/bin/kanata --port 5829";
+      Restart = "on-failure";
+    };
+  };
+
+  systemd.user.services.kanata-nav-indicator = {
+    Unit = {
+      Description = "Show i3 bar while kanata's hjkl nav layer is active";
+      After = [ "kanata.service" ];
+    };
+    Install = {
+      WantedBy = [ "default.target" ];
+    };
+    Service = {
+      ExecStart = "${config.home.homeDirectory}/.config/kanata/scripts/nav-indicator";
+      Restart = "on-failure";
     };
   };
 

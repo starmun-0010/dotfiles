@@ -1,3 +1,11 @@
+# Lit up by kanata-nav-indicator while the hjkl -> arrow-key nav layer
+# is active (see nixos/programs/kanata/kanata.kbd + scripts/nav-indicator)
+[nav]
+command=cat "${XDG_RUNTIME_DIR:-/tmp}/kanata-nav-active" 2>/dev/null
+interval=once
+signal=10
+color=#fab387
+
 # Guess the weather hourly
 [weather]
 command=curl -Ss 'https://wttr.in/islamabad?0&T&Q' | cut -c 16- | head -2 | xargs echo

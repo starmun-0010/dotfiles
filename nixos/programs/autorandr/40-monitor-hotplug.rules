@@ -1,0 +1,1 @@
+ACTION=="change", SUBSYSTEM=="drm", RUN+="/usr/bin/systemctl --user --machine=hermes@ start --no-block autorandr.service"

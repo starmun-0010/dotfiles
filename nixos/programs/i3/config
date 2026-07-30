@@ -14,11 +14,24 @@ smart_gaps inverse_outer
 
 font pango:DejaVu Sans Mono 10
 
+# .xinitrc starts i3 via a bare `dbus-run-session i3`, so DISPLAY/XAUTHORITY
+# never reach the systemd --user manager. Without this, any systemd user
+# service that needs the display (e.g. autorandr.service) fails with
+# "Can't open display" when triggered outside a shell that already has
+# those vars (like from a udev rule). dbus-update-activation-environment
+# doesn't work here since dbus-run-session spawns its own private bus
+# instead of using the systemd-managed per-user one; set-environment
+# talks to systemd directly and works regardless.
+exec --no-startup-id systemctl --user set-environment DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY
+
 exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpapers/tropic_island_day.jpg
 exec_always --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec_always --no-startup-id echo -e "connect 23:02:24:14:13:2E" | bluetoothctl
 exec_always --no-startup-id echo -e "nconnect 74:45:CE:F5:01:59" | bluetoothctl
+
+exec --no-startup-id firefox
+exec --no-startup-id slack
 
 bindsym $mod+m bar mode toggle
 
@@ -59,16 +72,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
+set $ws1 "1:"
 set $ws2 "2"
 set $ws3 "3"
 set $ws4 "4"
-set $ws5 "5"
+set $ws5 "5:"
 set $ws6 "6"
 set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws8 "8:"
+set $ws9 "9:"
+set $ws10 "10:"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -93,6 +106,19 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# Auto-assign apps to workspaces (icons for these are set on the $wsN
+# names above; classes confirmed live via `xprop WM_CLASS`).
+# assign rules are evaluated top-to-bottom, first match wins, so the
+# per-project VS Code title matches must come before the catch-all.
+assign [class="^firefox$"]                                      $ws1
+assign [class="^code$" title=".* - cld - Visual Studio Code$"]  $ws7
+assign [class="^code$" title=".* - 2025 - Visual Studio Code$"] $ws7
+assign [class="^code$"]                                         $ws5
+assign [class="^org\.wezfurlong\.wezterm$"]                     $ws8
+assign [class="^AWS VPN Client$"]                               $ws8
+assign [class="^postman$"]                                      $ws9
+assign [class="^slack$"]                                        $ws10
 
 
 
@@ -159,6 +185,8 @@ bar {
 
   i3bar_command i3bar --transparency
   status_command i3blocks
+  font pango:FiraCode Nerd Font 13
+  strip_workspace_numbers yes
   mode hide
   padding 10px 0
   tray_padding 0
@@ -169,12 +197,11 @@ bar {
     background         $base
     statusline         $text
     focused_statusline $text
-    active_workspace   $base $text $blue
     #focused_separator $text
     focused_workspace  $base $base $green
     active_workspace   $base $base $blue
-    inactive_workspace $base $base $surface1
-    urgent_workspace   $base $base $surface1
+    inactive_workspace $base $base $subtext0
+    urgent_workspace    $peach $peach $base
     binding_mode       $base $base $surface1
   }
 }
